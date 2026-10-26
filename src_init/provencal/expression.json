@@ -1,254 +1,464 @@
 [
   {
-    "expression":"Avé la testa dura",
-    "traduction":"Avoir la tête dure",
-    "signification":"Être têtu",
-    "equivalent":"Têtu comme une mule"
+    "local-expression": "Avé la testa dura",
+    "pronunciation": "avoir la tete dure",
+    "literal-translation": "Avoir la tête dure",
+    "meaning": "Être têtu",
+    "french-equivalent": "Têtu comme une mule",
+    "origin": "Provençal / Italien",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Faire cantar li cigalo",
-    "traduction":"Faire chanter les cigales",
-    "signification":"Profiter de la vie",
-    "equivalent":"Prendre du bon temps"
+    "local-expression": "Faire cantar li cigalo",
+    "pronunciation": "faire chanter les cigales",
+    "literal-translation": "Faire chanter les cigales",
+    "meaning": "Profiter de la vie",
+    "french-equivalent": "Prendre du bon temps",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Entre dos aigo",
-    "traduction":"Entre deux eaux",
-    "signification":"Hésiter",
-    "equivalent":"Avoir le derrière entre deux chaises"
+    "local-expression": "Entre dos aigo",
+    "pronunciation": "entre deux eaux",
+    "literal-translation": "Entre deux eaux",
+    "meaning": "Hésiter",
+    "french-equivalent": "Avoir le derrière entre deux chaises",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Quand lou soulèu tomba",
-    "traduction":"Quand le soleil tombe",
-    "signification":"À la tombée de la nuit",
-    "equivalent":""
+    "local-expression": "Quand lou soulèu tomba",
+    "pronunciation": "quand le soleil tombe",
+    "literal-translation": "Quand le soleil tombe",
+    "meaning": "À la tombée de la nuit",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Faire lou pescadou",
-    "traduction":"Faire le pêcheur",
-    "signification":"Attendre son moment",
-    "equivalent":""
+    "local-expression": "Faire lou pescadou",
+    "pronunciation": "faire le pecheur",
+    "literal-translation": "Faire le pêcheur",
+    "meaning": "Attendre son moment",
+    "french-equivalent": "",
+    "origin": "Provençal maritime",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Coume vai ?",
-    "traduction":"Comment ça va ?",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "Coume vai ?",
+    "pronunciation": "comment ca va ?",
+    "literal-translation": "Comment ça va ?",
+    "meaning": "Comment ça va ?",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Balin-balan !",
-    "traduction":"Comme-ci, comme-ça !",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "Balin-balan !",
+    "pronunciation": "comme-ci, comme-ca !",
+    "literal-translation": "Comme-ci, comme-ça !",
+    "meaning": "Comme-ci, comme-ça !",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"E patin coufin...",
-    "traduction":"Et patati, et patata...",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "E patin coufin...",
+    "pronunciation": "et patati, et patata...",
+    "literal-translation": "Et patati, et patata...",
+    "meaning": "Et patati, et patata...",
+    "french-equivalent": "",
+    "origin": "Provençal maritime",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Qu'es acò ?",
-    "traduction":"Qu'est-ce que c'est ?",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "Qu'es acò ?",
+    "pronunciation": "qu'est-ce que c'est ?",
+    "literal-translation": "Qu'est-ce que c'est ?",
+    "meaning": "Qu'est-ce que c'est ?",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Oh ! Qu'acò's bèu ! [bèou]",
-    "traduction":"Oh ! Que c'est beau !",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "Oh ! Qu'acò's bèu ! [bèou]",
+    "pronunciation": "oh ! que c'est beau !",
+    "literal-translation": "Oh ! Que c'est beau !",
+    "meaning": "Oh ! Que c'est beau !",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Aqui n'y a proun !",
-    "traduction":"Y'en a marre !",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "Aqui n'y a proun !",
+    "pronunciation": "y'en a marre !",
+    "literal-translation": "Y'en a marre !",
+    "meaning": "Y'en a marre !",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Noun sai [aï]",
-    "traduction":"Je ne sais pas",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "Noun sai [aï]",
+    "pronunciation": "je ne sais pas",
+    "literal-translation": "Je ne sais pas",
+    "meaning": "Je ne sais pas",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Pasosco !",
-    "traduction":"Très bien ! Bravo !",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "Pasosco !",
+    "pronunciation": "tres bien ! bravo !",
+    "literal-translation": "Très bien ! Bravo !",
+    "meaning": "Très bien ! Bravo !",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Osco Manosco !",
-    "traduction":"Vive Manosque !",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "Osco Manosco !",
+    "pronunciation": "vive manosque !",
+    "literal-translation": "Vive Manosque !",
+    "meaning": "Vive Manosque !",
+    "french-equivalent": "",
+    "origin": "Alpes-de-Haute-Provence (Manosque)",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"À la couchado !",
-    "traduction":"Au lit !",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "À la couchado !",
+    "pronunciation": "au lit !",
+    "literal-translation": "Au lit !",
+    "meaning": "Au lit !",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"I'a dégun !",
-    "traduction":"Il n'y a personne !",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "I'a dégun !",
+    "pronunciation": "il n'y a personne !",
+    "literal-translation": "Il n'y a personne !",
+    "meaning": "Il n'y a personne !",
+    "french-equivalent": "",
+    "origin": "Provençal maritime (Marseille)",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Fan de chichourlo !",
-    "traduction":"Fils d'avare !",
-    "signification":"Exclamation employée pour dire « Sapristi ! » ; fan : cf. enfant ; chiche : cf. avare.",
-    "equivalent":"Sapristi !"
+    "local-expression": "Fan de chichourlo !",
+    "pronunciation": "fils d'avare !",
+    "literal-translation": "Fils d'avare !",
+    "meaning": "Exclamation employée pour dire « Sapristi ! » ; fan : cf. enfant ; chiche : cf. avare.",
+    "french-equivalent": "Sapristi !",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Que couiounado !",
-    "traduction":"Quelle plaisanterie ! Quelle couillonnade !",
-    "signification":"En provençal, le sens est moins vulgaire ; « estre la couio » signifie être la risée.",
-    "equivalent":"Quelle plaisanterie !"
+    "local-expression": "Que couiounado !",
+    "pronunciation": "quelle plaisanterie ! quelle couillonnade !",
+    "literal-translation": "Quelle plaisanterie ! Quelle couillonnade !",
+    "meaning": "En provençal, le sens est moins vulgaire ; « estre la couio » signifie être la risée.",
+    "french-equivalent": "Quelle plaisanterie !",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Estre la couio",
-    "traduction":"Être la couio",
-    "signification":"Être la risée.",
-    "equivalent":""
+    "local-expression": "Estre la couio",
+    "pronunciation": "etre la couio",
+    "literal-translation": "Être la couio",
+    "meaning": "Être la risée.",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Es un Fènis !",
-    "traduction":"C'est un miracle ! C'est un Fénis !",
-    "signification":"Chose, événement ou personne extraordinaire ; cf. « Vous êtes le phénix des hôtes de ces bois », Le Corbeau et le Renard de La Fontaine (https://www.lexilogos.com/la_fontaine_jean.htm).",
-    "equivalent":""
+    "local-expression": "Es un Fènis !",
+    "pronunciation": "c'est un miracle ! c'est un fenis !",
+    "literal-translation": "C'est un miracle ! C'est un Fénis !",
+    "meaning": "Chose, événement ou personne extraordinaire ; cf. « Vous êtes le phénix des hôtes de ces bois », Le Corbeau et le Renard de La Fontaine (https://www.lexilogos.com/la_fontaine_jean.htm).",
+    "french-equivalent": "",
+    "origin": "Provençal (Littéraire)",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": "https://www.lexilogos.com/la_fontaine_jean.htm"
   },
   {
-    "expression":"À la revisto !",
-    "traduction":"Au revoir ! À la prochaine !",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "À la revisto !",
+    "pronunciation": "au revoir ! a la prochaine !",
+    "literal-translation": "Au revoir ! À la prochaine !",
+    "meaning": "Au revoir ! À la prochaine !",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Adessias !",
-    "traduction":"Au revoir !",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "Adessias !",
+    "pronunciation": "au revoir !",
+    "literal-translation": "Au revoir !",
+    "meaning": "Au revoir !",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Longo mai !",
-    "traduction":"Longtemps encore !",
-    "signification":"Formule de souhait ou de félicitation ; s'emploie pour dire « À ta santé ! » ou souhaiter à des mariés « Que votre bonheur dure à jamais ! ».",
-    "equivalent":"À ta santé ! ; Que votre bonheur dure à jamais !"
+    "local-expression": "Longo mai !",
+    "pronunciation": "longtemps encore !",
+    "literal-translation": "Longtemps encore !",
+    "meaning": "Formule de souhait ou de félicitation ; s'emploie pour dire « À ta santé ! » ou souhaiter à des mariés « Que votre bonheur dure à jamais ! ».",
+    "french-equivalent": "À ta santé ! ; Que votre bonheur dure à jamais !",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Urous anniversàri e longo mai !",
-    "traduction":"Joyeux anniversaire !",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "Urous anniversàri e longo mai !",
+    "pronunciation": "joyeux anniversaire !",
+    "literal-translation": "Joyeux anniversaire !",
+    "meaning": "Joyeux anniversaire !",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Bon Nouvè !",
-    "traduction":"Joyeux Noël !",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "Bon Nouvè !",
+    "pronunciation": "joyeux noel !",
+    "literal-translation": "Joyeux Noël !",
+    "meaning": "Joyeux Noël !",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Bòni Pasco !",
-    "traduction":"Joyeuses Pâques !",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "Bòni Pasco !",
+    "pronunciation": "joyeuses paques !",
+    "literal-translation": "Joyeuses Pâques !",
+    "meaning": "Joyeuses Pâques !",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Bono annado !",
-    "traduction":"Bonne année !",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "Bono annado !",
+    "pronunciation": "bonne annee !",
+    "literal-translation": "Bonne année !",
+    "meaning": "Bonne année !",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Avé de pan à la paniero",
-    "traduction":"Avoir du pain dans le panier",
-    "signification":"Avoir du travail à faire.",
-    "equivalent":"Avoir du pain sur la planche."
+    "local-expression": "Avé de pan à la paniero",
+    "pronunciation": "avoir du pain dans le panier",
+    "literal-translation": "Avoir du pain dans le panier",
+    "meaning": "Avoir du travail à faire.",
+    "french-equivalent": "Avoir du pain sur la planche.",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Peta plus aut que soun cuou",
-    "traduction":"Péter plus haut que son cul",
-    "signification":"Être prétentieux.",
-    "equivalent":"Péter plus haut que son cul."
+    "local-expression": "Peta plus aut que soun cuou",
+    "pronunciation": "peter plus haut que son cul",
+    "literal-translation": "Péter plus haut que son cul",
+    "meaning": "Être prétentieux.",
+    "french-equivalent": "Péter plus haut que son cul.",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Chanja l'aigo dis óulivo",
-    "traduction":"Changer l'eau des olives",
-    "signification":"Uriner.",
-    "equivalent":""
+    "local-expression": "Chanja l'aigo dis óulivo",
+    "pronunciation": "changer l'eau des olives",
+    "literal-translation": "Changer l'eau des olives",
+    "meaning": "Uriner.",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Avé lou cuou borda d'anchoio",
-    "traduction":"Avoir le cul bordé d'anchois",
-    "signification":"Avoir du pot.",
-    "equivalent":"Avoir du pot."
+    "local-expression": "Avé lou cuou borda d'anchoio",
+    "pronunciation": "avoir le cul borde d'anchois",
+    "literal-translation": "Avoir le cul bordé d'anchois",
+    "meaning": "Avoir du pot.",
+    "french-equivalent": "Avoir du pot.",
+    "origin": "Provençal maritime",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Fai pas bon travaia quand la cigalo canto",
-    "traduction":"Il ne fait pas bon travailler quand la cigale chante",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "Fai pas bon travaia quand la cigalo canto",
+    "pronunciation": "il ne fait pas bon travailler quand la cigale chante",
+    "literal-translation": "Il ne fait pas bon travailler quand la cigale chante",
+    "meaning": "Il ne fait pas bon travailler quand la cigale chante",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Mies vau pan à la paniero qu'un bèl ome à la carriero",
-    "traduction":"Mieux vaut du pain dans la corbeille qu'un bel homme dans la rue",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "Mies vau pan à la paniero qu'un bèl ome à la carriero",
+    "pronunciation": "mieux vaut du pain dans la corbeille qu'un bel homme dans la rue",
+    "literal-translation": "Mieux vaut du pain dans la corbeille qu'un bel homme dans la rue",
+    "meaning": "Mieux vaut du pain dans la corbeille qu'un bel homme dans la rue",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Qu mies noun pòu èstre, emé sa mouié se couche",
-    "traduction":"Faute de mieux, on couche avec sa femme",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "Qu mies noun pòu èstre, emé sa mouié se couche",
+    "pronunciation": "faute de mieux, on couche avec sa femme",
+    "literal-translation": "Faute de mieux, on couche avec sa femme",
+    "meaning": "Faute de mieux, on couche avec sa femme",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Se fai pas lou civié avans d'avé la lèbre",
-    "traduction":"On ne fait pas le civet avant d'avoir le lièvre",
-    "signification":"",
-    "equivalent":"On ne met pas la charrue avant les bœufs."
+    "local-expression": "Se fai pas lou civié avans d'avé la lèbre",
+    "pronunciation": "on ne fait pas le civet avant d'avoir le lievre",
+    "literal-translation": "On ne fait pas le civet avant d'avoir le lièvre",
+    "meaning": "On ne fait pas le civet avant d'avoir le lièvre",
+    "french-equivalent": "On ne met pas la charrue avant les bœufs.",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Quau à ben dina crèi lis autre sadou",
-    "traduction":"Qui a bien mangé croit les autres rassasiés",
-    "signification":"Cf. « saturé ».",
-    "equivalent":""
+    "local-expression": "Quau à ben dina crèi lis autre sadou",
+    "pronunciation": "qui a bien mange croit les autres rassasies",
+    "literal-translation": "Qui a bien mangé croit les autres rassasiés",
+    "meaning": "Cf. « saturé ».",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Jamai sant de païs a fa miracle",
-    "traduction":"Jamais saint de pays n'a fait un miracle",
-    "signification":"",
-    "equivalent":"Nul n'est prophète en son pays."
+    "local-expression": "Jamai sant de païs a fa miracle",
+    "pronunciation": "jamais saint de pays n'a fait un miracle",
+    "literal-translation": "Jamais saint de pays n'a fait un miracle",
+    "meaning": "Jamais saint de pays n'a fait un miracle",
+    "french-equivalent": "Nul n'est prophète en son pays.",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"L'esperanço es lou pan di miserable",
-    "traduction":"L'espérance est le pain du pauvre",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "L'esperanço es lou pan di miserable",
+    "pronunciation": "l'esperance est le pain du pauvre",
+    "literal-translation": "L'espérance est le pain du pauvre",
+    "meaning": "L'espérance est le pain du pauvre",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"S'acò's pas vuei, sara deman",
-    "traduction":"Si ce n'est aujourd'hui, ce sera pour demain",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "S'acò's pas vuei, sara deman",
+    "pronunciation": "si ce n'est aujourd'hui, ce sera pour demain",
+    "literal-translation": "Si ce n'est aujourd'hui, ce sera pour demain",
+    "meaning": "Si ce n'est aujourd'hui, ce sera pour demain",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Noun es pas riche qu'a de bèn, mai aquéu que se contènto",
-    "traduction":"N'est pas riche qui a des biens, mais celui qui se contente",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "Noun es pas riche qu'a de bèn, mai aquéu que se contènto",
+    "pronunciation": "n'est pas riche qui a des biens, mais celui qui se contente",
+    "literal-translation": "N'est pas riche qui a des biens, mais celui qui se contente",
+    "meaning": "N'est pas riche qui a des biens, mais celui qui se contente",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Qu toujour pren e rèn noun douno, a la fin cadun l'abandouno",
-    "traduction":"Qui prend toujours et ne donne rien, à la fin chacun l'abandonne",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "Qu toujour pren e rèn noun douno, a la fin cadun l'abandouno",
+    "pronunciation": "qui prend toujours et ne donne rien, a la fin chacun l'abandonne",
+    "literal-translation": "Qui prend toujours et ne donne rien, à la fin chacun l'abandonne",
+    "meaning": "Qui prend toujours et ne donne rien, à la fin chacun l'abandonne",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   },
   {
-    "expression":"Es pas bèu ço qu'es bèu, es bèu ço qu'agrado",
-    "traduction":"N'est pas beau ce qui est beau, est beau ce qui plaît",
-    "signification":"",
-    "equivalent":""
+    "local-expression": "Es pas bèu ço qu'es bèu, es bèu ço qu'agrado",
+    "pronunciation": "n'est pas beau ce qui est beau, est beau ce qui plait",
+    "literal-translation": "N'est pas beau ce qui est beau, est beau ce qui plaît",
+    "meaning": "N'est pas beau ce qui est beau, est beau ce qui plaît",
+    "french-equivalent": "",
+    "origin": "Provençal",
+    "sensitivity-level": "Commun",
+    "usage-type": "Courant",
+    "source-url": ""
   }
 ]

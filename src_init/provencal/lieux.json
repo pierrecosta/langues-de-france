@@ -1,27 +1,102 @@
 [
   {
-    "id": "lieu_001",
-    "nom": "Les Baux-de-Provence",
-    "description": "Village médiéval perché dans les Alpilles.",
-    "photos": ["1.jpg","2.jpg","3.jpg"]
+    "id": "les-baux-de-provence",
+    "title": "Les Baux-de-Provence",
+    "description": "Village médiéval perché dans les Alpilles, classé parmi les plus beaux villages de France.",
+    "image-urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/e/e5/LesBauxDeProvence.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a2/Vue_des_Baux-de-Provence.jpg"
+    ],
+    "source-url": "https://fr.wikipedia.org/wiki/Les_Baux-de-Provence"
   },
   {
-    "id": "lieu_002",
-    "nom": "Gordes",
-    "description": "Village emblématique du Luberon.",
-    "photos": ["1.jpg","2.jpg","3.jpg"]
+    "id": "gordes",
+    "title": "Gordes",
+    "description": "Village emblématique du Luberon, accroché à un éperon rocheux face à la vallée du Calavon.",
+    "image-urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/0/07/Gordes_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a1/Gordes_village.jpg"
+    ],
+    "source-url": "https://fr.wikipedia.org/wiki/Gordes"
   },
   {
-    "id": "lieu_003",
-    "nom": "Abbaye de Sénanque",
-    "description": "Abbaye entourée de champs de lavande."
+    "id": "abbaye-de-senanque",
+    "title": "Abbaye de Sénanque",
+    "description": "Abbaye cistercienne du XIIe siècle toujours en activité, célèbre pour son cadre naturel et ses champs de lavande.",
+    "image-urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/91/Abbaye_de_S%C3%A9nanque_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/7b/Senanque_monastery.jpg"
+    ],
+    "source-url": "https://fr.wikipedia.org/wiki/Abbaye_Notre-Dame_de_S%C3%A9nanque"
   },
   {
-    "id": "lieu_004",
-    "nom": "Calanques de Cassis"
+    "id": "calanques-de-cassis",
+    "title": "Calanques de Cassis",
+    "description": "Massif côtier spectaculaire offrant d'impressionnantes falaises calcaires et des criques aux eaux turquoise.",
+    "image-urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/0/02/Calanque_d%27En-Vau.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/8/87/Calanque_de_Port-Pin.jpg"
+    ],
+    "source-url": "https://fr.wikipedia.org/wiki/Massif_des_Calanques"
   },
   {
-    "id": "lieu_005",
-    "nom": "Mont Ventoux"
+    "id": "mont-ventoux",
+    "title": "Mont Ventoux",
+    "description": "Surnommé le « Géant de Provence », ce sommet mythique culminant à 1 910 mètres offre un panorama exceptionnel sur le Sud de la France.",
+    "image-urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/e/e1/Mont_Ventoux_from_Bedoin.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/0/06/Sommet_du_Mont_Ventoux.jpg"
+    ],
+    "source-url": "https://fr.wikipedia.org/wiki/Mont_Ventoux"
+  },
+  {
+    "id": "palais-des-papes-d-avignon",
+    "title": "Palais des Papes d'Avignon",
+    "description": "La plus grande des constructions gothiques du Moyen Âge, résidence des souverains pontifes au XIVe siècle.",
+    "image-urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/90/Palais_des_papes_Avignon.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a9/Palais_des_Papes_de_nuit.jpg"
+    ],
+    "source-url": "https://fr.wikipedia.org/wiki/Palais_des_papes_d%27Avignon"
+  },
+  {
+    "id": "arenes-d-arles",
+    "title": "Arènes d'Arles",
+    "description": "Amphithéâtre romain édifié à la fin du Ier siècle, monument emblématique de l'antique cité d'Arelate.",
+    "image-urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/4b/Arenes_de_Arles.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/0/01/Arles_Arena.jpg"
+    ],
+    "source-url": "https://fr.wikipedia.org/wiki/Amphith%C3%A9%C3%A2tre_d%27Arles"
+  },
+  {
+    "id": "sentier-des-ocres-de-roussillon",
+    "title": "Sentier des Ocres de Roussillon",
+    "description": "Parcours pédestre aménagé au cœur d'anciennes carrières d'ocre, célèbre pour ses falaises aux teintes flamboyantes.",
+    "image-urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/8/87/Roussillon_Ocre_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/30/Le_Sentier_des_Ocres_Roussillon.jpg"
+    ],
+    "source-url": "https://fr.wikipedia.org/wiki/Roussillon_(Vaucluse)"
+  },
+  {
+    "id": "theatre-antique-d-orange",
+    "title": "Théâtre antique d'Orange",
+    "description": "L'un des théâtres romains les mieux conservés au monde, célèbre pour son imposant mur de scène d'origine.",
+    "image-urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/8/80/Theatre_Antique_Orange.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Orange_Theatre_Antique.jpg"
+    ],
+    "source-url": "https://fr.wikipedia.org/wiki/Th%C3%A9%C3%A2tre_antique_d%27Orange"
+  },
+  {
+    "id": "mucem-marseille",
+    "title": "MUCEM (Marseille)",
+    "description": "Musée des Civilisations de l'Europe et de la Méditerranée, grand projet architectural reliant la ville moderne au fort Saint-Jean.",
+    "image-urls": [
+      "https://upload.wikimedia.org/wikipedia/commons/8/87/Mucem_Marseille.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/5/52/Mucem_et_Fort_Saint_Jean.jpg"
+    ],
+    "source-url": "https://fr.wikipedia.org/wiki/Mus%C3%A9e_des_Civilisations_de_l%27Europe_et_de_la_M%C3%A9diterran%C3%A9e"
   }
 ]

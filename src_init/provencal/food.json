@@ -1,22 +1,37 @@
 [
   {
-    "id": "prod_001",
-    "nom": "Huile d'olive de Provence"
+    "id": "huile-d-olive-de-provence",
+    "title": "Huile d'olive de Provence",
+    "image-url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Huile_d%27olive_de_Nyons_au_march%C3%A9_d%27Orange.jpg",
+    "history": "L'huile d'olive est produite en Provence depuis l'Antiquité romaine, bénéficiant d'un terroir et d'un climat méditerranéen idéal.",
+    "source-url": "https://fr.wikipedia.org/wiki/Huile_d%27olive_de_Provence_AOC"
   },
   {
-    "id": "prod_002",
-    "nom": "Calisson d'Aix"
+    "id": "calisson-d-aix",
+    "title": "Calisson d'Aix",
+    "image-url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Calissons_de_Provence_%C3%A0_Ch%C3%A2teauneuf-du-Pape.jpg",
+    "history": "Créé au XVIIe siècle à Aix-en-Provence, le calisson associe amandes effilées, melon confit et fleur d'oranger sur un lit d'hostie.",
+    "source-url": "https://www.aixenprovencetourisme.com/"
   },
   {
-    "id": "prod_003",
-    "nom": "Herbes de Provence"
+    "id": "herbes-de-provence",
+    "title": "Herbes de Provence",
+    "image-url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Herbes_de_Provence.jpg",
+    "history": "Le mélange emblématique d'herbes aromatiques (thym, romarin, sarriette, origan) s'est imposé dans la cuisine provençale traditionnelle.",
+    "source-url": "https://fr.wikipedia.org/wiki/Herbes_de_Provence"
   },
   {
-    "id": "prod_004",
-    "nom": "Tapenade"
+    "id": "tapenade",
+    "title": "Tapenade",
+    "image-url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Tapenade.jpg",
+    "history": "Inventée en 1880 par le chef Meynier au restaurant La Maison Dorée à Marseille, la tapenade tire son nom du mot provençal tapena (câpre).",
+    "source-url": "https://fr.wikipedia.org/wiki/Tapenade"
   },
   {
-    "id": "prod_005",
-    "nom": "Lavande"
+    "id": "lavande",
+    "title": "Lavande",
+    "image-url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Lavande_off_FR_2012.jpg",
+    "history": "Cultivée sur les plateaux provençaux comme Sault ou Valensole, la lavande est le symbole botanique et économique de la région depuis des siècles.",
+    "source-url": "https://fr.wikipedia.org/wiki/Lavandula_angustifolia"
   }
 ]

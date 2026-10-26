@@ -1,72 +1,92 @@
 [
   {
-    "id": 1,
-    "titre": "Site archéologique d'Olbia (Hyères)",
+    "id": "site-archeologique-d-olbia-hyeres",
+    "title": "Site archéologique d'Olbia (Hyères)",
     "description": "Explorer l'une des rares colonies grecques fortifiées dont le plan est conservé dans son intégralité. Vestiges grecs, romains et médiévaux en bord de mer.",
-    "site": "https://hyeres.fr/presentation-site-olbia/",
-    "image": "https://via.placeholder.com/150"
+    "image-url": "https://live.staticflickr.com/835/43596207411_5960071799.jpg",
+    "source-url": "https://hyeres.fr/presentation-site-olbia/",
+    "start-date": "2026-06-15",
+    "end-date": "2026-06-25"
   },
   {
-    "id": 2,
-    "titre": "Abbaye du Thoronet",
+    "id": "abbaye-du-thoronet",
+    "title": "Abbaye du Thoronet",
     "description": "Découvrir l'un des plus remarquables monuments cisterciens de Provence, célèbre pour son architecture romane et son acoustique exceptionnelle.",
-    "site": "https://www.le-thoronet.fr/",
-    "image": "https://via.placeholder.com/150"
+    "image-url": "https://live.staticflickr.com/725/21812607110_ce1ce65ecd_b.jpg",
+    "source-url": "https://www.le-thoronet.fr/",
+    "start-date": "2026-07-01",
+    "end-date": "2026-08-31"
   },
   {
-    "id": 3,
-    "titre": "Musée des Gueules Rouges (Tourves)",
+    "id": "musee-des-gueules-rouges-tourves",
+    "title": "Musée des Gueules Rouges (Tourves)",
     "description": "Comprendre l'histoire des mineurs de bauxite du centre Var et l'impact de cette activité sur la culture locale provençale.",
-    "site": "https://museesetcentresdart.caprovenceverte.fr/musee-des-gueules-rouges/",
-    "image": "https://via.placeholder.com/150"
+    "image-url": "https://via.placeholder.com/150",
+    "source-url": "https://museesetcentresdart.caprovenceverte.fr/musee-des-gueules-rouges/",
+    "start-date": "2026-09-10",
+    "end-date": "2026-09-20"
   },
   {
-    "id": 4,
-    "titre": "Musée national de la Marine (Toulon)",
+    "id": "musee-national-de-la-marine-toulon",
+    "title": "Musée national de la Marine (Toulon)",
     "description": "Parcourir l'histoire maritime de Toulon, principal arsenal de Méditerranée, à travers maquettes, objets et collections historiques.",
-    "site": "https://www.musee-marine.fr/nos-musees/toulon.html",
-    "image": "https://via.placeholder.com/150"
+    "image-url": "https://via.placeholder.com/150",
+    "source-url": "https://www.musee-marine.fr/nos-musees/toulon.html",
+    "start-date": "2027-04-01",
+    "end-date": "2027-04-15"
   },
   {
-    "id": 5,
-    "titre": "Village médiéval de Bormes-les-Mimosas",
+    "id": "village-medieval-de-bormes-les-mimosas",
+    "title": "Village médiéval de Bormes-les-Mimosas",
     "description": "Déambuler dans l'un des plus beaux villages du Var, marqué par son patrimoine médiéval et son identité provençale.",
-    "site": "https://www.bormeslesmimosas.com/",
-    "image": "https://via.placeholder.com/150"
+    "image-url": "https://via.placeholder.com/150",
+    "source-url": "https://www.bormeslesmimosas.com/",
+    "start-date": "2027-05-20",
+    "end-date": "2027-06-05"
   },
   {
-    "id": 6,
-    "titre": "Village historique de Cotignac",
+    "id": "village-historique-de-cotignac",
+    "title": "Village historique de Cotignac",
     "description": "Découvrir un village provençal emblématique adossé à une falaise de tuf et fortement associé à l'histoire locale de la Provence intérieure.",
-    "site": "https://www.cotignac.fr/",
-    "image": "https://via.placeholder.com/150"
+    "image-url": "https://via.placeholder.com/150",
+    "source-url": "https://www.cotignac.fr/",
+    "start-date": "2026-05-01",
+    "end-date": "2026-05-10"
   },
   {
-    "id": 7,
-    "titre": "Musée de la Préhistoire des Gorges du Verdon (Quinson)",
+    "id": "musee-de-la-prehistoire-des-gorges-du-verdon-quinson",
+    "title": "Musée de la Préhistoire des Gorges du Verdon (Quinson)",
     "description": "Explorer les origines du peuplement provençal à travers l'un des plus importants musées de préhistoire d'Europe.",
-    "site": "https://www.museeprehistoire.com/",
-    "image": "https://via.placeholder.com/150"
+    "image-url": "https://via.placeholder.com/150",
+    "source-url": "https://www.museeprehistoire.com/",
+    "start-date": "2027-07-14",
+    "end-date": "2027-07-20"
   },
   {
-    "id": 8,
-    "titre": "Centre ancien de Fréjus et vestiges romains",
+    "id": "centre-ancien-de-frejus-et-vestiges-romains",
+    "title": "Centre ancien de Fréjus et vestiges romains",
     "description": "Visiter l'amphithéâtre, l'aqueduc, le théâtre romain et le patrimoine antique de l'ancienne cité romaine de Forum Julii.",
-    "site": "https://www.frejus.fr/",
-    "image": "https://via.placeholder.com/150"
+    "image-url": "https://via.placeholder.com/150",
+    "source-url": "https://www.frejus.fr/",
+    "start-date": "2026-10-01",
+    "end-date": "2026-10-15"
   },
   {
-    "id": 9,
-    "titre": "Fête de la Saint-Jean et traditions provençales",
+    "id": "fete-de-la-saint-jean-et-traditions-provencales",
+    "title": "Fête de la Saint-Jean et traditions provençales",
     "description": "Participer aux fêtes traditionnelles provençales organisées dans plusieurs communes du Var, avec danses, musique et culture régionale.",
-    "site": "https://www.visitvar.fr/",
-    "image": "https://via.placeholder.com/150"
+    "image-url": "https://via.placeholder.com/150",
+    "source-url": "https://www.visitvar.fr/",
+    "start-date": "2027-06-21",
+    "end-date": "2027-06-24"
   },
   {
-    "id": 10,
-    "titre": "Archives départementales du Var (Draguignan)",
+    "id": "archives-departementales-du-var-draguignan",
+    "title": "Archives départementales du Var (Draguignan)",
     "description": "Participer aux expositions, conférences et visites guidées consacrées à l'histoire du Var, de la Provence et de la langue provençale.",
-    "site": "https://archives.var.fr/",
-    "image": "https://via.placeholder.com/150"
+    "image-url": "https://via.placeholder.com/150",
+    "source-url": "https://archives.var.fr/",
+    "start-date": "2026-11-01",
+    "end-date": "2026-11-10"
   }
 ]

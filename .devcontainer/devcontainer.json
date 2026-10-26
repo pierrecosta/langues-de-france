@@ -1,12 +1,12 @@
 {
-  "name": "ai-basepack-dev",
+  "name": "langues-de-france-dev",
   "dockerComposeFile": "../docker-compose.mcp.yml",
   "service": "devcontainer",
-  "workspaceFolder": "/workspaces/ai-basepack",
+  "workspaceFolder": "/workspaces/langues-de-france",
   "runServices": ["devcontainer"],
   "shutdownAction": "stopCompose",
   "features": {
-    "ghcr.io/devcontainers/features/node:1": { "version": "lts" },
+    "ghcr.io/devcontainers/features/node:2": { "version": "lts" },
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
       "moby": false
     }

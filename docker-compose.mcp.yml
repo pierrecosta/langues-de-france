@@ -2,14 +2,14 @@
 # Les MCP et leur base de démonstration sont lancés à la demande par .vscode/mcp.json.
 # HOST_WORKSPACE = chemin du projet côté hôte Docker (défini par le devcontainer).
 
-name: ai-basepack
+name: langues-de-france
 
 services:
   devcontainer:
     image: mcr.microsoft.com/devcontainers/python:3.12
     command: sleep infinity
     volumes:
-      - .:/workspaces/ai-basepack:cached
+      - .:/workspaces/langues-de-france:cached
 
   mcp-context7:
     profiles: ["mcp"]
@@ -26,9 +26,9 @@ services:
     profiles: ["mcp"]
     build: ./.devcontainer/mcp/memory
     environment:
-      MEMORY_FILE_PATH: /workspaces/ai-basepack/memory/memory.jsonl
+      MEMORY_FILE_PATH: /workspaces/langues-de-france/memory/memory.jsonl
     volumes:
-      - ${HOST_WORKSPACE:-.}/memory:/workspaces/ai-basepack/memory
+      - ${HOST_WORKSPACE:-.}/memory:/workspaces/langues-de-france/memory
 
   mcp-postgres:
     profiles: ["mcp"]
@@ -43,13 +43,13 @@ services:
 
   postgres-db:
     profiles: ["mcp"]
-    image: postgres:16-alpine
+    image: postgres:18-alpine
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-demo}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-demo}
       POSTGRES_DB: ${POSTGRES_DB:-demo}
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
       interval: 3s

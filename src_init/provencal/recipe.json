@@ -1,47 +1,176 @@
 [
   {
-    "id": "rec_001",
+    "id": "aioli",
     "title": "Aïoli",
-    "image-url": "",
-    "history": "",
-    "ingredients": [],
-    "description": "",
-    "source-url": ""
+    "image-url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Aioli_garni.jpg",
+    "history": "Plat traditionnel des fêtes et réunions de famille en Provence, l'aïoli garni associe une mayonnaise à l'ail et à l'huile d'olive à de la morue pochée et des légumes de saison bouillis.",
+    "ingredients": [
+      "Ail",
+      "Huile d'olive",
+      "Jaunes d'œufs",
+      "Morue dessalée",
+      "Pommes de terre",
+      "Carottes",
+      "Haricots verts",
+      "Chou-fleur"
+    ],
+    "description": "Piler les gousses d'ail au mortier, émulsionner avec l'huile d'olive et le jaune d'œuf pour obtenir une pommade ferme. Servir avec la morue pochée et les légumes cuits à l'eau.",
+    "source-url": "https://fr.wikipedia.org/wiki/A%C3%AFoli_garni"
   },
   {
-    "id": "rec_002",
+    "id": "daube-provencale",
     "title": "Daube provençale",
-    "image-url": "",
-    "history": "",
-    "ingredients": [],
-    "description": "",
-    "source-url": ""
+    "image-url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Daube_proven%C3%A7ale.jpg",
+    "history": "Plat dominical et festif à l'origine, la daube est un mijoté de bœuf mariné longuement dans du vin rouge avec du marjolaine, du thym et des zestes d'orange cuit traditionnellement dans une daubière en terre cuite.",
+    "ingredients": [
+      "Bœuf à braiser",
+      "Vin rouge de Provence",
+      "Lardons",
+      "Carottes",
+      "Oignons",
+      "Ail",
+      "Zeste d'orange",
+      "Herbes de Provence"
+    ],
+    "description": "Faire mariner la viande découpée 12h dans le vin et les aromates. Faire revenir la garniture, ajouter la viande et la marinade, puis laisser mijoter à feu très doux pendant 3 à 4 heures.",
+    "source-url": "https://fr.wikipedia.org/wiki/Daube_proven%C3%A7ale"
   },
   {
-    "id": "rec_003",
+    "id": "soupe-au-pistou",
     "title": "Soupe au pistou",
-    "image-url": "",
-    "history": "",
-    "ingredients": [],
-    "description": "",
-    "source-url": ""
+    "image-url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Soupe_au_pistou_01.jpg",
+    "history": "Spécialité estivale par excellence, cette soupe maraîchère rassemble tous les légumes frais du potager et s'assaisonne au moment de servir d'un mélange pilé de basilic frais, d'ail et d'huile d'olive.",
+    "ingredients": [
+      "Basilic frais",
+      "Ail",
+      "Huile d'olive",
+      "Courgettes",
+      "Haricots rouges",
+      "Haricots blancs",
+      "Pommes de terre",
+      "Tomates",
+      "Pâtes (coquillettes)"
+    ],
+    "description": "Cuire les légumes coupés en dés dans de l'eau bouillante, ajouter les pâtes en fin de cuisson. Incorporer la pommade de pistou pilée à l'ail et au basilic directement dans le bouillon hors du feu.",
+    "source-url": "https://fr.wikipedia.org/wiki/Soupe_au_pistou"
   },
   {
-    "id": "rec_004",
+    "id": "ratatouille",
     "title": "Ratatouille",
-    "image-url": "",
-    "history": "",
-    "ingredients": [],
-    "description": "",
-    "source-url": ""
+    "image-url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Ratatouille_01.jpg",
+    "history": "Ragoût de légumes mijotés originaire de la région niçoise et populaire dans toute la Provence, la ratatouille met à l'honneur les légumes du soleil revenus à l'huile d'olive.",
+    "ingredients": [
+      "Aubergines",
+      "Courgettes",
+      "Poivrons (rouges et jaunes)",
+      "Tomates",
+      "Oignons",
+      "Ail",
+      "Huile d'olive",
+      "Thym"
+    ],
+    "description": "Faire revenir chaque légume séparément dans l'huile d'olive pour préserver leurs saveurs. Assembler le tout dans une cocotte et laisser confire doucement avec le thym et l'ail.",
+    "source-url": "https://fr.wikipedia.org/wiki/Ratatouille"
   },
   {
-    "id": "rec_005",
-    "title": "Calissons",
-    "image-url": "",
-    "history": "",
-    "ingredients": [],
-    "description": "",
-    "source-url": ""
+    "id": "bouillabaisse",
+    "title": "Bouillabaisse",
+    "image-url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Bouillabaisse_Marseille.jpg",
+    "history": "Plat emblématique de Marseille, cette soupe était à l'origine préparée par les pêcheurs avec les poissons de roche invendus bouillis dans de l'eau de mer avec de l'huile et des aromates.",
+    "ingredients": [
+      "Poissons de roche (rascasse, saint-pierre, grondin, congre)",
+      "Huile d'olive",
+      "Oignons",
+      "Tomates",
+      "Safran",
+      "Fennel",
+      "Ail",
+      "Pain rassis",
+      "Rouille"
+    ],
+    "description": "Pocher les poissons dans un bouillon fortement aromatisé au safran et au fenouil. Servir le bouillon chaud filtré sur des croûtons aillés tartinés de rouille, puis présenter les poissons sur un plat.",
+    "source-url": "https://fr.wikipedia.org/wiki/Bouillabaisse"
+  },
+  {
+    "id": "pissaladiere",
+    "title": "Pissaladière",
+    "image-url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Pissaladi%C3%A8re_01.jpg",
+    "history": "Spécialité culinaire provençale à base de pâte à pain couverte d'oignons confits, de pissalat (pâte d'anchois) ou de filets d'anchois et d'olives noires de Nice.",
+    "ingredients": [
+      "Pâte à pain",
+      "Oignons",
+      "Huile d'olive",
+      "Filets d'anchois",
+      "Olives noires (caillettes)",
+      "Thym"
+    ],
+    "description": "Faire compoter doucement les oignons émincés dans l'huile d'olive. Étaler sur la pâte à pain, garnir d'un croisillon d'anchois et d'olives noires, puis enfourner jusqu'à dorure.",
+    "source-url": "https://fr.wikipedia.org/wiki/Pissaladi%C3%A8re"
+  },
+  {
+    "id": "anchoiade",
+    "title": "Anchoïade",
+    "image-url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Ancho%C3%AFade.jpg",
+    "history": "Préparation traditionnelle à base d'anchois, d'ail et d'huile d'olive, généralement servie à l'apéritif avec des bâtonnets de légumes crus de saison.",
+    "ingredients": [
+      "Filets d'anchois au sel",
+      "Ail",
+      "Huile d'olive",
+      "Vinaigre de vin",
+      "Légumes crus (carottes, céleri, radis, chou-fleur)"
+    ],
+    "description": "Piler les anchois dessalés et l'ail au mortier. Émulsionner avec l'huile d'olive et un trait de vinaigre. Servir frais avec un assortiment de légumes crus de saison.",
+    "source-url": "https://fr.wikipedia.org/wiki/Ancho%C3%AFade"
+  },
+  {
+    "id": "pieds-et-paquets",
+    "title": "Pieds et paquets",
+    "image-url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Pieds_et_paquets.jpg",
+    "history": "Spécialité marseillaise et de Sisteron, ce plat mijoté associe des paquets tripés d'agneau farcis au lard et au persil avec des pieds d'agneau dans une sauce au vin blanc et à la tomate.",
+    "ingredients": [
+      "Tripes d'agneau",
+      "Pieds d'agneau",
+      "Lard maigre",
+      "Ail",
+      "Persil",
+      "Vin blanc",
+      "Tomates",
+      "Herbes de Provence"
+    ],
+    "description": "Confectionner les paquets en farcissant les tripes d'un hachis de lard, d'ail et de persil. Cuire à feu très doux pendant 7 à 8 heures avec les pieds d'agneau dans le vin blanc aromatisé.",
+    "source-url": "https://fr.wikipedia.org/wiki/Pieds_et_paquets"
+  },
+  {
+    "id": "tian-de-legumes",
+    "title": "Tian de légumes",
+    "image-url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Tian_proven%C3%A7al.jpg",
+    "history": "Le tian désigne à l'origine le plat en terre cuite vernissée provençal. Par extension, il désigne ce gratin où les rondelles de légumes du soleil sont rangées en rangées alternées et cuites au four.",
+    "ingredients": [
+      "Courgettes",
+      "Aubergines",
+      "Tomates",
+      "Oignons",
+      "Ail",
+      "Huile d'olive",
+      "Thym"
+    ],
+    "description": "Couper les légumes en rondelles de taille égale. Les disposer debout en alternant les couleurs dans un plat allant au four, arroser généreusement d'huile d'olive et de thym, puis cuire au four 1h.",
+    "source-url": "https://fr.wikipedia.org/wiki/Tian_proven%C3%A7al"
+  },
+  {
+    "id": "navettes-de-marseille",
+    "title": "Navettes de Marseille",
+    "image-url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Navettes_de_Marseille.jpg",
+    "history": "Pâtisserie traditionnelle en forme de barque aromatisée à la fleur d'oranger, traditionnellement achetée à la fête de la Chandeleur à l'abbaye Saint-Victor de Marseille.",
+    "ingredients": [
+      "Farine",
+      "Sucre",
+      "Beurre",
+      "Œufs",
+      "Eau de fleur d'oranger",
+      "Zeste de citron"
+    ],
+    "description": "Former une pâte ferme aromatisée à la fleur d'oranger. Façonner de petits bâtonnets en forme de barquette, fendre le dessus dans la longueur et cuire au four jusqu'à ce qu'elles soient bien dorées.",
+    "source-url": "https://fr.wikipedia.org/wiki/Navette_de_Marseille"
   }
 ]
