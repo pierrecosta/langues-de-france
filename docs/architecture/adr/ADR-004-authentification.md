@@ -10,7 +10,7 @@ Protéger les comptes, les contributions et les fonctions d'administration tout 
 
 ## Périmètre
 
-Inscription des utilisateurs, invitation au rôle contributeur, administration territoriale, sessions web, authentification Android, liens manuels d'invitation et de réinitialisation, suppression/anonymisation.
+Inscription des utilisateurs, invitation au rôle contributeur, administration territoriale, sessions web du MVP, liens manuels d'invitation et de réinitialisation, suppression/anonymisation. L'authentification Android concerne une application native post-MVP.
 
 ## Prérequis
 
@@ -22,7 +22,7 @@ Inscription des utilisateurs, invitation au rôle contributeur, administration t
 ## Étapes
 
 1. Utiliser les sessions Django, avec cookies `Secure`, `HttpOnly` et `SameSite`, et protection CSRF.
-2. Utiliser un mécanisme de jetons natifs géré par Django pour Android, distinct des sessions web ; définir avant implémentation leur durée de vie, renouvellement, révocation et stockage sécurisé.
+2. Après le MVP, si l'application Android est engagée, définir un mécanisme de jetons natifs géré par Django, distinct des sessions web, avec durée de vie, renouvellement, révocation et stockage sécurisé.
 3. Créer des rôles globaux et territoriaux et appliquer les contrôles côté serveur à chaque action.
 4. Générer des liens d'invitation et de réinitialisation à usage unique, à durée limitée et révocables.
 5. Afficher le lien au super-administrateur afin qu'il le transmette manuellement ; ne jamais afficher ni envoyer un mot de passe.
@@ -31,7 +31,7 @@ Inscription des utilisateurs, invitation au rôle contributeur, administration t
 
 ## Contexte
 
-Le site possède des comptes, une progression et des contributions. L'inscription ordinaire est libre, mais les contributions sont sur invitation. L'équipe n'a pas prévu d'intégration SMTP/API et exploite elle-même le serveur.
+Le site web du MVP possède des comptes, une progression et des contributions. L'inscription ordinaire est libre, mais les contributions sont sur invitation. L'équipe n'a pas prévu d'intégration SMTP/API et exploite elle-même le serveur. Aucun client mobile natif n'est livré au MVP.
 
 ## Options étudiées
 
@@ -43,9 +43,9 @@ Le site possède des comptes, une progression et des contributions. L'inscriptio
 
 ## Décision proposée
 
-Utiliser les sessions Django pour le web et des jetons natifs gérés par Django pour l'application Android. Android peut jouer hors ligne ; l'authentification et la synchronisation des résultats nécessitent une connexion. L'application Android propose la connexion, mais l'inscription et la récupération de compte se font sur le site web.
+Utiliser les sessions Django pour le web du MVP. L'application mobile native, son authentification par jetons et la synchronisation hors ligne sont post-MVP et ne doivent pas retarder le lancement web.
 
-Les utilisateurs anonymes peuvent jouer sur le web, mais seule une session authentifiée peut enregistrer une progression. Pour Android, l'identité associée à une synchronisation provient du jeton ; le client ne choisit pas le compte cible.
+Les utilisateurs anonymes peuvent jouer aux mini-jeux web, mais seule une session authentifiée peut enregistrer une progression. Si Android est développé après le MVP, l'identité associée à une synchronisation proviendra du jeton ; le client ne choisira pas le compte cible.
 
 Les messages sont transmis manuellement par le super-administrateur. Les jetons sont à usage unique, temporaires et non réutilisables ; leur durée d'expiration reste à fixer avant implémentation. Un lien ne doit pas contenir d'information personnelle et ne doit pas être journalisé.
 
@@ -59,12 +59,12 @@ Les messages sont transmis manuellement par le super-administrateur. Les jetons 
   - L'envoi manuel augmente le délai et la charge de support ; il n'y a pas de notification automatique.
   - Le super-administrateur devient un point de dépendance pour les invitations et réinitialisations.
   - L'expiration des liens et le processus de récupération doivent être testés et documentés.
-  - Les détails du cycle de vie des jetons Android sont à fixer avant leur implémentation.
+  - Les détails du cycle de vie des jetons Android seront à fixer avant une éventuelle implémentation mobile post-MVP.
 - Sécurité, scalabilité, performance :
   - Appliquer le moindre privilège ; une session ordinaire ne donne jamais le droit de contribuer.
   - Les administrateurs territoriaux ne peuvent gérer que leur territoire ; le super-administrateur gère les rôles globaux.
   - Prévoir limitation de débit sur l'inscription, la connexion, la création et la consommation des liens.
-  - Ne jamais journaliser ni exposer les jetons Android ; le stockage local suit le standard Android.
+  - Pour une future application Android, ne jamais journaliser ni exposer les jetons ; le stockage local suivra le standard Android.
   - Les cookies et le transport sont HTTPS uniquement.
 
 ## Retour arrière
@@ -75,7 +75,7 @@ Le rôle contributeur peut être retiré immédiatement et les invitations non c
 
 - Un compte ordinaire ne peut pas soumettre une contribution avant attribution du rôle.
 - Une personne non connectée peut jouer mais ne peut pas enregistrer de progression.
-- Les jetons Android révoqués, expirés ou mal formés sont refusés ; aucun identifiant de compte fourni par le client ne change le propriétaire d'une progression.
+- Après le MVP, les jetons Android révoqués, expirés ou mal formés seront refusés ; aucun identifiant de compte fourni par le client ne changera le propriétaire d'une progression.
 - Un lien d'invitation ou de réinitialisation expiré, révoqué ou déjà utilisé est refusé.
 - Les tests couvrent l'accès hors territoire, la révocation de rôle, la limitation de débit et la suppression/anonymisation.
 - Les secrets de session et jetons ne sont pas écrits dans les journaux.

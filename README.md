@@ -2,7 +2,7 @@
 
 ## Objectif
 
-Cadre de travail avec GitHub Copilot : agents spécialisés, skills, prompts, standards et quatre serveurs MCP (context7, playwright, postgres, memory), chacun dans son conteneur. Il inclut une chaîne de jeux pédagogiques multiplateforme : sources → contenus Django → mini-jeux web et Android.
+Cadre de travail avec GitHub Copilot : agents spécialisés, skills, prompts, standards et quatre serveurs MCP (context7, playwright, postgres, memory), chacun dans son conteneur. Le projet documenté lance le territoire provençal avec des mini-jeux web responsives au MVP ; six territoires sont visés à terme et l'application mobile native viendra ensuite.
 
 ## Principe
 
@@ -32,6 +32,7 @@ Créer chaque nouveau projet à partir d'une copie propre de ce dossier, puis ad
 | Catalogue, relations, workflow | [docs/process/](docs/process/) |
 | Guides | [docs/guides/](docs/guides/) |
 | Mémoire du projet (montée dans le MCP) | [memory/](memory/) |
+| Seeds initiaux par territoire | [src_init/readme.md](src_init/readme.md) |
 | Environnement de dev et conteneurs MCP | [.devcontainer/](.devcontainer/), [docker-compose.mcp.yml](docker-compose.mcp.yml) |
 | Scripts de contrôle | [scripts/](scripts/) |
 

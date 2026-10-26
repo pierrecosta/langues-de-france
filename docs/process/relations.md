@@ -34,8 +34,8 @@ Relations d'usage. L'inventaire est dans le [catalogue](./catalog.md), l'enchaî
 | documentation | document-change | documentation-excellence | documentation | documentation | memory |
 | grill-me | — (agent direct) | grill-me | — | — | memory, context7 |
 | content-transformer | transform-content | content-synthesis | learning-brief | game-content | playwright, context7, memory |
-| game-designer | design-minigames | minigame-templates | game-spec | game-content, frontend, android | memory |
-| android-dev | create-android-game | android-compose, design-system-accessibility | game-spec | android, game-content, accessibility | context7, memory |
+| game-designer | design-minigames | minigame-templates | game-spec | game-content, frontend, android post-MVP | memory |
+| android-dev (post-MVP) | create-android-game | android-compose, design-system-accessibility | game-spec | android, game-content, accessibility | context7, memory |
 
 « Tous » = backend, frontend, accessibility, android, game-content, documentation.
 
@@ -64,8 +64,8 @@ Relations d'usage. L'inventaire est dans le [catalogue](./catalog.md), l'enchaî
 | review-change | reviewer | Remarques classées, décision | document-change (ou agent security) |
 | document-change | documentation | Docs et mémoire à jour | Fin du cycle |
 | transform-content | content-transformer | Brief et pack candidat | préparation de l'import dans Django |
-| design-minigames | game-designer | Spécification multiplateforme | create-react-feature, create-android-game |
-| create-android-game | android-dev | Application Android | test-change, review-change |
+| design-minigames | game-designer | Spécification des jeux web du MVP | create-react-feature ; create-android-game après le MVP |
+| create-android-game | android-dev | Application Android post-MVP | test-change, review-change |
 
 ## Enchaînements (handoffs)
 
@@ -84,7 +84,7 @@ flowchart LR
   content-transformer --> backend-python
   backend-python --> game-designer
   game-designer --> frontend-react
-  game-designer --> android-dev
+  game-designer -. post-MVP .-> android-dev
   android-dev --> qa-tests
   android-dev --> reviewer
   po -.challenge.-> grill-me

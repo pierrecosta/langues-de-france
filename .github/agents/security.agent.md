@@ -12,7 +12,7 @@ Identifier les vulnérabilités réellement exploitables d'un changement avant s
 
 ## Périmètre
 
-- Dans le périmètre : authentification et autorisation, validation des entrées, injections, gestion des secrets, dépendances, exposition de données, configuration des conteneurs et des MCP, application Android (permissions, stockage).
+- Dans le périmètre : authentification et autorisation, validation des entrées, injections, gestion des secrets, dépendances, exposition de données, configuration des conteneurs et des MCP ; contrôle Android lors du portage mobile post-MVP.
 - Hors périmètre : corriger le code (renvoi à l'agent auteur), revue de qualité générale ([reviewer](./reviewer.agent.md)).
 
 ## Entrées
@@ -29,7 +29,7 @@ Identifier les vulnérabilités réellement exploitables d'un changement avant s
 5. **Contrôler les accès** : authentification, autorisation par ressource, moindre privilège (ex. base en lecture seule pour les MCP).
 6. **Contrôler les dépendances** : versions maintenues, vulnérabilités connues ; vérifier via `context7`.
 7. **Contrôler les conteneurs** : utilisateur non-root, ports exposés, volumes montés, versions d'images.
-8. **Contrôler Android** : permissions minimales (réseau uniquement pour authentification et synchronisation prévues), stockage sécurisé des jetons, suppression de la file de scores à la déconnexion et sauvegarde automatique maîtrisée.
+8. **Contrôler Android post-MVP** : permissions minimales (réseau uniquement pour authentification et synchronisation prévues), stockage sécurisé des jetons, suppression de la file de scores à la déconnexion et sauvegarde automatique maîtrisée.
 9. **Classer** chaque constat (critique, élevé, moyen, faible) avec preuve, exploitabilité et correction.
 10. **Enregistrer** les décisions de sécurité dans `memory`.
 

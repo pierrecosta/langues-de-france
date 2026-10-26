@@ -28,19 +28,33 @@ Objectifs :
 - Souhaite partager son savoir.
 - Contribue au contenu.
 
+## Transmetteur provençal du Var (60 ans)
+- Homme du Var, il parle couramment le provençal et connaît particulièrement la région et la culture varoises.
+- Il connaît les ressources des [Archives départementales du Var](https://archives.var.fr/) et de [Mémoire orale du Var](https://memoire-orale.var.fr/).
+- Son objectif de vie est de transmettre la langue et la culture provençales.
+- Dans le projet, il vérifie la cohérence globale comme utilisateur du site public et comme administrateur des contenus.
+- Il évalue la facilité d'utilisation, la clarté, l'accessibilité et la cohérence de l'expérience.
+- Il n'est pas technicien, mais sait lire la documentation Markdown et les fichiers JSON. Il peut corriger les données métier ; il ne développe pas et ne modifie pas le code ou la configuration technique.
+- Il est particulièrement attentif à la lisibilité, à la clarté des parcours et à la simplicité de l'interface d'administration.
+
 ## Voyageur culturel
 - Découvre une région.
 - Cherche vocabulaire et expressions.
 
 # 3. Territoires linguistiques
 
-## Territoires actifs V1
+## Territoire du MVP
+- Provençal, avec une attention particulière aux formes et à la culture du Var.
+
+## Cible à terme : six territoires
+- Provençal
 - Ch'ti / Picard
 - Breton
 - Basque
-- Provençal
 - Corse
 - Créole Réunionnais
+
+Le MVP ouvre d'abord le provençal. Les cinq autres territoires sont prévus après le MVP ; leur ordre et leurs dates d'ouverture restent à définir.
 
 ## Territoires référencés
 - Alsacien
@@ -102,11 +116,15 @@ Chaque territoire possède :
 - Galerie de 3 photos.
 - Lien externe.
 
+Les lieux sont des destinations de visite patrimoniales ou culturelles : sites historiques, villages typiques, musées et lieux comparables. Les activités sont des expériences comme les foires, expositions, marchés, randonnées et parcours. Les événements à durée déterminée portent une date de début et une date de fin ; ces dates ne sont pas exigées pour les parcours pérennes. Le contrat détaillé des seeds est décrit dans [src_init/readme.md](src_init/readme.md).
+
 ## Gastronomie
 - Produits locaux.
 - Recettes emblématiques.
 - Histoire du plat.
 - Lien externe.
+
+Une fiche de produit local comprend un identifiant, un titre, un lien d'image, son histoire et, si elle est disponible, une référence ; sa description est facultative. Une fiche de recette comprend un identifiant, un titre, un lien d'image, son histoire, une liste d'ingrédients, une description complète et, si elle est disponible, une référence.
 
 ## Dictionnaire
 Objectif long terme : 5000 mots par territoire.
@@ -198,7 +216,11 @@ Actions possibles :
 Workflow :
 Proposition -> Validation -> Publication.
 
+Un contributeur peut proposer une forme apprise ou connue de mémoire ; l'absence de source externe ne suffit pas à écarter sa contribution. Lorsqu'une source est connue ou accessible, elle doit être renseignée ou mise à jour. Ne jamais inventer une référence.
+
 # 10. Gamification
+
+Les mini-jeux pédagogiques sont inclus dans le MVP sur le site web responsive. Jouer dans un navigateur mobile fait partie de cette expérience web et ne constitue pas une application mobile native.
 
 ## Progression
 - XP.
@@ -212,9 +234,9 @@ Proposition -> Validation -> Publication.
 - Contributeur.
 
 ## Futur
-- Quiz.
 - Défis.
 - Parcours d'apprentissage.
+- Application mobile native après le MVP.
 
 # 11. Accessibilité
 
@@ -267,20 +289,19 @@ Modules :
 # 15. Roadmap
 
 ## MVP
-- 6 territoires.
-- 200 mots.
-- 50 expressions.
+- 1 territoire : le provençal.
+- Corpus cible initial : 200 mots et 50 expressions ; ces volumes sont des objectifs, pas des seuils bloquant l'ouverture.
+- Mini-jeux pédagogiques dans le site web responsive.
 - Comptes utilisateurs.
 - Administration.
 
 ## V2
-- Quiz.
 - Parcours d'apprentissage.
-- Plus de territoires.
+- Ouverture progressive des cinq autres territoires, jusqu'à six au total.
 
 ## V3
 - Audio natif.
-- Applications mobiles dédiées.
+- Application mobile native, après le MVP web.
 - Événements régionaux.
 - Partenariats culturels.
 

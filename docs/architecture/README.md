@@ -6,7 +6,7 @@ Décrire l'architecture proposée pour Découverte des Langues de France et rend
 
 ## Périmètre
 
-Application neuve : MVP provençal, conçue pour accueillir plusieurs territoires. Le statut de chaque décision est indiqué dans son ADR ; les paramètres ouverts doivent être tranchés avant l'implémentation concernée. Les modèles sont dans [.github/templates](../../.github/templates/).
+Application neuve : MVP provençal uniquement, avec une cible de six territoires au total à terme. Les mini-jeux web responsives sont inclus au MVP ; l'application mobile native vient après. Le statut de chaque décision est indiqué dans son ADR ; les paramètres ouverts doivent être tranchés avant l'implémentation concernée. Les modèles sont dans [.github/templates](../../.github/templates/).
 
 ## Prérequis
 
@@ -29,15 +29,15 @@ flowchart LR
     N -->|API JSON, réseau interne| D
     D --> B[(PostgreSQL)]
     D --> M[(Volume média persistant)]
-    D -->|Export de contenu versionné| A[Android hors ligne]
-    A -->|Connexion et synchronisation des scores| D
+    D -.->|Après le MVP : export versionné| A[Application Android hors ligne]
+    A -.->|Après le MVP : connexion et synchronisation| D
     B --> S[Copie de sauvegarde hors serveur]
     M --> S
 ```
 
-Le MVP est un monolithe modulaire côté Django, accompagné d'un frontend Next.js rendu côté serveur pour les contenus publics partageables. Les pages sont `noindex` au MVP ; les aperçus sociaux sont générés côté serveur. Les données de compte sont chargées côté navigateur et ne sont pas mises en cache partagé. Les contenus publics en cache sont invalidés à chaque publication.
+Le MVP provençal est un monolithe modulaire côté Django, accompagné d'un frontend Next.js rendu côté serveur pour les contenus publics partageables et les mini-jeux web responsives. Les pages sont `noindex` au MVP ; les aperçus sociaux sont générés côté serveur. Les données de compte sont chargées côté navigateur et ne sont pas mises en cache partagé. Les contenus publics en cache sont invalidés à chaque publication. Aucun client mobile natif n'est livré au MVP.
 
-Django est la source de vérité des contenus ; les seeds historiques sont importés une fois comme brouillons. Android embarque un export versionné et reste jouable hors ligne ; le réseau sert uniquement à la connexion et à la synchronisation des résultats. Les règles de jeu sont partagées entre les clients et versionnées avec le code. Pas de microservices, Kubernetes, cache distribué ni moteur de recherche dédié au lancement.
+Django est la source de vérité des contenus ; les seeds historiques sont importés une fois comme brouillons. Les règles des jeux web sont versionnées avec le code et conçues pour pouvoir être portées ultérieurement vers une application mobile. Après le MVP, Android pourra embarquer un export versionné et synchroniser les résultats. Pas de microservices, Kubernetes, cache distribué ni moteur de recherche dédié au lancement.
 
 ## Contenu
 
@@ -46,7 +46,7 @@ Django est la source de vérité des contenus ; les seeds historiques sont impor
 - [ADR-003 — PostgreSQL et recherche tolérante](./adr/ADR-003-postgresql-search.md) : données multi-territoires et recherche.
 - [ADR-004 — Comptes, invitations et permissions](./adr/ADR-004-authentification.md) : rôles, liens manuels, données personnelles.
 - [ADR-005 — Déploiement Docker et exploitation](./adr/ADR-005-deploiement.md) : local, OVH, sauvegardes et seuils de migration.
-- [ADR-006 — Contenus canoniques et mini-jeux multiplateformes](./adr/ADR-006-contenus-et-jeux-multiplateformes.md) : import, export Android, parité des jeux et progression.
+- [ADR-006 — Contenus canoniques et mini-jeux multiplateformes](./adr/ADR-006-contenus-et-jeux-multiplateformes.md) : import, jeux web du MVP et portage mobile ultérieur.
 
 Chaque décision structurante suit le [modèle ADR](../../.github/templates/adr-template.md) et reste à valider par le porteur du projet.
 

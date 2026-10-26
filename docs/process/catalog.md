@@ -35,7 +35,7 @@ Une règle n'existe que dans un standard ; une procédure que dans un skill ; le
 | [security](../../.github/agents/security.agent.md) | | |
 | [content-transformer](../../.github/agents/content-transformer.agent.md) | [content-synthesis](../../.github/skills/content-synthesis/SKILL.md) | [transform-content](../../.github/prompts/transform-content.prompt.md) |
 | [game-designer](../../.github/agents/game-designer.agent.md) | [minigame-templates](../../.github/skills/minigame-templates/SKILL.md) | [design-minigames](../../.github/prompts/design-minigames.prompt.md) |
-| [android-dev](../../.github/agents/android-dev.agent.md) | [android-compose](../../.github/skills/android-compose/SKILL.md) | [create-android-game](../../.github/prompts/create-android-game.prompt.md) |
+| [android-dev — post-MVP](../../.github/agents/android-dev.agent.md) | [android-compose](../../.github/skills/android-compose/SKILL.md) | [create-android-game](../../.github/prompts/create-android-game.prompt.md) |
 
 Templates : [ADR](../../.github/templates/adr-template.md), [documentation](../../.github/templates/documentation-template.md), [user story](../../.github/templates/user-story-template.md), [brief pédagogique](../../.github/templates/learning-brief-template.md), [spécification de jeu multiplateforme](../../.github/templates/game-spec-template.md).
 

@@ -34,7 +34,7 @@ Prouver, par des tests reproductibles, que chaque critère d'acceptation est rem
 3. **Choisir le niveau** pour chaque cas : unitaire déjà présent, intégration, ou bout en bout.
 4. **Écrire** les tests manquants, indépendants et déterministes ; données de test isolées.
 5. **Exécuter** : suites automatisées, parcours Playwright (chemin principal et un chemin d'erreur au minimum), vérification en base via `postgres`.
-6. **Pour Android** : lancer `./gradlew lint test` ; vérifier les jeux en mode avion, puis connexion, synchronisation, déconnexion et rejet d'un résultat périmé ; noter les écarts.
+6. **Pour le portage Android post-MVP** : lancer `./gradlew lint test` ; vérifier les jeux en mode avion, puis connexion, synchronisation, déconnexion et rejet d'un résultat périmé ; noter les écarts. Au MVP, couvrir les mini-jeux web responsive avec Playwright.
 7. **Analyser** les échecs : distinguer bug produit, test fragile, donnée de test.
 8. **Rapporter** et enregistrer les bugs connus dans `memory`.
 

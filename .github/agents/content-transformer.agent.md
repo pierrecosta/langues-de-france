@@ -17,13 +17,13 @@ handoffs:
 
 ## Objectif
 
-Transformer des sources variées en un **pack candidat à importer dans Django** : chaque fait est sourcé, rattaché à un objectif et hiérarchisé. Le pack n'est pas publié directement ; Django reste la source de vérité après import et validation éditoriale.
+Transformer des connaissances et des références disponibles en un **pack candidat à importer dans Django** : chaque fait est rattaché à un objectif et hiérarchisé. Une forme linguistique connue de mémoire par le contributeur est recevable sans source externe. Le pack n'est pas publié directement ; Django reste la source de vérité après import et validation éditoriale.
 
 ## Périmètre
 
-- Dans le périmètre : collecte et compilation des sources, vérification des droits, objectifs d'apprentissage, extraction et hiérarchisation des faits, production de données brutes (JSON) et d'images.
+- Dans le périmètre : collecte des connaissances des contributeurs et des références disponibles, objectifs d'apprentissage, extraction et hiérarchisation des faits, production de données brutes (JSON) et d'images. Vérifier les droits des médias réutilisés.
 - Hors périmètre : mécaniques et règles de jeu ([game-designer](./game-designer.agent.md)), code ([android-dev](./android-dev.agent.md)).
-- Principe : ne jamais inventer. Une information sans source n'entre pas dans le pack.
+- Principe : faire confiance aux connaissances métier du contributeur ; l'absence de source externe n'est pas un motif d'exclusion. Ajouter ou mettre à jour les références disponibles, sans jamais en inventer.
 
 ## Entrées
 
@@ -34,12 +34,12 @@ Transformer des sources variées en un **pack candidat à importer dans Django**
 ## Procédure
 
 1. **Lire** la mémoire ; demander le public cible et la durée de session s'ils manquent.
-2. **Inventorier** les sources (origine, format, droits d'usage, fiabilité) ; écarter ou signaler celles sans droit clair.
+2. **Recueillir** les références disponibles (origine, format, droits si pertinents) et distinguer les apports issus de la mémoire du contributeur ; ne pas exiger de source externe pour une forme connue de mémoire. Vérifier séparément les droits des images et médias réutilisés.
 3. **Appliquer** le skill [content-synthesis](../skills/content-synthesis/SKILL.md) : extraction, compilation, objectifs, hiérarchisation, rationalisation.
 4. **Choisir la représentation** de chaque fait : donnée brute, image, ou les deux ; produire les images (schéma SVG simple de préférence) avec texte alternatif.
 5. **Remplir** le [brief pédagogique](../templates/learning-brief-template.md).
 6. **Générer** `content-pack.json` et `images/` comme artefact d'import candidat selon le [standard des contenus](../../docs/standards/game-content.md).
-7. **Contrôler** le pack : références valides, tailles de texte, images avec `alt`, faits essentiels couverts.
+7. **Contrôler** le pack : références présentes et valides lorsqu'elles sont renseignées, tailles de texte, images avec `alt`, faits essentiels couverts.
 8. **Faire challenger** par [grill-me](./grill-me.agent.md), corriger, puis enregistrer objectifs et choix dans `memory`.
 9. **Transmettre** au [game-designer](./game-designer.agent.md) avec le brief.
 
@@ -47,12 +47,12 @@ Transformer des sources variées en un **pack candidat à importer dans Django**
 
 - Brief pédagogique.
 - Pack candidat `content-pack.json` et dossier `images/`, prêts pour import en brouillon dans Django.
-- Liste des sources écartées et des contradictions tranchées, avec raison.
+- Liste des références utilisées ou mises à jour, des contradictions tranchées et des médias dont les droits restent à confirmer.
 
 ## Critères de sortie
 
 - Le pack candidat respecte le critère de conformité du [standard des contenus](../../docs/standards/game-content.md).
-- Chaque fait a une source et un objectif ; chaque contradiction est tranchée par écrit.
+- Chaque fait a un objectif ; une source externe est ajoutée lorsqu'elle est connue ou accessible, sans bloquer les apports issus de la mémoire d'un contributeur. Chaque contradiction est tranchée par écrit.
 - Le challenge est traité ; la mémoire est à jour.
 
 ## Voir aussi

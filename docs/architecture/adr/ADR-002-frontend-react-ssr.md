@@ -10,7 +10,7 @@ Fournir une interface React accessible et des pages de contenu partageables avec
 
 ## Périmètre
 
-Site public responsive du MVP, URLs dédiées par contenu et rendu des métadonnées sociales. L'indexation et la PWA sont hors périmètre du MVP.
+Site public responsive du MVP provençal, y compris ses mini-jeux web, URLs dédiées par contenu et rendu des métadonnées sociales. Une application mobile native est hors périmètre du MVP et prévue après.
 
 ## Prérequis
 
@@ -40,7 +40,7 @@ Les liens de contenus seront transmis directement à des connaissances. Les aper
 
 ## Décision
 
-Utiliser Next.js comme frontend React rendu côté serveur pour les pages publiques. Générer les métadonnées sociales par territoire et par contenu. Ajouter `noindex` et ne pas publier de sitemap d'indexation tant que l'indexation n'est pas souhaitée. Les URLs canoniques suivent la forme `/{territoire}/{type}/{slug}` ; l'identifiant métier reste stable et un ancien slug redirige vers l'URL canonique.
+Utiliser Next.js comme frontend React rendu côté serveur pour les pages publiques et les mini-jeux responsives du MVP provençal. Jouer depuis un navigateur mobile relève du site web et ne signifie pas qu'une application native est livrée. Générer les métadonnées sociales par territoire et par contenu. Ajouter `noindex` et ne pas publier de sitemap d'indexation tant que l'indexation n'est pas souhaitée. Les URLs canoniques suivent la forme `/{territoire}/{type}/{slug}` ; l'identifiant métier reste stable et un ancien slug redirige vers l'URL canonique.
 
 Construire l'application en mode autonome pour le conteneur Docker et conserver Django comme source de vérité métier. Placer le frontend et le backend derrière le même domaine : `/` pour Next.js, `/api/` pour Django et `/admin/` pour le back-office.
 

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "rec_001",
+    "title": "Aïoli",
+    "image-url": "",
+    "history": "",
+    "ingredients": [],
+    "description": "",
+    "source-url": ""
+  },
+  {
+    "id": "rec_002",
+    "title": "Daube provençale",
+    "image-url": "",
+    "history": "",
+    "ingredients": [],
+    "description": "",
+    "source-url": ""
+  },
+  {
+    "id": "rec_003",
+    "title": "Soupe au pistou",
+    "image-url": "",
+    "history": "",
+    "ingredients": [],
+    "description": "",
+    "source-url": ""
+  },
+  {
+    "id": "rec_004",
+    "title": "Ratatouille",
+    "image-url": "",
+    "history": "",
+    "ingredients": [],
+    "description": "",
+    "source-url": ""
+  },
+  {
+    "id": "rec_005",
+    "title": "Calissons",
+    "image-url": "",
+    "history": "",
+    "ingredients": [],
+    "description": "",
+    "source-url": ""
+  }
+]

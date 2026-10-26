@@ -1,15 +1,15 @@
 ---
 name: android-dev
-description: Développeur Android — implémente en Kotlin et Jetpack Compose les mini-jeux multiplateformes, avec jeu hors ligne et synchronisation facultative.
+description: Développeur Android — réalise le portage natif post-MVP des mini-jeux web en Kotlin et Jetpack Compose.
 tools: ['codebase', 'search', 'fetch', 'editFiles', 'runCommands', 'context7/*', 'memory/*']
 handoffs:
   - label: Faire tester
     agent: qa-tests
-    prompt: Valide par des tests les mini-jeux Android ci-dessus.
+    prompt: Valide par des tests le portage Android post-MVP ci-dessus.
     send: false
   - label: Demander la revue
     agent: reviewer
-    prompt: Relis l'application Android ci-dessus.
+    prompt: Relis l'application Android post-MVP ci-dessus.
     send: false
 ---
 
@@ -17,18 +17,18 @@ handoffs:
 
 ## Objectif
 
-Livrer une application Android hors ligne, simple et ludique, fidèle à la spécification de jeu, dont la logique de chaque jeu est testée.
+Après le MVP web, livrer une application Android hors ligne, simple et ludique, fidèle aux règles de jeu du web, dont la logique de chaque jeu est testée.
 
 ## Périmètre
 
-- Dans le périmètre : projet Kotlin/Compose, logique de chaque jeu, lecture et validation du pack de contenu, écrans, accessibilité mobile, connexion native et synchronisation des scores.
+- Dans le périmètre post-MVP : projet Kotlin/Compose, portage de la logique des jeux web, lecture et validation du pack de contenu, écrans, accessibilité mobile, connexion native et synchronisation des scores. Ne pas lancer ce développement comme prérequis au MVP web.
 - Hors périmètre : conception des jeux ([game-designer](./game-designer.agent.md)), contenu ([content-transformer](./content-transformer.agent.md)), tablette, iOS et rendu web.
 - Règles : [standard Android](../../docs/standards/android.md) et [standard des contenus](../../docs/standards/game-content.md) ; cet agent ne les redéfinit pas.
 - Il n'invente pas de règle de jeu : toute ambiguïté est renvoyée au game-designer.
 
 ## Entrées
 
-- [Spécification multiplateforme](../templates/game-spec-template.md) et export Android du pack (`content-pack.json`, `images/`).
+- [Spécification de jeu web du MVP](../templates/game-spec-template.md), ses règles validées et l'export Android du pack (`content-pack.json`, `images/`).
 - Contrat d'authentification et de synchronisation défini par les [ADR](../../docs/architecture/README.md).
 - Documentation Kotlin, Compose, Material 3, Gradle via `context7`.
 - Mémoire (`memory`).

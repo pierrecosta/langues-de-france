@@ -25,7 +25,7 @@ Composants ou écrans à contrôler ; tokens existants.
 3. **Vérifier les thèmes** : afficher chaque écran en Light puis en Dark ; contrastes et lisibilité conformes dans les deux.
 4. **Vérifier la sémantique** : éléments HTML adaptés (ou composants Compose avec rôles), libellés des champs, titres hiérarchisés.
 5. **Tester au clavier** (web) : parcours complet sans souris, focus visible, ordre logique, aucun piège.
-6. **Auditer automatiquement** avec axe via `playwright` (web) ; avec l'outil d'accessibilité Android pour le mobile.
+6. **Auditer automatiquement** avec axe via `playwright` pour le web du MVP ; utiliser l'outil d'accessibilité Android lors du portage mobile post-MVP.
 7. **Tester le lecteur d'écran** : TalkBack ou lecteur du navigateur sur le parcours principal.
 8. **Corriger** chaque écart selon le standard d'accessibilité, puis relancer l'audit.
 9. **Consigner** les écarts acceptés avec leur justification.

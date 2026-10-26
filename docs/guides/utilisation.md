@@ -52,7 +52,7 @@ La copie doit conserver ses propres fichiers de mémoire et de configuration : n
 | Mettre à jour la doc | `/document-change` |
 | Transformer des sources en contenu | `/transform-content` |
 | Concevoir des mini-jeux | `/design-minigames` |
-| Développer l'app Android | `/create-android-game` |
+| Préparer l'application Android après le MVP | `/create-android-game` |
 | Challenger une idée ou un plan | agent `grill-me` |
 | Auditer la sécurité | agent `security` |
 
@@ -83,8 +83,8 @@ Les skills se chargent quand la demande correspond à leur description. Pour en 
 | `/review-change` | Remarques classées, décision | documentation |
 | `/document-change` | Docs et mémoire à jour | tout le monde |
 | `/transform-content` | Brief et pack candidat à importer dans Django | backend-python, équipe éditoriale |
-| `/design-minigames` | Spécification de jeu multiplateforme | frontend-react, android-dev |
-| `/create-android-game` | Application Android | qa-tests, reviewer |
+| `/design-minigames` | Spécification des jeux web du MVP, portable ensuite | frontend-react ; android-dev après le MVP |
+| `/create-android-game` | Application Android post-MVP | qa-tests, reviewer |
 
 ## Rôle de la mémoire et de grill-me
 
@@ -99,15 +99,15 @@ Les skills se chargent quand la demande correspond à leur description. Pour en 
 4. `/test-change`, puis `/review-change`.
 5. `/document-change`.
 
-## Parcours jeu pédagogique web et Android
+## Parcours des mini-jeux web du MVP
 
-1. `/transform-content` → brief et pack candidat destiné à l'import en brouillon.
-2. `backend-python` et l'équipe éditoriale importent les données dans Django, les enrichissent et valident les entrées à publier.
-3. `/design-minigames` → spécification des règles communes et des parcours propres aux plateformes.
-4. `/create-react-feature` et `/create-android-game` → jeux web et Android ; Android reste jouable hors ligne et synchronise les scores lorsqu'il est connecté.
+1. `/transform-content` → brief et pack candidat destiné à l'import en brouillon ; les connaissances d'un contributeur sont acceptées sans référence externe, et les références disponibles sont ajoutées.
+2. `backend-python` et l'équipe éditoriale importent les données dans Django, puis valident les entrées selon le [standard des contenus](../standards/game-content.md).
+3. `/design-minigames` → spécification des règles et parcours des mini-jeux web du MVP.
+4. `/create-react-feature` → mini-jeux dans le site web responsive, jouables aussi depuis le navigateur mobile.
 5. `/test-change`, `/review-change`, `/document-change`.
 
-Les développeurs partent de la spécification multiplateforme et des contenus validés dans Django ; Android consomme un export versionné. Règles : [contenus](../standards/game-content.md), [frontend](../standards/frontend.md) et [Android](../standards/android.md).
+L'application mobile native n'est pas nécessaire au MVP. Après le MVP, `/create-android-game` pourra porter les règles vers Android et consommer un export versionné. Règles : [contenus](../standards/game-content.md), [frontend](../standards/frontend.md) et, pour la phase mobile ultérieure, [Android](../standards/android.md).
 
 ## Règle d'or : la documentation suit chaque itération
 

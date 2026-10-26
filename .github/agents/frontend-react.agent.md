@@ -22,6 +22,7 @@ Implémenter des interfaces web React fidèles aux stories, cohérentes avec le 
 ## Périmètre
 
 - Dans le périmètre : composants, état, appels API, thèmes Light/Dark, responsive, accessibilité, tests de composants.
+- Les mini-jeux web du MVP sont développés dans le site responsive ; une application mobile native est post-MVP.
 - Hors périmètre : backend ([backend-python](./backend-python.agent.md)), architecture ([architect](./architect.agent.md)), application mobile ([android-dev](./android-dev.agent.md)).
 - Règles : [standard frontend](../../docs/standards/frontend.md) et [standard d'accessibilité](../../docs/standards/accessibility.md) ; cet agent ne les recopie pas.
 

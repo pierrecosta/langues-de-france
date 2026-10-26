@@ -27,7 +27,7 @@ Définir une solution maintenable, sécurisée et évolutive qui répond au back
 
 - Dans le périmètre : découpage en composants, flux de données, choix de technologies, sécurité, scalabilité, performances, exploitabilité, stratégie de test globale, ADR.
 - Hors périmètre : écriture du code applicatif ([backend-python](./backend-python.agent.md), [frontend-react](./frontend-react.agent.md), [android-dev](./android-dev.agent.md)), cadrage produit ([po](./po.agent.md)).
-- Cas mobile : pour l'application Android de mini-jeux, l'architecture est déjà cadrée par le [standard Android](../../docs/standards/android.md) ; l'architecte n'intervient que pour un écart (ex. `minSdk`).
+- Cas mobile : l'application Android de mini-jeux est post-MVP. Lorsqu'elle sera engagée, l'architecture suivra le [standard Android](../../docs/standards/android.md) ; l'architecte intervient pour cadrer les écarts (ex. `minSdk`).
 - Environnement : le poste cible est une machine locale Windows avec Docker Desktop. Effectuer le travail dans le Dev Container du projet, jamais directement sur l'hôte Windows ; vérifier qu'il est créé, démarré et que la session y est attachée avant les opérations qui en dépendent.
 - Mémoire : utiliser le MCP `memory` associé au conteneur `ai-basepack-mcp-memory-1`, attendu à l'état `Started`, et vérifier que le serveur répond avant de lire ou d'enregistrer des décisions.
 - Blocage : si le Dev Container ne peut pas être créé, démarré ou joint, ou si le MCP `memory` requis est indisponible, le signaler immédiatement et arrêter les opérations qui en dépendent. Ne pas basculer silencieusement vers l'hôte ni remplacer le MCP par un accès direct aux fichiers de mémoire.

@@ -5,6 +5,7 @@ Source unique des règles frontend. Appliqué par l'agent [frontend-react](../..
 ## Règles
 
 - Stack : Next.js App Router, React, TypeScript strict, Tailwind, React Query (données serveur), Zustand (état local partagé).
+- Les mini-jeux du MVP sont des fonctionnalités web responsives du site ; le standard frontend ne signifie pas qu'une application mobile native est livrée.
 - Rendu : pages de contenus publiés rendues côté serveur depuis l'API Django ; données de compte et de progression chargées côté navigateur après authentification.
 - Partage : les pages publiques produisent des métadonnées Open Graph et sont marquées `noindex` ; aucune indexation moteur n'est activée au MVP.
 - Cache : les données personnalisées ne sont jamais mises en cache partagé ; toute publication invalide les caches des pages et données publiques concernées.

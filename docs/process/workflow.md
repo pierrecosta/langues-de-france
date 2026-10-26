@@ -17,16 +17,16 @@ Séquence et points de contrôle. Les rôles sont dans le [catalogue](./catalog.
 5. **Revue** — [reviewer](../../.github/agents/reviewer.agent.md), puis [security](../../.github/agents/security.agent.md) si le changement touche à la sécurité.
 6. **Documentation** — [documentation](../../.github/agents/documentation.agent.md) : pages et mémoire à jour.
 
-## Variante : jeu pédagogique web et Android
+## Variante : mini-jeux web du MVP
 
-Pour transformer des sources en mini-jeux web et Android :
+Pour transformer des connaissances et références disponibles en mini-jeux web pour le MVP provençal :
 
 1. [content-transformer](../../.github/agents/content-transformer.agent.md) : brief pédagogique et pack candidat. Challenge grill-me.
-2. [backend-python](../../.github/agents/backend-python.agent.md) et l'équipe éditoriale : import unique en brouillon dans Django, mapping et validation ; Django devient la source de vérité.
-3. [game-designer](../../.github/agents/game-designer.agent.md) : règles communes et parcours web/Android dans la spécification. Challenge grill-me.
-4. [frontend-react](../../.github/agents/frontend-react.agent.md) et [android-dev](../../.github/agents/android-dev.agent.md) : implémentations correspondantes ; Android joue hors ligne et synchronise les scores selon les ADR.
+2. [backend-python](../../.github/agents/backend-python.agent.md) et l'équipe éditoriale : import unique en brouillon dans Django, mapping et validation éditoriale ; une source externe n'est pas obligatoire si le contributeur connaît la forme de mémoire, et les références disponibles sont enregistrées.
+3. [game-designer](../../.github/agents/game-designer.agent.md) : règles et parcours des mini-jeux web du MVP, conçus pour pouvoir être portés plus tard. Challenge grill-me.
+4. [frontend-react](../../.github/agents/frontend-react.agent.md) : implémentation des jeux dans le site web responsive, utilisable depuis un navigateur mobile.
 
-Les tests, la revue et la documentation restent requis. Le contrat entre les rôles est le [standard des contenus](../standards/game-content.md) ; la synchronisation est décrite par l'[ADR-006](../architecture/adr/ADR-006-contenus-et-jeux-multiplateformes.md).
+Après le MVP, [android-dev](../../.github/agents/android-dev.agent.md) peut implémenter l'application native ; le jeu hors ligne et la synchronisation sont alors couverts par les ADR concernés. Les tests, la revue et la documentation restent requis. Le contrat entre les rôles est le [standard des contenus](../standards/game-content.md).
 
 ## Déclenchement
 

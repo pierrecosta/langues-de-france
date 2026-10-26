@@ -1,6 +1,8 @@
 # Standard Android (mobile)
 
-Source unique des règles de l'application Android. Appliqué par l'agent [android-dev](../../.github/agents/android-dev.agent.md) et contrôlé par [reviewer](../../.github/agents/reviewer.agent.md). L'accessibilité relève du [standard d'accessibilité](./accessibility.md) ; le format des données du [standard des contenus](./game-content.md).
+Source unique des règles de l'application Android post-MVP. Appliqué par l'agent [android-dev](../../.github/agents/android-dev.agent.md) et contrôlé par [reviewer](../../.github/agents/reviewer.agent.md). L'accessibilité relève du [standard d'accessibilité](./accessibility.md) ; le format des données du [standard des contenus](./game-content.md).
+
+Le MVP comprend des mini-jeux web responsives, utilisables dans un navigateur mobile. Il ne comprend pas d'application Android native ; ce standard s'applique lorsque le portage mobile sera engagé après le MVP.
 
 ## Cible
 

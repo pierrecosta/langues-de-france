@@ -10,7 +10,7 @@ Choisir un backend Python qui permette de gérer les contenus territoriaux, les 
 
 ## Périmètre
 
-Backend du MVP provençal et ajout ultérieur de territoires. Le frontend public et les décisions de stockage sont traités dans des ADR séparés.
+Backend du MVP provençal uniquement, puis ajout progressif jusqu'à six territoires au total. Les mini-jeux web responsives sont au MVP ; l'application mobile native est post-MVP. Le frontend public et les décisions de stockage sont traités dans des ADR séparés.
 
 ## Prérequis
 
@@ -43,7 +43,7 @@ Utiliser Django comme monolithe modulaire : domaines `territories`, `dictionary`
 
 Ne pas séparer les modules en microservices. Le modèle porte un `territory_id` sur les contenus et les contributions ; l'ajout d'un territoire est une opération de données et de configuration, pas une copie de schéma ou de service.
 
-Django est la source de vérité des contenus publiés. Les fichiers historiques `src_init/provencal/*.json` sont importés une fois comme brouillons ; après cet import, toute correction s'effectue dans Django. Les entrées incomplètes restent non publiées jusqu'à leur enrichissement et leur validation. Le mapping des fichiers vers les modèles et les critères de validation sont à définir avant l'import.
+Django est la source de vérité des contenus publiés. Les fichiers historiques `src_init/provencal/*.json` sont importés une fois comme brouillons ; après cet import, toute correction s'effectue dans Django. Les entrées restent soumises à une validation éditoriale, mais une source externe n'est pas obligatoire pour une connaissance linguistique confiée par un contributeur. Toute référence connue ou accessible est enregistrée ; aucune référence n'est inventée. Les droits des médias réutilisés restent à vérifier. Le mapping des fichiers vers les modèles et les critères de validation sont à définir avant l'import.
 
 ## Conséquences
 

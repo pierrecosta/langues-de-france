@@ -1,5 +1,5 @@
 ---
-description: Implémenter des mini-jeux Android jouables hors ligne avec authentification et synchronisation des scores.
+description: Après le MVP web, porter les mini-jeux vers une application Android hors ligne.
 agent: android-dev
 ---
 
@@ -7,7 +7,7 @@ agent: android-dev
 
 ## Objectif
 
-Développer l'application Android correspondant à la spécification.
+Après le MVP web, développer l'application Android correspondant aux règles validées des mini-jeux.
 
 ## Entrées
 
@@ -23,7 +23,7 @@ Développer l'application Android correspondant à la spécification.
 5. Vérifie chaque critère : jeu et contenu en mode avion ; connexion et synchronisation en ligne ; déconnexion ; résultat d'une version périmée.
 6. Lance `./gradlew lint test` et documente le build.
 
-Résultat attendu : application jouable hors ligne, synchronisation conforme au standard, tests qui passent et critères d'acceptation vérifiés.
+Résultat attendu après le MVP : application jouable hors ligne, synchronisation conforme au standard Android, tests qui passent et critères d'acceptation vérifiés. Ne pas lancer cette étape comme condition du lancement web.
 
 ## Voir aussi
 

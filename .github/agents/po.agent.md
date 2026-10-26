@@ -23,7 +23,7 @@ Convertir un besoin métier, souvent flou, en backlog priorisé dont chaque él�
 
 - Dans le périmètre : cadrage du problème, valeur métier, personas, user stories, critères d'acceptation, priorisation (MoSCoW), risques, dépendances, hypothèses, roadmap par jalons.
 - Hors périmètre : choix techniques et de conception (→ [architect](./architect.agent.md)), estimation en jours, écriture de code.
-- Frontière avec les jeux pédagogiques : le PO cadre un produit ; pour transformer des sources en jeux mobiles, voir [content-transformer](./content-transformer.agent.md).
+- Frontière avec les jeux pédagogiques : le PO cadre un produit ; pour transformer des connaissances en jeux web du MVP, voir [content-transformer](./content-transformer.agent.md). Le portage vers une application mobile est post-MVP.
 
 ## Entrées
 

@@ -1,17 +1,17 @@
 ---
 name: android-compose
-description: Procédure d'implémentation d'une application Android de mini-jeux en Kotlin et Jetpack Compose, jouable hors ligne avec synchronisation des scores.
+description: Procédure de portage post-MVP des mini-jeux web vers une application Android Kotlin/Jetpack Compose.
 ---
 
 # Skill android-compose
 
 ## Objectif
 
-Implémenter les mini-jeux d'une spécification de façon régulière, testable et accessible, avec une logique de jeu indépendante de l'interface.
+Après le MVP web, porter les mini-jeux en application Android de façon régulière, testable et accessible, avec une logique de jeu indépendante de l'interface.
 
 ## Périmètre
 
-- Dans le périmètre : structure du projet, couche données, logique de jeu, écrans Compose, navigation, tests.
+- Dans le périmètre post-MVP : structure du projet, couche données, portage des règles web, écrans Compose, navigation, tests.
 - Hors périmètre : règles normatives ([standard Android](../../../docs/standards/android.md)), conception des jeux ([minigame-templates](../minigame-templates/SKILL.md)), contrôles d'accessibilité détaillés ([design-system-accessibility](../design-system-accessibility/SKILL.md)).
 
 ## Entrées
@@ -20,7 +20,7 @@ Implémenter les mini-jeux d'une spécification de façon régulière, testable 
 
 ## Procédure
 
-1. **Vérifier** via `context7` les versions et API de Compose, Material 3, Navigation, Gradle, `kotlinx.serialization`.
+1. **Vérifier** que le portage mobile est engagé après le MVP web, puis consulter `context7` pour les versions et API de Compose, Material 3, Navigation, Gradle, `kotlinx.serialization`.
 2. **Créer le projet** : module unique, catalogue de versions Gradle, `minSdk` et `targetSdk` selon le standard ; limiter l'accès réseau à la connexion et à la synchronisation prévues par le standard.
 3. **Intégrer l'export versionné** dans `assets/` ; couche `data` : lecture, désérialisation, validation des références (objectifs, sources, faits). Échec = écran d'erreur lisible.
 4. **Modéliser la logique** : une classe pure par template (état, actions, score) sans dépendance Android ; générateur aléatoire injectable pour des tests déterministes.

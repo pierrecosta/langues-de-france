@@ -13,7 +13,7 @@ handoffs:
     send: false
   - label: Concevoir les mini-jeux
     agent: game-designer
-    prompt: Conçois les mini-jeux à partir du contenu importé, publié et validé dans Django, avec des règles communes au web et à Android.
+    prompt: Conçois les mini-jeux web du MVP à partir du contenu importé et validé dans Django ; prévois des règles portables pour un futur mobile.
     send: false
 ---
 

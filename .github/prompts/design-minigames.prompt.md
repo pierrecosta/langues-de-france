@@ -1,5 +1,5 @@
 ---
-description: Concevoir les mini-jeux web et Android à règles communes à partir de contenus publiés et validés dans Django.
+description: Concevoir les mini-jeux web du MVP à partir de contenus publiés dans Django, en prévoyant leur portabilité mobile future.
 agent: game-designer
 ---
 
@@ -7,7 +7,7 @@ agent: game-designer
 
 ## Objectif
 
-Produire une spécification de jeu commune aux implémentations web et Android.
+Produire une spécification implémentable pour les mini-jeux web responsives du MVP et portable vers une application mobile post-MVP.
 
 ## Entrées
 
@@ -19,11 +19,11 @@ Produire une spécification de jeu commune aux implémentations web et Android.
 1. Vérifie que le pack est conforme au standard ; sinon, liste les corrections pour le content-transformer.
 2. Applique le skill minigame-templates : associe chaque objectif à un template et vérifie la matière disponible.
 3. Règle chaque jeu : questions, difficulté, essais, score, retours ludiques.
-4. Rédige la spécification : règles et scores communs, parcours et critères propres au web et à Android, cas limites et critères d'acceptation Étant donné / Quand / Alors.
+4. Rédige la spécification des règles, scores, parcours et cas limites du web MVP. Note les règles réutilisables plus tard, sans exiger de parcours ni de critères Android pour le lancement.
 5. Remplis le tableau de couverture des faits essentiels.
 6. Propose le challenge grill-me, enregistre dans la mémoire.
 
-Résultat attendu : spécification implémentable sans question par les équipes web et Android. Étapes suivantes : `/create-react-feature` et `/create-android-game`.
+Résultat attendu : spécification du web MVP implémentable sans question par l'équipe frontend, avec des règles assez claires pour un portage ultérieur. Étape suivante : `/create-react-feature`. Lancer `/create-android-game` seulement après le MVP web.
 
 ## Voir aussi
 

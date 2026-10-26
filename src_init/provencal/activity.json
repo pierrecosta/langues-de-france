@@ -1,22 +1,72 @@
 [
   {
-    "id": "act_001",
-    "nom": "Route de la Lavande"
+    "id": 1,
+    "titre": "Site archéologique d'Olbia (Hyères)",
+    "description": "Explorer l'une des rares colonies grecques fortifiées dont le plan est conservé dans son intégralité. Vestiges grecs, romains et médiévaux en bord de mer.",
+    "site": "https://hyeres.fr/presentation-site-olbia/",
+    "image": "https://via.placeholder.com/150"
   },
   {
-    "id": "act_002",
-    "nom": "Marchés provençaux"
+    "id": 2,
+    "titre": "Abbaye du Thoronet",
+    "description": "Découvrir l'un des plus remarquables monuments cisterciens de Provence, célèbre pour son architecture romane et son acoustique exceptionnelle.",
+    "site": "https://www.le-thoronet.fr/",
+    "image": "https://via.placeholder.com/150"
   },
   {
-    "id": "act_003",
-    "nom": "Randonnée dans les Alpilles"
+    "id": 3,
+    "titre": "Musée des Gueules Rouges (Tourves)",
+    "description": "Comprendre l'histoire des mineurs de bauxite du centre Var et l'impact de cette activité sur la culture locale provençale.",
+    "site": "https://museesetcentresdart.caprovenceverte.fr/musee-des-gueules-rouges/",
+    "image": "https://via.placeholder.com/150"
   },
   {
-    "id": "act_004",
-    "nom": "Dégustation d'huile d'olive"
+    "id": 4,
+    "titre": "Musée national de la Marine (Toulon)",
+    "description": "Parcourir l'histoire maritime de Toulon, principal arsenal de Méditerranée, à travers maquettes, objets et collections historiques.",
+    "site": "https://www.musee-marine.fr/nos-musees/toulon.html",
+    "image": "https://via.placeholder.com/150"
   },
   {
-    "id": "act_005",
-    "nom": "Visite de villages perchés"
+    "id": 5,
+    "titre": "Village médiéval de Bormes-les-Mimosas",
+    "description": "Déambuler dans l'un des plus beaux villages du Var, marqué par son patrimoine médiéval et son identité provençale.",
+    "site": "https://www.bormeslesmimosas.com/",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 6,
+    "titre": "Village historique de Cotignac",
+    "description": "Découvrir un village provençal emblématique adossé à une falaise de tuf et fortement associé à l'histoire locale de la Provence intérieure.",
+    "site": "https://www.cotignac.fr/",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 7,
+    "titre": "Musée de la Préhistoire des Gorges du Verdon (Quinson)",
+    "description": "Explorer les origines du peuplement provençal à travers l'un des plus importants musées de préhistoire d'Europe.",
+    "site": "https://www.museeprehistoire.com/",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 8,
+    "titre": "Centre ancien de Fréjus et vestiges romains",
+    "description": "Visiter l'amphithéâtre, l'aqueduc, le théâtre romain et le patrimoine antique de l'ancienne cité romaine de Forum Julii.",
+    "site": "https://www.frejus.fr/",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 9,
+    "titre": "Fête de la Saint-Jean et traditions provençales",
+    "description": "Participer aux fêtes traditionnelles provençales organisées dans plusieurs communes du Var, avec danses, musique et culture régionale.",
+    "site": "https://www.visitvar.fr/",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 10,
+    "titre": "Archives départementales du Var (Draguignan)",
+    "description": "Participer aux expositions, conférences et visites guidées consacrées à l'histoire du Var, de la Provence et de la langue provençale.",
+    "site": "https://archives.var.fr/",
+    "image": "https://via.placeholder.com/150"
   }
 ]
