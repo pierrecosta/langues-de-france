@@ -1,0 +1,22 @@
+[
+  {
+    "id": "prod_001",
+    "nom": "Huile d'olive de Provence"
+  },
+  {
+    "id": "prod_002",
+    "nom": "Calisson d'Aix"
+  },
+  {
+    "id": "prod_003",
+    "nom": "Herbes de Provence"
+  },
+  {
+    "id": "prod_004",
+    "nom": "Tapenade"
+  },
+  {
+    "id": "prod_005",
+    "nom": "Lavande"
+  }
+]

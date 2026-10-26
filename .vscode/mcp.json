@@ -1,0 +1,24 @@
+{
+  "servers": {
+    "context7": {
+      "type": "stdio",
+      "command": "docker",
+      "args": ["compose", "-f", "docker-compose.mcp.yml", "run", "--rm", "-T", "mcp-context7"]
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "docker",
+      "args": ["compose", "-f", "docker-compose.mcp.yml", "run", "--rm", "-T", "mcp-playwright"]
+    },
+    "postgres": {
+      "type": "stdio",
+      "command": "docker",
+      "args": ["compose", "-f", "docker-compose.mcp.yml", "run", "--rm", "-T", "mcp-postgres"]
+    },
+    "memory": {
+      "type": "stdio",
+      "command": "docker",
+      "args": ["compose", "-f", "docker-compose.mcp.yml", "run", "--rm", "-T", "mcp-memory"]
+    }
+  }
+}

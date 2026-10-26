@@ -1,0 +1,22 @@
+[
+  {
+    "id": "act_001",
+    "nom": "Route de la Lavande"
+  },
+  {
+    "id": "act_002",
+    "nom": "Marchés provençaux"
+  },
+  {
+    "id": "act_003",
+    "nom": "Randonnée dans les Alpilles"
+  },
+  {
+    "id": "act_004",
+    "nom": "Dégustation d'huile d'olive"
+  },
+  {
+    "id": "act_005",
+    "nom": "Visite de villages perchés"
+  }
+]

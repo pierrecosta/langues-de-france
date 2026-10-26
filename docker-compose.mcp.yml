@@ -1,0 +1,60 @@
+# Le Dev Container est géré par VS Code au cycle de vie du workspace.
+# Les MCP et leur base de démonstration sont lancés à la demande par .vscode/mcp.json.
+# HOST_WORKSPACE = chemin du projet côté hôte Docker (défini par le devcontainer).
+
+name: ai-basepack
+
+services:
+  devcontainer:
+    image: mcr.microsoft.com/devcontainers/python:3.12
+    command: sleep infinity
+    volumes:
+      - .:/workspaces/ai-basepack:cached
+
+  mcp-context7:
+    profiles: ["mcp"]
+    build: ./.devcontainer/mcp/context7
+    environment:
+      CONTEXT7_API_KEY: ${CONTEXT7_API_KEY:-}
+
+  mcp-playwright:
+    profiles: ["mcp"]
+    image: mcr.microsoft.com/playwright/mcp:latest
+    init: true
+
+  mcp-memory:
+    profiles: ["mcp"]
+    build: ./.devcontainer/mcp/memory
+    environment:
+      MEMORY_FILE_PATH: /workspaces/ai-basepack/memory/memory.jsonl
+    volumes:
+      - ${HOST_WORKSPACE:-.}/memory:/workspaces/ai-basepack/memory
+
+  mcp-postgres:
+    profiles: ["mcp"]
+    build: ./.devcontainer/mcp/postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-demo}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-demo}
+      POSTGRES_DB: ${POSTGRES_DB:-demo}
+    depends_on:
+      postgres-db:
+        condition: service_healthy
+
+  postgres-db:
+    profiles: ["mcp"]
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-demo}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-demo}
+      POSTGRES_DB: ${POSTGRES_DB:-demo}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  postgres-data:

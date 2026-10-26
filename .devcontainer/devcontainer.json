@@ -1,0 +1,26 @@
+{
+  "name": "ai-basepack-dev",
+  "dockerComposeFile": "../docker-compose.mcp.yml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspaces/ai-basepack",
+  "runServices": ["devcontainer"],
+  "shutdownAction": "stopCompose",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": { "version": "lts" },
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "moby": false
+    }
+  },
+  "containerEnv": {
+    "HOST_WORKSPACE": "${localWorkspaceFolder}"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "yzhang.markdown-all-in-one"
+      ]
+    }
+  }
+}

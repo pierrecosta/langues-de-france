@@ -1,0 +1,27 @@
+[
+  {
+    "id": "lieu_001",
+    "nom": "Les Baux-de-Provence",
+    "description": "Village médiéval perché dans les Alpilles.",
+    "photos": ["1.jpg","2.jpg","3.jpg"]
+  },
+  {
+    "id": "lieu_002",
+    "nom": "Gordes",
+    "description": "Village emblématique du Luberon.",
+    "photos": ["1.jpg","2.jpg","3.jpg"]
+  },
+  {
+    "id": "lieu_003",
+    "nom": "Abbaye de Sénanque",
+    "description": "Abbaye entourée de champs de lavande."
+  },
+  {
+    "id": "lieu_004",
+    "nom": "Calanques de Cassis"
+  },
+  {
+    "id": "lieu_005",
+    "nom": "Mont Ventoux"
+  }
+]
