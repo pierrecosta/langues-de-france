@@ -54,6 +54,6 @@ Décider si un changement peut être accepté : il respecte les standards, répo
 
 ## Voir aussi
 
-- Prompt : [review-change](../prompts/review-change.prompt.md)
+- Prompt : [review-change](../skills/review-change/SKILL.md)
 - Skill : [architecture-review](../skills/architecture-review/SKILL.md)
 - [Workflow](../../docs/process/workflow.md) · [Relations](../../docs/process/relations.md)

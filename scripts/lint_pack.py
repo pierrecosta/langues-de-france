@@ -4,6 +4,7 @@ Usage : python scripts/lint_pack.py
 """
 import re
 import sys
+from os import walk
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -12,6 +13,7 @@ SECTIONS = [
     "Objectif", "Périmètre", "Entrées", "Procédure",
     "Livrables", "Critères de sortie", "Voir aussi",
 ]
+# Gabarit court des skills lançables (disable-model-invocation: true) et des prompts.
 PROMPT_SECTIONS = ["Objectif", "Entrées", "Consigne", "Voir aussi"]
 LINK = re.compile(r"\[[^\]]*\]\(([^)\s]+)\)")
 errors: list[str] = []
@@ -27,7 +29,7 @@ def frontmatter(path: Path) -> dict[str, str]:
     if not m:
         errors.append(f"{rel(path)}: frontmatter absent")
         return {}
-    return dict(re.findall(r"^([a-z]+):\s*(.+)$", m.group(1), re.M))
+    return dict(re.findall(r"^([a-z-]+):\s*(.+)$", m.group(1), re.M))
 
 
 def sections(path: Path, expected: list[str]) -> None:
@@ -50,6 +52,15 @@ def names(files: list[Path], suffix: str, fm_expected) -> set[str]:
     return seen
 
 
+def markdown_files() -> list[Path]:
+    excluded = {".git", ".next", ".ruff_cache", ".venv", "__pycache__", "node_modules"}
+    files: list[Path] = []
+    for directory, subdirectories, filenames in walk(ROOT):
+        subdirectories[:] = sorted(name for name in subdirectories if name not in excluded)
+        files.extend(Path(directory) / name for name in filenames if name.endswith(".md"))
+    return files
+
+
 agents = sorted((GITHUB / "agents").glob("*.agent.md"))
 skills = sorted((GITHUB / "skills").glob("*/SKILL.md"))
 prompts = sorted((GITHUB / "prompts").glob("*.prompt.md"))
@@ -64,7 +75,8 @@ for f in agents:
 for f in skills:
     if frontmatter(f).get("name") != f.parent.name:
         errors.append(f"{rel(f)}: name différent du dossier")
-    sections(f, SECTIONS)
+    disabled = frontmatter(f).get("disable-model-invocation") == "true"
+    sections(f, PROMPT_SECTIONS if disabled else SECTIONS)
 for f in prompts:
     fm = frontmatter(f)
     if fm.get("agent") not in agent_names:
@@ -77,9 +89,7 @@ for f in agents:
         if target not in agent_names:
             errors.append(f"{rel(f)}: handoff vers agent inconnu '{target}'")
 
-for f in list(ROOT.rglob("*.md")):
-    if any(part in {"node_modules", ".git"} for part in f.parts):
-        continue
+for f in markdown_files():
     for target in LINK.findall(f.read_text(encoding="utf-8")):
         if re.match(r"(https?:|mailto:|#)", target):
             continue

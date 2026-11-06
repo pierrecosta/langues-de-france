@@ -41,7 +41,7 @@ src_init/
     README.md
 ```
 
-Les exemples de `src_init/exemples/` ne sont pas des seeds de territoire et ne doivent jamais être importés. Le [README provençal](./provencal/README.md) décrit l'extraction du dictionnaire depuis `src_dict.csv`.
+Les exemples de `src_init/exemples/` ne sont pas des seeds de territoire et ne doivent jamais être importés. L'extraction du dictionnaire provençal depuis `src_dict.csv` (fichier non versionné : provenance et droits à confirmer).
 
 ## Format cible
 

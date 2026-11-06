@@ -1,8 +1,8 @@
 # ADR-004 — Comptes, invitations et permissions
 
-- Statut : proposé
+- Statut : accepté (2026-10-26, PO délégué par le porteur ; révisable par le porteur)
 - Date : 2026-10-25
-- Décideurs : porteur du projet (validation à obtenir), architecte IA (proposition)
+- Décideurs : PO (délégation du porteur), architecte IA
 
 ## Objectif
 
@@ -41,13 +41,13 @@ Le site web du MVP possède des comptes, une progression et des contributions. L
 | Jetons JWT conservés dans le navigateur | API découplée et jetons utilisables par plusieurs clients. | Révocation et renouvellement plus complexes ; risque accru si les jetons sont exposés au JavaScript ou mal stockés. | Coût moyen à élevé, non justifié par le besoin web actuel. |
 | Fournisseur d'identité tiers | Réduit la gestion locale de certains aspects d'authentification. | Dépendance, coût potentiel, configuration et transfert de données vers un tiers. | Coût et dépendance externes ; non retenu sans besoin multi-fournisseur. |
 
-## Décision proposée
+## Décision
 
 Utiliser les sessions Django pour le web du MVP. L'application mobile native, son authentification par jetons et la synchronisation hors ligne sont post-MVP et ne doivent pas retarder le lancement web.
 
 Les utilisateurs anonymes peuvent jouer aux mini-jeux web, mais seule une session authentifiée peut enregistrer une progression. Si Android est développé après le MVP, l'identité associée à une synchronisation proviendra du jeton ; le client ne choisira pas le compte cible.
 
-Les messages sont transmis manuellement par le super-administrateur. Les jetons sont à usage unique, temporaires et non réutilisables ; leur durée d'expiration reste à fixer avant implémentation. Un lien ne doit pas contenir d'information personnelle et ne doit pas être journalisé.
+Les messages sont transmis manuellement par le super-administrateur. Les jetons sont à usage unique, temporaires et non réutilisables ; ils expirent après 48 h pour une invitation et après 1 h pour une réinitialisation de mot de passe. Un lien ne doit pas contenir d'information personnelle et ne doit pas être journalisé.
 
 ## Conséquences
 
@@ -59,7 +59,7 @@ Les messages sont transmis manuellement par le super-administrateur. Les jetons 
   - L'envoi manuel augmente le délai et la charge de support ; il n'y a pas de notification automatique.
   - Le super-administrateur devient un point de dépendance pour les invitations et réinitialisations.
   - L'expiration des liens et le processus de récupération doivent être testés et documentés.
-  - Les détails du cycle de vie des jetons Android seront à fixer avant une éventuelle implémentation mobile post-MVP.
+  - **Post-MVP, hors périmètre du MVP** : le cycle de vie des jetons Android (durée, renouvellement, révocation, stockage) sera défini dans un ADR dédié si l'application est engagée.
 - Sécurité, scalabilité, performance :
   - Appliquer le moindre privilège ; une session ordinaire ne donne jamais le droit de contribuer.
   - Les administrateurs territoriaux ne peuvent gérer que leur territoire ; le super-administrateur gère les rôles globaux.

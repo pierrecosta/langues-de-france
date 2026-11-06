@@ -42,5 +42,5 @@ Projet Android, tests, notes de build et de lancement.
 ## Voir aussi
 
 - Agent : [android-dev](../../agents/android-dev.agent.md)
-- Prompt : [create-android-game](../../prompts/create-android-game.prompt.md)
+- Prompt : [create-android-game](../create-android-game/SKILL.md)
 - Skills : [design-system-accessibility](../design-system-accessibility/SKILL.md), [minigame-templates](../minigame-templates/SKILL.md)

@@ -19,7 +19,7 @@ Créer `.github/skills/<nom>/SKILL.md` (`name` identique au dossier, mêmes sect
 
 ## Ajouter un prompt
 
-Créer `.github/prompts/<nom>.prompt.md` : frontmatter (`description`, `agent`), sections Objectif, Entrées, Consigne, Voir aussi.
+Créer `.github/skills/<nom>/SKILL.md` avec un frontmatter `description` ; il sert de point d'entrée `/nom` (`.github/prompts/` n'est plus utilisé).
 
 ## Finaliser
 

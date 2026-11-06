@@ -24,7 +24,7 @@ Import initial des seeds, source de vérité du contenu, mini-jeux web du MVP, s
 
 ## Décision
 
-1. Django est la source de vérité des contenus publiés. Les six seeds (`word`, `expression`, `food`, `lieux`, `recipe`, `activity`) sont importés une fois comme brouillons. Le format cible de chaque catégorie et les exemples sont documentés dans [src_init/readme.md](../../../src_init/readme.md). Le mapping des formats historiques reste à définir avant l'import. Une source externe n'est pas obligatoire pour une forme linguistique connue de mémoire ; les références disponibles sont enregistrées et aucune n'est inventée. Les droits des médias réutilisés restent à vérifier. Seuls les contenus validés éditorialement sont publiés et jouables.
+1. Django est la source de vérité des contenus publiés. Les six seeds (`word`, `expression`, `food`, `lieux`, `recipe`, `activity`) sont importés une fois comme brouillons. Le format cible de chaque catégorie et les exemples sont documentés dans [src_init/readme.md](../../../src_init/readme.md). Le mapping des formats historiques et l'identité stable des entrées sont fixés par l'[ADR-007](./ADR-007-identite-et-mapping-des-seeds.md). Une source externe n'est pas obligatoire pour une forme linguistique connue de mémoire ; les références disponibles sont enregistrées et aucune n'est inventée. Les droits des médias réutilisés restent à vérifier. Seuls les contenus validés éditorialement sont publiés et jouables.
 2. Le web obtient les contenus publiés via l'API Django ; les mini-jeux web responsives sont inclus dans le MVP provençal. Jouer dans un navigateur mobile ne requiert pas d'application native.
 3. Les règles, la difficulté et le barème des jeux web sont versionnés avec le code ; le back-office ne les modifie pas au MVP. Les règles sont conçues pour pouvoir être portées vers une application mobile après le MVP, sans livrer ce client au lancement.
 4. Une personne non connectée peut jouer sur le web, mais seul un compte connecté peut sauvegarder sa progression. L'authentification mobile native et ses jetons sont post-MVP et traités, le moment venu, dans l'ADR-004.
@@ -37,7 +37,7 @@ Import initial des seeds, source de vérité du contenu, mini-jeux web du MVP, s
    - Le compte du MVP est déterminé par la session web ; l'horodatage est produit par le serveur. Les champs inconnus sont refusés. Une identité par jeton natif ne concernera qu'une future application mobile.
 
 6. Chaque partie est conservée dans l'historique du compte et supprimée avec celui-ci.
-7. Après le MVP, une éventuelle application Android pourra mettre les résultats terminés hors ligne en attente. Les retries réutiliseront le même `submission_id`. À la déconnexion, la file en attente sera supprimée. Si le serveur refuse un résultat parce que sa version n'est plus actuelle, l'application supprimera ce résultat localement.
+7. **Post-MVP (aucune tâche au MVP)** : une éventuelle application Android pourra mettre les résultats terminés hors ligne en attente. Les retries réutiliseront le même `submission_id`. À la déconnexion, la file en attente sera supprimée. Si le serveur refuse un résultat parce que sa version n'est plus actuelle, l'application supprimera ce résultat localement.
 
 ## Conséquences
 
@@ -48,7 +48,7 @@ Import initial des seeds, source de vérité du contenu, mini-jeux web du MVP, s
 - Négatives et dette acceptée :
   - Post-MVP, un résultat mobile en attente pourra être perdu après une publication qui change la version du contenu ; cette perte devra être signalée et le résultat local périmé supprimé.
   - Les seeds nécessitent un mapping et une validation éditoriale avant publication.
-  - La durée de vie, le renouvellement, la révocation et le stockage des jetons Android restent à préciser avant l'implémentation, selon l'ADR-004.
+  - **Post-MVP, hors périmètre du MVP** : le cycle de vie des jetons Android sera défini dans un ADR dédié si l'application est engagée (voir ADR-004).
 - Sécurité, scalabilité, performance :
   - Le serveur valide la forme, les types, les bornes, le template et la version courante ; il ne garantit pas l'authenticité du score. Aucun dispositif antifraude n'est requis pour ces scores ludiques.
   - L'identité est dérivée de la session ou du jeton validé ; l'autorisation est contrôlée côté serveur.

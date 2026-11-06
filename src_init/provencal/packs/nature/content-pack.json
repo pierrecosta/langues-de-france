@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "title": "Nature en provençal — pack candidat",
+  "language": "fr",
+  "territory": "provencal",
+  "sources": [
+    {
+      "id": "src-1",
+      "label": "Seed vocabulaire provençal",
+      "origin": "src_init/provencal/word.json",
+      "license": "À confirmer"
+    },
+    {
+      "id": "src-2",
+      "label": "Seed expressions provençales",
+      "origin": "src_init/provencal/expression.json",
+      "license": "À confirmer"
+    }
+  ],
+  "objectives": [
+    { "id": "obj-1", "statement": "Associer quatre éléments du paysage (soleil, lune, mer, montagne) à leur nom provençal", "level": "debutant" },
+    { "id": "obj-2", "statement": "Identifier le nom provençal de cinq plantes du terroir (lavande, romarin, thym, piment, petits pois)", "level": "debutant" },
+    { "id": "obj-3", "statement": "Citer le sens de trois expressions provençales liées à la nature", "level": "intermediaire" }
+  ],
+  "facts": [
+    { "id": "fact-1", "objectiveId": "obj-1", "sourceId": "src-1", "statement": "« Soleil » se dit « Soleu » en provençal (graphie du seed, à valider).", "importance": "essentiel", "provenance": "brouillon" },
+    { "id": "fact-2", "objectiveId": "obj-1", "sourceId": "src-1", "statement": "« Lune » se dit « Luna » en provençal (graphie du seed, à valider).", "importance": "essentiel", "provenance": "brouillon" },
+    { "id": "fact-3", "objectiveId": "obj-1", "sourceId": "src-1", "statement": "« Mer » se dit « Mar » en provençal (graphie du seed, à valider).", "importance": "essentiel", "provenance": "brouillon" },
+    { "id": "fact-4", "objectiveId": "obj-1", "sourceId": "src-1", "statement": "« Montagne » se dit « Montanha » en provençal (graphie du seed, à valider).", "importance": "important", "provenance": "brouillon" },
+    { "id": "fact-5", "objectiveId": "obj-2", "sourceId": "src-1", "statement": "« Lavande » se dit « Lavanda » en provençal (graphie du seed, à valider).", "importance": "essentiel", "provenance": "brouillon" },
+    { "id": "fact-6", "objectiveId": "obj-2", "sourceId": "src-1", "statement": "« Romarin » se dit « Roumanieu » en provençal (graphie du seed, à valider).", "importance": "important", "provenance": "brouillon" },
+    { "id": "fact-7", "objectiveId": "obj-2", "sourceId": "src-1", "statement": "« Thym » se dit « Farigoulo » en provençal (graphie du seed, à valider).", "importance": "important", "provenance": "brouillon" },
+    { "id": "fact-8", "objectiveId": "obj-2", "sourceId": "src-1", "statement": "« Piment » se dit « Pimentoun » en provençal (graphie du seed, à valider).", "importance": "complementaire", "provenance": "brouillon" },
+    { "id": "fact-9", "objectiveId": "obj-2", "sourceId": "src-1", "statement": "« Petits pois » se dit « Peses Verds » en provençal (graphie du seed, à valider).", "importance": "complementaire", "provenance": "brouillon" },
+    { "id": "fact-10", "objectiveId": "obj-3", "sourceId": "src-2", "statement": "« Faire cantar li cigalo » signifie « Profiter de la vie » (sens du seed, à valider).", "importance": "important", "provenance": "brouillon" },
+    { "id": "fact-11", "objectiveId": "obj-3", "sourceId": "src-2", "statement": "« Quand lou soulèu tomba » signifie « À la tombée de la nuit » (sens du seed, à valider).", "importance": "important", "provenance": "brouillon" },
+    { "id": "fact-12", "objectiveId": "obj-3", "sourceId": "src-2", "statement": "« Entre dos aigo » signifie « Hésiter » (sens du seed, à valider).", "importance": "complementaire", "provenance": "brouillon" }
+  ],
+  "pairs": [
+    { "id": "pair-1", "factId": "fact-1", "left": "Soleil", "right": "Soleu" },
+    { "id": "pair-2", "factId": "fact-2", "left": "Lune", "right": "Luna" },
+    { "id": "pair-3", "factId": "fact-3", "left": "Mer", "right": "Mar" },
+    { "id": "pair-4", "factId": "fact-4", "left": "Montagne", "right": "Montanha" },
+    { "id": "pair-5", "factId": "fact-5", "left": "Lavande", "right": "Lavanda" },
+    { "id": "pair-6", "factId": "fact-6", "left": "Romarin", "right": "Roumanieu" },
+    { "id": "pair-7", "factId": "fact-7", "left": "Thym", "right": "Farigoulo" },
+    { "id": "pair-8", "factId": "fact-8", "left": "Piment", "right": "Pimentoun" },
+    { "id": "pair-9", "factId": "fact-9", "left": "Petits pois", "right": "Peses Verds" },
+    { "id": "pair-10", "factId": "fact-10", "left": "Faire cantar li cigalo", "right": "Profiter de la vie" },
+    { "id": "pair-11", "factId": "fact-11", "left": "Quand lou soulèu tomba", "right": "À la tombée de la nuit" },
+    { "id": "pair-12", "factId": "fact-12", "left": "Entre dos aigo", "right": "Hésiter" }
+  ],
+  "distractors": [
+    { "factId": "fact-1", "wrong": ["Luna", "Mar", "Montanha"] },
+    { "factId": "fact-2", "wrong": ["Soleu", "Mar", "Montanha"] },
+    { "factId": "fact-3", "wrong": ["Soleu", "Luna", "Montanha"] },
+    { "factId": "fact-4", "wrong": ["Soleu", "Luna", "Mar"] },
+    { "factId": "fact-5", "wrong": ["Roumanieu", "Farigoulo", "Pimentoun"] },
+    { "factId": "fact-6", "wrong": ["Lavanda", "Farigoulo", "Pimentoun"] },
+    { "factId": "fact-7", "wrong": ["Lavanda", "Roumanieu", "Peses Verds"] },
+    { "factId": "fact-8", "wrong": ["Lavanda", "Roumanieu", "Peses Verds"] },
+    { "factId": "fact-9", "wrong": ["Lavanda", "Farigoulo", "Pimentoun"] },
+    { "factId": "fact-10", "wrong": ["Hésiter", "À la tombée de la nuit", "Être têtu"] },
+    { "factId": "fact-11", "wrong": ["Profiter de la vie", "Hésiter", "Être têtu"] },
+    { "factId": "fact-12", "wrong": ["Profiter de la vie", "À la tombée de la nuit", "Être têtu"] }
+  ]
+}

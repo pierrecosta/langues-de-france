@@ -21,4 +21,4 @@ La documentation fait partie du livrable : une itération n'est pas terminée ta
 
 ## Critère de conformité
 
-`python scripts/lint_pack.py` ne signale aucune erreur ; liens valides ; pas de contenu dupliqué.
+`python scripts/lint_pack.py` ne signale aucune erreur ; liens valides ; pas de contenu dupliqué. Le lint ignore les dépendances, caches et fichiers générés (`.git`, `.next`, `.ruff_cache`, `.venv`, `__pycache__`, `node_modules`).

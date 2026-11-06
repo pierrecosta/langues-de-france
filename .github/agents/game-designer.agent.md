@@ -61,7 +61,7 @@ Transformer les contenus validés en mini-jeux ludiques pour le web responsive d
 
 ## Voir aussi
 
-- Prompt : [design-minigames](../prompts/design-minigames.prompt.md)
+- Prompt : [design-minigames](../skills/design-minigames/SKILL.md)
 - Skill : [minigame-templates](../skills/minigame-templates/SKILL.md)
 - Modèle : [spécification de jeu](../templates/game-spec-template.md)
 - [Workflow](../../docs/process/workflow.md) · [Relations](../../docs/process/relations.md)

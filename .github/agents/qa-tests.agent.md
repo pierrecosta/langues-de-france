@@ -51,5 +51,5 @@ Prouver, par des tests reproductibles, que chaque critère d'acceptation est rem
 
 ## Voir aussi
 
-- Prompt : [test-change](../prompts/test-change.prompt.md)
+- Prompt : [test-change](../skills/test-change/SKILL.md)
 - [Workflow](../../docs/process/workflow.md) · [Relations](../../docs/process/relations.md)

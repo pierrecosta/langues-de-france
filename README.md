@@ -2,7 +2,7 @@
 
 ## Objectif
 
-Cadre de travail avec GitHub Copilot : agents spécialisés, skills, prompts, standards et quatre serveurs MCP (context7, playwright, postgres, memory), chacun dans son conteneur. Le projet documenté lance le territoire provençal avec des mini-jeux web responsives au MVP ; six territoires sont visés à terme et l'application mobile native viendra ensuite.
+Cadre de travail avec GitHub Copilot : agents spécialisés, skills, prompts, standards et quatre serveurs MCP (context7, playwright, postgres, memory), chacun dans son conteneur. Le projet documenté lance le territoire provençal avec des mini-jeux web responsives au MVP ; six territoires sont visés à terme et le mobile viendra après le MVP, PWA puis Android natif ([trajectoire](docs/standards/android.md)).
 
 ## Principe
 
@@ -30,6 +30,8 @@ Créer chaque nouveau projet à partir d'une copie propre de ce dossier, puis ad
 | Agents, skills, prompts, templates | [.github/](.github/) |
 | Standards (règles : backend, frontend, accessibilité, documentation, Android, contenus) | [docs/standards/](docs/standards/) |
 | Catalogue, relations, workflow | [docs/process/](docs/process/) |
+| Backlog produit du MVP | [docs/product/mvp-backlog.md](docs/product/mvp-backlog.md) |
+| Standard de tests (qa-tests) | `docs/standards/testing.md` (page non encore créée) |
 | Guides | [docs/guides/](docs/guides/) |
 | Mémoire du projet (montée dans le MCP) | [memory/](memory/) |
 | Seeds initiaux par territoire | [src_init/readme.md](src_init/readme.md) |

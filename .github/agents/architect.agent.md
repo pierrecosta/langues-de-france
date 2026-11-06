@@ -66,7 +66,7 @@ Définir une solution maintenable, sécurisée et évolutive qui répond au back
 
 ## Voir aussi
 
-- Prompt : [design-architecture](../prompts/design-architecture.prompt.md)
+- Prompt : [design-architecture](../skills/design-architecture/SKILL.md)
 - Skills : [architecture-review](../skills/architecture-review/SKILL.md), [grill-me](../skills/grill-me/SKILL.md)
 - Modèle : [ADR](../templates/adr-template.md)
 - [Workflow](../../docs/process/workflow.md) · [Relations](../../docs/process/relations.md)

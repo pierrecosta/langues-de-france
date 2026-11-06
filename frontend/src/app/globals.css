@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* Tokens : grille de 4 px (échelle d'espacement Tailwind 1 = 4 px). */
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f3f4f6;
+  --color-fg: #111827;
+  --color-muted: #4b5563;
+  --color-border: #6b7280;
+  --color-primary: #1d4ed8;
+  --color-on-primary: #ffffff;
+  --color-focus: #1d4ed8;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #0f172a;
+  --color-surface: #1e293b;
+  --color-fg: #f1f5f9;
+  --color-muted: #cbd5e1;
+  --color-border: #94a3b8;
+  --color-primary: #93c5fd;
+  --color-on-primary: #0f172a;
+  --color-focus: #93c5fd;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-fg: var(--color-fg);
+  --color-muted: var(--color-muted);
+  --color-border: var(--color-border);
+  --color-primary: var(--color-primary);
+  --color-on-primary: var(--color-on-primary);
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));

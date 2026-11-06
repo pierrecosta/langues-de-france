@@ -10,7 +10,7 @@ Les règles des mini-jeux web du MVP sont versionnées avec le code et non modif
 
 ## Règles
 
-- JSON UTF-8, texte en français, identifiants (`id`, clés) en anglais, `kebab-case`.
+- JSON UTF-8, texte en français, clés en anglais. Les valeurs d'identifiant (`id`) sont en `kebab-case`. Les clés des seeds (`src_init/`) sont en `kebab-case` ; celles de `content-pack.json` sont en `camelCase` (`objectiveId`, `sourceId`).
 - Chaque fait est rattaché à un **objectif d'apprentissage** (`objectiveId`), formulé avec un verbe observable (« identifier », « citer », « associer »).
 - Une forme linguistique peut provenir de la mémoire ou de l'apprentissage d'un contributeur ; une source externe n'est pas obligatoire. Si une source est connue ou accessible, le contributeur l'ajoute dans `sources` et le fait la référence avec `sourceId`. Ne jamais inventer de référence et ne pas écarter une contribution uniquement faute de source externe.
 - L'absence de référence externe n'annule pas la confiance accordée au contributeur ni la validation éditoriale. Les droits des images, sons et autres médias réutilisés restent à vérifier.
@@ -25,11 +25,12 @@ Les règles des mini-jeux web du MVP sont versionnées avec le code et non modif
   "version": 1,
   "title": "Titre du pack",
   "language": "fr",
+  "territory": "provencal",
   "sources": [{ "id": "src-1", "label": "Nom", "origin": "URL ou fichier", "license": "Licence ou droits si connus" }],
   "objectives": [{ "id": "obj-1", "statement": "Identifier ...", "level": "debutant" }],
   "facts": [{
     "id": "fact-1", "objectiveId": "obj-1", "sourceId": "src-1",
-    "statement": "Fait validé", "importance": "essentiel",
+    "statement": "Fait à valider", "importance": "essentiel", "provenance": "brouillon",
     "image": { "file": "images/fact-1.svg", "alt": "Description" }
   }],
   "pairs": [{ "id": "pair-1", "factId": "fact-1", "left": "Terme", "right": "Définition" }],
@@ -38,6 +39,8 @@ Les règles des mini-jeux web du MVP sont versionnées avec le code et non modif
 ```
 
 `importance` : `essentiel`, `important` ou `complementaire`. `level` : `debutant`, `intermediaire` ou `avance`. `version` est la version positive du contenu ; la gestion de résultats en attente d'un client mobile ne s'appliquera qu'après le MVP.
+
+`language` est la langue des textes du pack (`fr`) ; `territory` identifie le territoire linguistique (`provencal`) et est obligatoire. `provenance` est obligatoire sur chaque fait : `contribution-memoire` (savoir du contributeur), `source-referencee` (`sourceId` renseigné) ou `brouillon` (issu d'un seed, à valider par le contributeur de référence avant publication).
 
 `sourceId` est facultatif lorsque le fait relève du savoir ou de la mémoire du contributeur. S'il est renseigné, il doit référencer une entrée existante dans `sources`. Une absence de `sourceId` ne bloque pas à elle seule la publication ; l'administrateur valide le contenu métier selon le workflow éditorial.
 

@@ -61,6 +61,6 @@ Implémenter des services Python fidèles à l'architecture validée et aux crit
 
 ## Voir aussi
 
-- Prompt : [create-python-webapp](../prompts/create-python-webapp.prompt.md)
+- Prompt : [create-python-webapp](../skills/create-python-webapp/SKILL.md)
 - Standard : [backend](../../docs/standards/backend.md)
 - [Workflow](../../docs/process/workflow.md) · [Relations](../../docs/process/relations.md)

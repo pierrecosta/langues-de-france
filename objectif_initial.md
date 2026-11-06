@@ -249,14 +249,12 @@ Exigences :
 - Responsive.
 - Boutons larges.
 
-# 12. SEO
+# 12. Partage et URL
 
-Une URL dédiée par contenu.
+Une URL dédiée par contenu, de forme `/{territoire}/{type}/{slug}`. Les pages sont partageables avec aperçu social, mais marquées `noindex` : aucune indexation par les moteurs de recherche au MVP ([ADR-002](docs/architecture/adr/ADR-002-frontend-react-ssr.md)).
 
-Exemples :
-- /territoires/breton/dictionnaire/demat
-- /territoires/corse/expressions/xxx
-- /territoires/reunion/recettes/cari-poulet
+Exemple MVP :
+- /provencal/dictionnaire/exemple
 
 # 13. Modèle de données simplifié
 

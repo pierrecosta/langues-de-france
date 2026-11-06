@@ -44,5 +44,5 @@ Build, lint, typage et tests passent ; chaque appel API gère chargement, erreur
 ## Voir aussi
 
 - Agent : [frontend-react](../../agents/frontend-react.agent.md)
-- Prompt : [create-react-feature](../../prompts/create-react-feature.prompt.md)
+- Prompt : [create-react-feature](../create-react-feature/SKILL.md)
 - Skill : [design-system-accessibility](../design-system-accessibility/SKILL.md)

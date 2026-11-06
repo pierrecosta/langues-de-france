@@ -56,6 +56,6 @@ Implémenter des interfaces web React fidèles aux stories, cohérentes avec le 
 
 ## Voir aussi
 
-- Prompt : [create-react-feature](../prompts/create-react-feature.prompt.md)
+- Prompt : [create-react-feature](../skills/create-react-feature/SKILL.md)
 - Skills : [next-react-expert](../skills/next-react-expert/SKILL.md), [design-system-accessibility](../skills/design-system-accessibility/SKILL.md)
 - [Workflow](../../docs/process/workflow.md) · [Relations](../../docs/process/relations.md)

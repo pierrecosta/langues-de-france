@@ -1,8 +1,8 @@
 # ADR-001 — Backend Django modulaire
 
-- Statut : proposé
+- Statut : accepté (2026-10-26, PO délégué par le porteur ; révisable par le porteur)
 - Date : 2026-10-25
-- Décideurs : porteur du projet (validation à obtenir), architecte IA (proposition)
+- Décideurs : PO (délégation du porteur), architecte IA
 
 ## Objectif
 
@@ -37,13 +37,16 @@ Le MVP comprend plusieurs modules de contenu, un back-office, des contributions 
 | FastAPI avec API et back-office séparés | API explicite et documentation OpenAPI intégrée. | Authentification, permissions éditoriales et back-office à assembler ou développer séparément. | Coût et maintenance plus élevés pour une petite équipe. |
 | Django avec pages et formulaires uniquement côté serveur | Déploiement plus simple et rendu HTML intégré. | S'écarte de la préférence React pour l'interface publique et peut mélanger plus fortement présentation et logique. | Coût initial faible ; réversibilité moyenne. |
 
-## Décision proposée
+## Décision
+
+Python 3.12, Django et Django REST Framework ; le schéma OpenAPI est généré par drf-spectacular.
+
 
 Utiliser Django comme monolithe modulaire : domaines `territories`, `dictionary`, `expressions`, `culture`, `tourism`, `gastronomy`, `contributions`, `learning` et `accounts`. Utiliser l'administration Django comme base du back-office, avec des permissions vérifiées par territoire et une API JSON pour le frontend.
 
 Ne pas séparer les modules en microservices. Le modèle porte un `territory_id` sur les contenus et les contributions ; l'ajout d'un territoire est une opération de données et de configuration, pas une copie de schéma ou de service.
 
-Django est la source de vérité des contenus publiés. Les fichiers historiques `src_init/provencal/*.json` sont importés une fois comme brouillons ; après cet import, toute correction s'effectue dans Django. Les entrées restent soumises à une validation éditoriale, mais une source externe n'est pas obligatoire pour une connaissance linguistique confiée par un contributeur. Toute référence connue ou accessible est enregistrée ; aucune référence n'est inventée. Les droits des médias réutilisés restent à vérifier. Le mapping des fichiers vers les modèles et les critères de validation sont à définir avant l'import.
+Django est la source de vérité des contenus publiés. Les fichiers historiques `src_init/provencal/*.json` sont importés une fois comme brouillons ; après cet import, toute correction s'effectue dans Django. Les entrées restent soumises à une validation éditoriale, mais une source externe n'est pas obligatoire pour une connaissance linguistique confiée par un contributeur. Toute référence connue ou accessible est enregistrée ; aucune référence n'est inventée. Les droits des médias réutilisés restent à vérifier. Le mapping des fichiers vers les modèles et l'identité stable des entrées sont fixés par l'[ADR-007](./ADR-007-identite-et-mapping-des-seeds.md). La validation éditoriale est faite par l'administrateur du territoire ; rien n'est publié sans elle.
 
 ## Conséquences
 

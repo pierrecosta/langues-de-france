@@ -1,8 +1,8 @@
 # ADR-003 — PostgreSQL partagé et recherche tolérante
 
-- Statut : proposé
+- Statut : accepté (2026-10-26, PO délégué par le porteur ; révisable par le porteur)
 - Date : 2026-10-25
-- Décideurs : porteur du projet (validation à obtenir), architecte IA (proposition)
+- Décideurs : PO (délégation du porteur), architecte IA
 
 ## Objectif
 
@@ -23,7 +23,7 @@ Modèle de données multi-territoires, variantes linguistiques, recherche franç
 1. Définir un schéma relationnel partagé avec un identifiant de territoire sur chaque contenu.
 2. Représenter les formes principales, variantes, sources et révisions dans des relations explicites.
 3. Indexer les champs de recherche et mesurer les requêtes exactes et approximatives.
-4. Activer l'extension `pg_trgm` si elle est disponible sur l'instance de production.
+4. Activer les extensions `unaccent` et `pg_trgm` (migration ; à vérifier sur l'instance de production).
 5. Conserver les médias dans un volume persistant sauvegardé avec la base.
 
 ## Contexte
@@ -38,9 +38,9 @@ Les données comportent des relations entre mots, variantes, catégories, source
 | Base séparée par territoire | Isolation forte entre territoires. | Migrations, sauvegardes, recherches globales et gestion des comptes plus complexes ; le besoin d'isolation physique n'est pas établi. | Coût d'exploitation élevé et réversibilité moyenne. |
 | PostgreSQL plus moteur de recherche dédié | Fonctions de recherche et classement plus riches à grande échelle. | Synchronisation et exploitation d'un composant supplémentaire, sans nécessité démontrée pour le volume prévu. | Coût et complexité élevés au MVP. |
 
-## Décision proposée
+## Décision
 
-Utiliser une base PostgreSQL unique avec un schéma partagé et des clés de territoire. Indexer les formes principales et variantes. Évaluer `pg_trgm` pour la tolérance aux fautes ; ne pas ajouter Elasticsearch ou un autre moteur externe au MVP.
+Utiliser une base PostgreSQL unique avec un schéma partagé et des clés de territoire. Indexer les formes principales et variantes. Recherche MVP simple : extensions `unaccent` et `pg_trgm` activées par migration (recherche insensible aux accents, tolérante aux fautes, dans les deux sens français ↔ provençal) ; ne pas ajouter Elasticsearch ou un autre moteur externe au MVP.
 
 Stocker les médias dans un volume persistant distinct des tables relationnelles, référencé par la base et inclus dans la sauvegarde hors serveur.
 

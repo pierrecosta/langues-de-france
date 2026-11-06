@@ -6,7 +6,7 @@ Décrire l'architecture proposée pour Découverte des Langues de France et rend
 
 ## Périmètre
 
-Application neuve : MVP provençal uniquement, avec une cible de six territoires au total à terme. Les mini-jeux web responsives sont inclus au MVP ; l'application mobile native vient après. Le statut de chaque décision est indiqué dans son ADR ; les paramètres ouverts doivent être tranchés avant l'implémentation concernée. Les modèles sont dans [.github/templates](../../.github/templates/).
+Application neuve : MVP provençal uniquement, avec une cible de six territoires au total à terme. Les mini-jeux web responsives sont inclus au MVP ; l'application mobile native vient après. Le statut de chaque décision est indiqué dans son ADR. Les modèles sont dans [.github/templates](../../.github/templates/).
 
 ## Prérequis
 
@@ -16,7 +16,7 @@ Application neuve : MVP provençal uniquement, avec une cible de six territoires
 ## Étapes
 
 1. Examiner le schéma et les ADR.
-2. Distinguer les décisions acceptées des paramètres qui restent à fixer.
+2. Vérifier que tout changement structurant passe par un ADR.
 3. Synchroniser les changements d'ADR et la mémoire avant l'implémentation.
 
 ## Schéma proposé
@@ -47,6 +47,9 @@ Django est la source de vérité des contenus ; les seeds historiques sont impor
 - [ADR-004 — Comptes, invitations et permissions](./adr/ADR-004-authentification.md) : rôles, liens manuels, données personnelles.
 - [ADR-005 — Déploiement Docker et exploitation](./adr/ADR-005-deploiement.md) : local, OVH, sauvegardes et seuils de migration.
 - [ADR-006 — Contenus canoniques et mini-jeux multiplateformes](./adr/ADR-006-contenus-et-jeux-multiplateformes.md) : import, jeux web du MVP et portage mobile ultérieur.
+- [ADR-007 — Identité stable et mapping des seeds](./adr/ADR-007-identite-et-mapping-des-seeds.md) : slugs, import idempotent, brouillons.
+
+Statuts au 2026-10-26 : ADR-001 à ADR-007 acceptés (PO délégué par le porteur ; révisables par le porteur).
 
 Chaque décision structurante suit le [modèle ADR](../../.github/templates/adr-template.md) et reste à valider par le porteur du projet.
 
@@ -55,9 +58,9 @@ Chaque décision structurante suit le [modèle ADR](../../.github/templates/adr-
 | Risque | Réponse proposée |
 |--------|------------------|
 | Une permission territoriale mal appliquée expose ou altère le contenu d'un autre territoire. | Vérifier le territoire côté serveur sur chaque opération ; tester les accès inter-territoires avec des comptes distincts. |
-| Les invitations et réinitialisations sont transmises manuellement. | Liens à usage unique, expiration courte à définir, journalisation sans enregistrer le secret du lien. |
-| Un jeton Android ou une file de résultats locale est exposé sur un appareil partagé. | Stockage sécurisé des jetons, identité déterminée côté serveur et suppression de la file à la déconnexion. |
-| Un résultat Android en attente devient périmé après publication d'un contenu. | N'accepter que la version courante ; informer l'utilisateur et supprimer le résultat périmé de la file locale. |
+| Les invitations et réinitialisations sont transmises manuellement. | Liens à usage unique, expiration 48 h (invitation) ou 1 h (réinitialisation), journalisation sans enregistrer le secret du lien. |
+| (Post-MVP) Un jeton Android ou une file de résultats locale est exposé sur un appareil partagé. | Stockage sécurisé des jetons, identité déterminée côté serveur et suppression de la file à la déconnexion. |
+| (Post-MVP) Un résultat Android en attente devient périmé après publication d'un contenu. | N'accepter que la version courante ; informer l'utilisateur et supprimer le résultat périmé de la file locale. |
 | Une entrée historique incomplète est publiée ou jouée. | Importer les seeds comme brouillons ; publier seulement après enrichissement et validation éditoriale. |
 | L'auto-hébergement fait peser les mises à jour et incidents sur une équipe réduite. | Images versionnées, vérifications de santé, sauvegardes quotidiennes hors serveur et test mensuel de restauration. |
 | La recherche approximative ne couvre pas toutes les conventions d'écriture locales. | Conserver les variantes attestées, établir des jeux de tests par territoire et réévaluer si les mesures échouent. |
@@ -65,6 +68,6 @@ Chaque décision structurante suit le [modèle ADR](../../.github/templates/adr-
 
 ## Vérification
 
-Avant implémentation, vérifier les paramètres encore ouverts dans les ADR, notamment le cycle de vie des jetons Android, le mapping des seeds et les décisions ADR encore proposées. En production, vérifier les métadonnées de partage et `noindex`, l'invalidation des caches à la publication, les accès territoriaux, les recherches dans les deux sens, les sauvegardes et la restauration mensuelle.
+**À préciser (post-MVP uniquement)** : cycle de vie des jetons Android (durée, renouvellement, révocation, stockage), dans un ADR dédié si l'application est engagée. Aucun paramètre ouvert ne bloque le MVP. En production, vérifier les métadonnées de partage et `noindex`, l'invalidation des caches à la publication, les accès territoriaux, les recherches dans les deux sens, les sauvegardes et la restauration mensuelle.
 
 Chaque décision structurante du projet possède un ADR référencé ici.

@@ -58,7 +58,7 @@ Convertir un besoin métier, souvent flou, en backlog priorisé dont chaque él�
 
 ## Voir aussi
 
-- Prompt : [define-project](../prompts/define-project.prompt.md)
+- Prompt : [define-project](../skills/define-project/SKILL.md)
 - Skill : [grill-me](../skills/grill-me/SKILL.md)
 - Modèle : [user story](../templates/user-story-template.md)
 - [Workflow](../../docs/process/workflow.md) · [Relations](../../docs/process/relations.md)

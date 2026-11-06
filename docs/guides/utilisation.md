@@ -14,7 +14,7 @@ Ce guide explique l'adoption du pack dans un nouveau projet et l'utilisation des
 |---------|------|----|--------------|
 | Agent | **Qui** : un rôle avec ses outils et ses passages de relais | `.github/agents/` | Choix dans la liste du chat |
 | Skill | **Comment** : une procédure détaillée réutilisable | `.github/skills/` | Automatiquement, ou en citant son nom |
-| Prompt | **Point d'entrée** : pose les questions et lance l'agent | `.github/prompts/` | `/nom` dans le chat |
+| Prompt | **Point d'entrée** : pose les questions et lance l'agent | `.github/skills/<nom>/SKILL.md` (anciens prompts migrés en skills) | `/nom` dans le chat |
 | Standard | **Règles** : source unique des exigences | `docs/standards/` | Cité par agents et skills |
 | Modèle | **Forme** d'un livrable | `.github/templates/` | Rempli par l'agent |
 | MCP | **Outils externes** : mémoire, docs à jour, navigateur, base | `.vscode/mcp.json` | Appelés par les agents |
@@ -107,7 +107,7 @@ Les skills se chargent quand la demande correspond à leur description. Pour en 
 4. `/create-react-feature` → mini-jeux dans le site web responsive, jouables aussi depuis le navigateur mobile.
 5. `/test-change`, `/review-change`, `/document-change`.
 
-L'application mobile native n'est pas nécessaire au MVP. Après le MVP, `/create-android-game` pourra porter les règles vers Android et consommer un export versionné. Règles : [contenus](../standards/game-content.md), [frontend](../standards/frontend.md) et, pour la phase mobile ultérieure, [Android](../standards/android.md).
+L'application mobile native n'est pas nécessaire au MVP. Après le MVP : PWA d'abord, puis Android natif (post-MVP, [trajectoire](../standards/android.md)). `/create-android-game` pourra alors porter les règles vers Android et consommer un export versionné. Règles : [contenus](../standards/game-content.md), [frontend](../standards/frontend.md) et [Android](../standards/android.md).
 
 ## Règle d'or : la documentation suit chaque itération
 

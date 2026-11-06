@@ -18,27 +18,26 @@ Choisir et paramétrer, pour chaque objectif d'apprentissage, le bon template de
 
 Pack de contenu, brief pédagogique, et le catalogue ci-dessous (référence unique des ids de jeu).
 
-| Id | Jeu | Règle | Données utilisées | Idéal pour |
-|----|-----|-------|-------------------|------------|
-| `quiz` | Quiz | Question ; réponse choisie parmi des lettres mélangées ou saisie ; un indice possible | `facts` | Rappel |
-| `qcm` | QCM | 1 bonne réponse parmi 4 (le fait + 3 `wrong`) | `facts`, `distractors` | Reconnaissance |
-| `true-false` | Vrai / Faux | Affirmation vraie ou rendue fausse avec un distracteur ; deux gros boutons | `facts`, `distractors` | Corriger les idées reçues |
-| `matching` | Association | Relier 4 à 6 paires par appuis successifs | `pairs` | Vocabulaire, définitions |
-| `word-find` | Trouve le mot | Deviner un mot depuis sa définition et ses lettres | `pairs` | Terminologie |
-| `speed-challenge` | Défi chronométré (type Kahoot) | Série de QCM courts, 15 s par question, points selon la rapidité, classement local | `facts`, `distractors` | Révision rapide |
+| Id | Jeu | Règle | Données utilisées | Idéal pour | Statut MVP |
+|----|-----|-------|-------------------|------------|------------|
+| `qcm` | QCM | 1 bonne réponse parmi 4 (le fait + 3 `wrong`) ; 5 questions, sans chronomètre | `facts`, `distractors` | Reconnaissance | Lot 1 (L2) |
+| `matching` | Association | 1 partie = 1 tableau de 5 paires à relier par appuis successifs (4 à 6 selon la matière disponible) | `pairs` | Vocabulaire, définitions | Lot 1 (L2) |
+| `true-false` | Vrai / Faux | Affirmation vraie ou rendue fausse avec un distracteur ; deux gros boutons ; 5 questions | `facts`, `distractors` | Corriger les idées reçues | Lot 2, après qcm et matching |
+| `quiz` | Quiz | Question ; réponse parmi des lettres mélangées ou saisie ; un indice possible | `facts` | Rappel | Post-MVP (non planifié) |
+| `word-find` | Trouve le mot | Deviner un mot depuis sa définition et ses lettres | `pairs` | Terminologie | Post-MVP (non planifié) |
 
-Le défi chronométré se joue en solo ou sur un seul appareil (un ou plusieurs joueurs en alternance) ; le multi-appareil et le classement compétitif sont hors périmètre.
+Le défi chronométré (`speed-challenge`) est retiré du catalogue MVP (décision PO du 2026-10-26, Won't) : pas de chronomètre, pas de points de rapidité, pas de classement. Le « quiz final de parcours » (5 questions, 4/5 requis) est une partie de `qcm` avec seuil de réussite ; il n'est pas un template distinct.
 
 ## Procédure
 
 1. **Associer** chaque objectif à un template selon « Idéal pour » ; varier les templates sur l'ensemble d'un pack.
 2. **Vérifier la matière** : un jeu exige assez de données (ex. `matching` ≥ 4 paires, `qcm` ≥ 1 fait avec 3 distracteurs). Sinon renvoyer au [content-transformer](../../agents/content-transformer.agent.md).
-3. **Régler la partie** : 5 à 10 questions ; difficulté selon le niveau de l'objectif (débutant : indices et 2 essais ; avancé : un essai, pas d'indice) ; ordre aléatoire à graine déterministe pour les tests.
-4. **Définir le score** : points par bonne réponse, bonus de série ou de rapidité (uniquement pour `speed-challenge`), seuils d'étoiles. Aucune pénalité négative.
+3. **Régler la partie** : 5 questions par partie au MVP (2 à 3 min, sans chronomètre) ; pour `matching`, une partie = un tableau de 5 paires (4 ou 6 si la matière l'impose, jamais de second tableau) ; difficulté selon le niveau de l'objectif (débutant : indices et 2 essais ; avancé : un essai, pas d'indice) ; ordre aléatoire à graine déterministe pour les tests.
+4. **Définir le score** : 1 point par bonne réponse ou paire correcte, étoiles à 60 % / 80 % / 100 % du maximum (barème provisoire, à valider par le porteur avant production). Aucune pénalité négative, aucun bonus de rapidité.
 5. **Définir les retours ludiques** : animation courte, vibration légère, messages encourageants, explication du fait après la réponse ; jamais punitif.
 6. **Prévoir les écrans** de chaque jeu : intro (règle en une phrase), partie, résultat (score, étoiles, rejouer, retour).
 7. **Vérifier la facilité** : règle comprise en moins de 10 secondes ; une action principale par écran ; interactions adaptées au tactile pour le navigateur mobile.
-8. **Écrire les critères d'acceptation** (Étant donné / Quand / Alors) dans la [spécification de jeu](../../templates/game-spec-template.md) pour le web MVP. Ajouter les critères Android, la rotation, le mode hors ligne et la synchronisation uniquement lors du portage mobile post-MVP.
+8. **Écrire les critères d'acceptation** (Étant donné / Quand / Alors) dans la [spécification de jeu](../../templates/game-spec-template.md) pour le web MVP. Les critères Android, la rotation, le mode hors ligne et la synchronisation sont **post-MVP** (Won't) : ne pas les écrire avant la phase mobile.
 
 ## Livrables
 
@@ -52,5 +51,5 @@ Spécification de jeu avec tableau de couverture des faits essentiels.
 ## Voir aussi
 
 - Agent : [game-designer](../../agents/game-designer.agent.md)
-- Prompt : [design-minigames](../../prompts/design-minigames.prompt.md)
-- Skills : [content-synthesis](../content-synthesis/SKILL.md), [android-compose](../android-compose/SKILL.md)
+- Prompt : [design-minigames](../design-minigames/SKILL.md)
+- Skills : [content-synthesis](../content-synthesis/SKILL.md) ; post-MVP : [android-compose](../android-compose/SKILL.md)

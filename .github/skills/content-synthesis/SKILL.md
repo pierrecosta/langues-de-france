@@ -49,5 +49,5 @@ Brief pédagogique, pack candidat `content-pack.json`, images, liste des contrad
 ## Voir aussi
 
 - Agent : [content-transformer](../../agents/content-transformer.agent.md)
-- Prompt : [transform-content](../../prompts/transform-content.prompt.md)
+- Skill d'entrée : [transform-content](../transform-content/SKILL.md)
 - Skills : [grill-me](../grill-me/SKILL.md), [minigame-templates](../minigame-templates/SKILL.md)

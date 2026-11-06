@@ -1,8 +1,8 @@
 # ADR-005 — Déploiement Docker et exploitation
 
-- Statut : proposé
+- Statut : accepté (2026-10-26, PO délégué par le porteur ; révisable par le porteur)
 - Date : 2026-10-25
-- Décideurs : porteur du projet (validation à obtenir), architecte IA (proposition)
+- Décideurs : PO (délégation du porteur), architecte IA
 
 ## Objectif
 
@@ -42,7 +42,7 @@ Le projet démarre à faible volume, sur un seul territoire, avec un développem
 | Services managés dès le départ | Réduit l'administration du système et peut fournir des sauvegardes/haute disponibilité intégrées. | Coût et dépendance plus élevés ; moins adapté à la préférence d'auto-exploitation initiale. | Coût moyen à élevé. |
 | Kubernetes au lancement | Fournit des primitives d'orchestration et de déploiement avancées. | Apprentissage et exploitation disproportionnés pour le trafic et l'équipe initiaux. | Coût opérationnel élevé ; risque de sur-ingénierie. |
 
-## Décision proposée
+## Décision
 
 Utiliser Docker Compose sur un serveur OVH pour le premier déploiement, avec des conteneurs séparés pour Next.js, Django, PostgreSQL et le reverse proxy. Garder les services applicatifs aussi stateless que possible ; ne pas introduire Kubernetes, cache distribué ou file de tâches au MVP.
 

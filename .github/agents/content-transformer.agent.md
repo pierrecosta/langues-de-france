@@ -57,7 +57,7 @@ Transformer des connaissances et des références disponibles en un **pack candi
 
 ## Voir aussi
 
-- Prompt : [transform-content](../prompts/transform-content.prompt.md)
+- Skill d'entrée (`/transform-content`) : [transform-content](../skills/transform-content/SKILL.md)
 - Skill : [content-synthesis](../skills/content-synthesis/SKILL.md)
 - Modèle : [brief pédagogique](../templates/learning-brief-template.md)
 - [Workflow](../../docs/process/workflow.md) · [Relations](../../docs/process/relations.md)

@@ -45,6 +45,6 @@ Garder la documentation exacte, sans doublon et utilisable par quelqu'un qui dé
 
 ## Voir aussi
 
-- Prompt : [document-change](../prompts/document-change.prompt.md)
+- Prompt : [document-change](../skills/document-change/SKILL.md)
 - Skill : [documentation-excellence](../skills/documentation-excellence/SKILL.md)
 - [Workflow](../../docs/process/workflow.md) · [Relations](../../docs/process/relations.md)

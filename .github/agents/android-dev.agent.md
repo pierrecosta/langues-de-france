@@ -57,6 +57,6 @@ Après le MVP web, livrer une application Android hors ligne, simple et ludique,
 
 ## Voir aussi
 
-- Prompt : [create-android-game](../prompts/create-android-game.prompt.md)
+- Prompt : [create-android-game](../skills/create-android-game/SKILL.md)
 - Skills : [android-compose](../skills/android-compose/SKILL.md), [design-system-accessibility](../skills/design-system-accessibility/SKILL.md)
 - [Workflow](../../docs/process/workflow.md) · [Relations](../../docs/process/relations.md)

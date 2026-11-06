@@ -18,11 +18,11 @@ Public, promesse, durée d'une partie, ton (ludique, encourageant) et version de
 
 Parcours, actions principales, états de chargement/erreur/hors connexion, critères d'acceptation.
 
-## Portage mobile natif après le MVP
+## Portage mobile natif — POST-MVP (Won't)
 
-Ne remplir cette section que lors de la phase mobile post-MVP.
+Ne pas remplir au MVP. À compléter uniquement lors de la phase mobile (PWA puis Android).
 
-### Android
+### Android — post-MVP
 
 Parcours, actions principales, usage hors ligne, synchronisation éventuelle, critères d'acceptation.
 
@@ -41,7 +41,7 @@ Une section par jeu, identifiant issu du [catalogue des templates](../skills/min
 
 ## Contraintes techniques
 
-Renvoi au [standard Android](../../docs/standards/android.md), au [standard frontend](../../docs/standards/frontend.md) et au [standard des contenus](../../docs/standards/game-content.md) ; écarts éventuels justifiés.
+Renvoi au [standard Android](../../docs/standards/android.md) (post-MVP, hors lancement), au [standard frontend](../../docs/standards/frontend.md) et au [standard des contenus](../../docs/standards/game-content.md) ; écarts éventuels justifiés.
 
 ## Couverture
 
