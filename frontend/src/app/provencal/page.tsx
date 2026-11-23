@@ -21,6 +21,21 @@ export default function ProvencalHome() {
       >
         Parcourir les mots
       </Link>
+      <p>
+        <Link href="/provencal/quiz" className="underline">
+          Essayer le quiz de démonstration
+        </Link>
+      </p>
+      <p>
+        <Link href="/carte" className="underline">
+          Voir la carte des territoires
+        </Link>
+      </p>
+      <p>
+        <Link href="/provencal/evenement" className="underline">
+          Découvrir l’agenda de démonstration
+        </Link>
+      </p>
     </div>
   );
 }

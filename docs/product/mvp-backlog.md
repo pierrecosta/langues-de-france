@@ -85,6 +85,14 @@ Les critères ci-dessous décrivent la cible produit. « Présent dans le code �
 
 ### MVP2 — QCM anonyme sur les mots publiés
 
+**Prototype local uniquement :** un quiz de démonstration utilise les mots du
+jeu de données frontend, sans API ni garantie de validation éditoriale. Il ne
+constitue pas encore le MVP 2 sur mots publiés. Le parcours propose une
+question français → provençal, une correction immédiate et un score
+temporaire ; aucune partie n'est sauvegardée. La source publiée, les
+retraits et la validation linguistique des distracteurs restent à réaliser
+avant publication.
+
 **Valeur / priorité : Must après MVP1.** Propose une première activité pédagogique à partir du dictionnaire publié, sans introduire de comptes ni de conservation de scores.
 
 **Inclus :** QCM en session anonyme, contenu tiré de mots publiés.
@@ -128,6 +136,10 @@ Les critères ci-dessous décrivent la cible produit. « Présent dans le code �
 
 **Sortie observable MVP3 :** l'ensemble des usages des MVP1 et MVP2 reste disponible ; la carte propose seulement le territoire provençal.
 
+**Prototype local :** la page `/carte` représente la métropole et les territoires ultramarins en encarts à des échelles différentes. Un repère situé à Marseille et un lien textuel ouvrent l'espace provençal, sans dessiner de frontière linguistique ; les autres territoires ne sont pas sélectionnables. Les contours sont embarqués avec l'application : ils ne nécessitent ni service cartographique ni téléchargement au moment de la consultation. Le prototype ne constitue pas une validation éditoriale ou juridique de la carte pour publication.
+
+**Source et reproduction :** contours régionaux généralisés, millésime 2026, du jeu [Contours administratifs de data.gouv.fr](https://www.data.gouv.fr/datasets/contours-administratifs), sous [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/). La source combine notamment Admin Express de l'IGN, © les contributeurs OpenStreetMap et, pour la Polynésie française et la Nouvelle-Calédonie, des jeux territoriaux identifiés dans la fiche source. Fichiers utilisés : [regions-1000m.geojson](https://contours-administratifs.s3.rbx.io.cloud.ovh.net/2026/geojson/regions-1000m.geojson) (SHA-256 : `2a48c8a4a38532053f07045e6d5a8ba0b1b6ff20d9d883f155ba9ea2abdbe685`) et [regions-100m.geojson](https://contours-administratifs.s3.rbx.io.cloud.ovh.net/2026/geojson/regions-100m.geojson) (SHA-256 : `f85fe769841120140cdf0dc8fb9536926ad884157fd8e26f74aec58b18994ba4`), ce dernier pour Saint-Barthélemy, Saint-Martin et Clipperton. Après téléchargement et vérification des fichiers, régénérer avec `python scripts/generate_map_data.py chemin/regions-1000m.geojson chemin/regions-100m.geojson frontend/src/lib/map-data.json`. Les contours et les échelles sont simplifiés ; vérifier la couverture, les droits et la représentation avant publication.
+
 ### MVP4 — Agenda public d'événements
 
 **Valeur / priorité : Must après MVP3.** Permet au public de consulter les rendez-vous publiés et au porteur de tenir l'agenda à jour.
@@ -159,6 +171,8 @@ Les critères ci-dessous décrivent la cible produit. « Présent dans le code �
 - **Dépendances :** US-M4-01 et contrat des données d'événement.
 
 **Sortie observable MVP4 :** les MVP précédents restent disponibles ; le public consulte l'agenda et le porteur administre les événements, sans inscription ni paiement.
+
+**Prototype local :** `/provencal/evenement` présente trois événements fictifs, avec fiches et dates calculées à 7, 14 et 21 jours à partir de la date UTC courante ; ces dates changent chaque jour. Les titres, descriptions et lieux ne correspondent à aucune annonce réelle. Aucune inscription ni paiement ne sont proposés. Les données sont embarquées et il n'y a pas d'administration, d'API ou de persistance : les règles de publication, de retrait et de masquage des événements passés restent à construire et à tester avant livraison.
 
 ## Après ces quatre MVP — besoins conservés, non supprimés
 
@@ -204,16 +218,16 @@ Les sujets suivants proviennent de la vision finale, du cahier des charges et du
 | Tranche | Présent / repéré | Livré ? |
 |---|---|---|
 | MVP1 | Modèle Word, administration, API publique filtrant les brouillons, pages liste/fiche et recherche côté interface repérés ; tests de modèle/API présents dans l'arbre. | **Non vérifié** : tests non exécutés ici, données réellement publiées, scénarios complets, déploiement et gates communs non contrôlés. |
-| MVP2 | Une spécification de mini-jeux existe dans `docs/product/game-spec-mvp.md`. Aucune expérience QCM et aucun backend de jeu n'ont été repérés dans le code applicatif parcouru. | **Non vérifié / non déclaré livré**. La spécification actuelle décrit notamment des comptes et des envois de résultats, en contradiction avec la décision de ce MVP. |
-| MVP3 | Pas de carte interactive repérée dans les pages applicatives parcourues. | **Non vérifié / non déclaré livré**. |
-| MVP4 | Modèles ou pages d'agenda d'événements non repérés dans les applications parcourues. L'administration générique de contenus existants ne prouve pas l'administration d'événements. | **Non vérifié / non déclaré livré**. |
+| MVP2 | Un prototype de QCM anonyme utilise des données locales de démonstration ; une spécification historique de mini-jeux existe dans `docs/product/game-spec-mvp.md`. | **Non déclaré livré** : le prototype n'utilise pas les mots publiés de l'API ; validation linguistique, retraits et critères de publication restent à traiter. |
+| MVP3 | Prototype de carte locale avec accès provençal et encarts ultramarins ; contours administratifs attribués. | **Non déclaré livré** : validation de la représentation, des droits et des prérequis communs encore nécessaire. |
+| MVP4 | Prototype local d'agenda et de fiches sur des événements fictifs ; aucune administration ni donnée réelle. | **Non déclaré livré** : administration, publication, retrait, filtrage des événements passés et prérequis communs restent à réaliser et vérifier. |
 
 La présence d'une fonctionnalité dans le dépôt, d'un test ou d'une spécification ne prouve ni que la recette passe ni qu'elle est publiée.
 
 ## Incohérences à traiter dans les autres documents / le produit
 
-- La [spécification de jeu historique](./game-spec-mvp.md) documente plusieurs jeux et la progression future ; adapter ses règles détaillées au QCM anonyme et au choix de distracteurs avant implémentation.
+- La [spécification de jeu historique](./game-spec-mvp.md) documente plusieurs jeux et la progression future ; adapter ses règles détaillées au QCM anonyme et au choix de distracteurs avant publication.
 - Le code web contient des chemins d'expressions et la page d'accueil annonce expressions/culture. Ce code ne change pas la décision MVP1 « mots uniquement » et n'autorise pas à déclarer ces éléments livrés dans MVP1.
 - La recherche côté web envoie `q` à l'API ; le chemin API générique observé ne montre pas de filtrage par `q`. De plus, le client prévoit un repli sur une fixture locale lors d'une indisponibilité, ce qui peut confondre panne et absence de contenu publié. À vérifier/corriger dans les composants et tests, hors de ce changement documentaire.
 - La revue sécurité ciblée signale aussi des points à vérifier avant ouverture : transitions de statut via le formulaire d'administration pouvant contourner le motif de retrait ; cache de 60 secondes et repli local susceptibles de réexposer un mot retiré ; configuration effective de HTTPS, cookies et limitation de débit ; pages légales. Ces constats sont issus d'une lecture, pas d'un audit de production ; prévoir corrections et tests avant de déclarer les critères satisfaits.
-- Les tests et procédures de publication doivent être adaptés aux critères et prérequis ci-dessus. Les précisions de séquencement ont été ajoutées aux ADR concernés ; aucun code applicatif n'est modifié ici.
+- Les tests et procédures de publication doivent être adaptés aux critères et prérequis ci-dessus. Les précisions de séquencement ont été ajoutées aux ADR concernés.

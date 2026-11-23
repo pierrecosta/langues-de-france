@@ -9,7 +9,7 @@ export function SiteHeader() {
           Langues de France
         </Link>
         <nav aria-label="Navigation principale">
-          <ul className="flex items-center gap-4">
+          <ul className="flex flex-wrap items-center gap-4">
             <li>
               <Link href="/provencal" className="underline-offset-4 hover:underline">
                 Accueil provençal
@@ -18,6 +18,21 @@ export function SiteHeader() {
             <li>
               <Link href="/provencal/mot" className="underline-offset-4 hover:underline">
                 Mots
+              </Link>
+            </li>
+            <li>
+              <Link href="/provencal/quiz" className="underline-offset-4 hover:underline">
+                Quiz
+              </Link>
+            </li>
+            <li>
+              <Link href="/carte" className="underline-offset-4 hover:underline">
+                Carte
+              </Link>
+            </li>
+            <li>
+              <Link href="/provencal/evenement" className="underline-offset-4 hover:underline">
+                Agenda
               </Link>
             </li>
             <li>
