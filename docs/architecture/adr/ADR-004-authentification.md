@@ -4,6 +4,14 @@
 - Date : 2026-10-25
 - Décideurs : PO (délégation du porteur), architecte IA
 
+> **Précision de séquencement :** les comptes visiteurs, l'inscription et la
+> progression décrits ci-dessous ne sont pas des prérequis des quatre MVP
+> définis dans le [backlog](../../product/mvp-backlog.md). Le QCM du MVP 2
+> est anonyme et ne sauvegarde aucun score. L'accès à l'administration reste
+> protégé dès sa première ouverture. Les choix relatifs aux comptes
+> visiteurs restent applicables lorsqu'ils seront engagés ; cette précision
+> ne modifie pas à elle seule le choix des sessions Django.
+
 ## Objectif
 
 Protéger les comptes, les contributions et les fonctions d'administration tout en respectant le modèle d'inscription retenu.

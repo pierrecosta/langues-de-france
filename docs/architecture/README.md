@@ -13,6 +13,22 @@ Application neuve : MVP provençal uniquement, avec une cible de six territoires
 - Lire le cahier des charges V2 et les décisions produit enregistrées dans la mémoire du projet.
 - Tenir compte des choix du porteur : Python/Django, React/Next.js, PostgreSQL, Docker, exploitation auto-gérée et domaine `le-provencal.ovh`.
 
+## Séquençage produit révisé
+
+Le [backlog](../product/mvp-backlog.md) remplace l'ancien périmètre de
+première livraison par quatre MVP cumulatifs et publiables séparément. Le
+dictionnaire précède le QCM anonyme, puis la carte de France à sélection
+provençale et l'agenda public. Les paragraphes et ADR ci-dessous conservent
+les choix techniques et la cible complète ; les comptes visiteurs, la
+progression, les autres jeux et les six imports ne sont pas requis au
+premier MVP. Le QCM initial ne sauvegarde aucun score.
+
+La carte et l'agenda n'imposent pas encore de choix de technologie, de
+prestataire cartographique ni de modèle de données définitif. Un ADR
+supplémentaire sera proposé si une décision structurante devient nécessaire,
+avec alternatives et validation du porteur ; ne pas interpréter ce
+séquençage comme une décision technique déjà acceptée.
+
 ## Étapes
 
 1. Examiner le schéma et les ADR.

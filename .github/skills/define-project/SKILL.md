@@ -16,12 +16,13 @@ Produire la fiche de cadrage et le backlog priorisé d'un projet.
 
 ## Consigne
 
-1. Lis la mémoire du projet et signale ce qui existe déjà.
-2. Reformule le besoin en une phrase et pose-moi les questions manquantes, une à la fois.
-3. Produis dans cet ordre : objectif mesurable, valeur métier, personas, périmètre inclus et exclu, user stories avec critères d'acceptation, priorisation MoSCoW, risques et dépendances, roadmap par jalons.
-4. Termine en proposant le challenge grill-me, puis enregistre le résultat dans la mémoire.
+1. Consulte les décisions pertinentes dans la mémoire et les documents actuels ; signale toute indisponibilité ou contradiction.
+2. Reformule l'objectif final et demande une à une les seules précisions nécessaires à l'incrément.
+3. Propose un premier résultat utilisable, son périmètre, ses critères observables, ses dépendances et la prochaine extension. Conserve explicitement l'objectif final et les décisions déjà prises.
+4. Complète le backlog, les personas ou la priorisation seulement si la demande ou le périmètre le justifie. Soumets tout arbitrage produit important au porteur.
+5. Pour une décision structurante, propose le challenge grill-me ; enregistre les décisions durables si la mémoire est disponible.
 
-Résultat attendu : un backlog où chaque story est testable. Étape suivante : `/design-architecture`.
+Résultat attendu : un incrément testable et sa suite ; un backlog complet seulement s'il est demandé ou nécessaire. L'architecture est une étape possible, pas automatique.
 
 ## Voir aussi
 

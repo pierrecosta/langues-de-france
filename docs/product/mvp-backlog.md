@@ -1,159 +1,219 @@
-# Backlog du MVP provençal
+# Backlog produit — vision et quatre MVP cumulatifs
 
-## Objectif
+## Objectif et valeur
 
-Publier le provençal seul, avec consultation, comptes, mini-jeux web et contribution validée, sur une architecture prête pour six territoires. Source de vérité du « quoi » ; le « comment » est dans les [ADR](../architecture/adr/).
+**Vision finale :** une plateforme web pour découvrir, préserver et transmettre les langues régionales françaises, avec des contenus éditoriaux et des expériences de découverte. Le produit s'ouvre progressivement : les quatre MVP ci-dessous sont des incréments publiables séparément, et non la livraison de toute la vision.
 
-## Périmètre
+**Objectif de la séquence :** permettre d'abord la consultation des mots provençaux, puis l'apprentissage par QCM, la découverte du territoire sur une carte et la consultation d'un agenda public.
 
-- **Inclus** : consultation publique (dictionnaire, expressions), comptes, mini-jeux web (qcm, matching, true-false), XP et badges, contribution validée par un administrateur, culture/tourisme/gastronomie, mise en production.
-- **Exclu (Won't)** : application Android, PWA, jeu hors ligne, speed-challenge, carte de France, galerie photo, contrôle de taille de police dédié, écran de contribution dédié (l'admin Django suffit), autres territoires.
-- Décisions et valeurs provisoires : mémoire du projet (« Décisions PO — tour de clarification 2026-10-26 »).
+**Indicateur de réussite à mesurer :** part des personnes d'un test d'usage qui accomplissent sans aide les parcours de consultation propres au MVP publié (MVP1 : trouver et ouvrir un mot ; MVP2 : terminer un QCM ; MVP3 : ouvrir le territoire depuis la carte ; MVP4 : trouver la fiche d'un événement). La méthode de test est observable et reproductible ; **la cible chiffrée et la fréquence de mesure restent à valider par le porteur**.
 
-## Prérequis
+## Décisions produit actées
 
-- [Cahier des charges](../../objectif_initial.md), [architecture](../architecture/README.md), [standard des contenus](../standards/game-content.md).
+- Ordre cumulatif : **MVP1 dictionnaire de mots → MVP2 quiz → MVP3 carte interactive → MVP4 agenda d'événements**. Chaque MVP peut être publié seul après satisfaction des prérequis communs de publication ci-dessous.
+- MVP1 porte sur les **mots seulement**. Les expressions restent dans la vision finale et sont reportées.
+- MVP2 : QCM anonyme fondé sur des mots publiés ; ni compte utilisateur, ni sauvegarde de score.
+- MVP3 : carte de France dont seule la Provence est interactive ; aucun autre territoire n'est présenté comme ouvert.
+- MVP4 : agenda public consultable, administré par le porteur ; ni inscription ni paiement d'événement. Les événements en cours ou à venir sont affichés publiquement ; les événements passés restent accessibles en administration.
+- Les mini-jeux supplémentaires, les comptes et la progression, les territoires supplémentaires et les autres besoins déjà exprimés restent au backlog ultérieur ; ils ne sont pas supprimés.
 
-## Personas
+## Personas et périmètre
 
-- **Curieux** (50 ans et plus) : consulte et joue sans compte, veut une lecture claire.
-- **Transmetteur** (60 ans, Var) : valide les contenus et contribue ; non technicien, travaille dans l'admin et les fichiers JSON de données.
+- **Curieux/apprenant** : consulte le dictionnaire, puis découvre les contenus et le territoire sans devoir créer un compte.
+- **Porteur / administrateur éditorial** : publie les mots et les événements de l'agenda. Les moyens d'administration existants sont à confirmer pour chaque type de contenu.
+- **Contributeur culturel** : persona de la vision finale ; la contribution communautaire n'est pas incluse dans ces quatre MVP.
 
-## Roadmap par lots
+Le périmètre territorial initial est le provençal, avec une attention particulière au Var. Les MVP n'ouvrent pas les autres langues ou territoires.
 
-| Lot | Contenu | Sortie observable |
-|-----|---------|-------------------|
-| L0 | Fondations : ADR acceptés, doc alignée, squelettes backend/frontend, standards de test et de sécurité | Les deux squelettes démarrent, `lint_pack.py` passe |
-| L1 | Consultation : US-001 à US-004 | Un visiteur lit un mot publié sur une URL partageable |
-| L2 | Comptes, jeux, XP : US-005 à US-008 | Un compte joue, gagne de l'XP, retrouve sa progression |
-| L3 | Contribution, validation, badges : US-009 à US-011 | Une contribution validée est publiée et donne un badge |
-| L4 | Culture/tourisme/gastronomie, légal, production : US-012 à US-014 | Le site est en ligne sur `le-provencal.ovh` |
+## Prérequis communs de publication — applicables séparément à MVP1, MVP2, MVP3 et MVP4
 
-## User stories
+Ce sont des **conditions de mise en ligne**, pas des fonctionnalités produit supplémentaires. Aucun MVP ne dépend de la livraison des trois suivants.
 
-### US-001 — Importer les seeds en brouillon (Must, L1)
+| Domaine | Critères de passage vérifiables |
+|---|---|
+| Sécurité | Le site public et l'administration sont servis en HTTPS avec un certificat valide ; les requêtes HTTP ne transmettent pas de données en clair. Les parcours publics ne permettent pas d'écrire/modifier du contenu. Toute action éditoriale est refusée à un visiteur non autorisé (réponse de refus vérifiée). Les secrets de production sont fournis hors du dépôt ; les contrôles de sécurité prévus pour la version candidate sont exécutés et leurs résultats sont examinés, avec aucun problème bloquant non résolu ou accepté explicitement par le porteur. |
+| Protection des données | Avant publication, un inventaire indique pour le périmètre du MVP les données traitées, leurs finalités, accès et durées de conservation, y compris les journaux et mesures d'audience. Les données non nécessaires ne sont pas collectées. Le texte d'information et les mentions applicables correspondent aux traitements réellement activés. Aucun traceur ou dispositif d'audience non approuvé n'est activé. Pour le QCM MVP2, aucun compte, résultat nominatif ou score persistant n'est créé. |
+| Exploitation | Une procédure décrit déploiement, contrôle de santé, diagnostic et retour arrière. Une sauvegarde de la base et des médias effectivement utilisés est disponible hors serveur ; sa restauration sur une copie est exécutée et le parcours public du MVP candidat est vérifié après restauration. Les contrôles de santé et les principales pages/API du périmètre répondent après déploiement. |
+| Publication | Le porteur valide les contenus publiés et les droits des médias éventuels. Le domaine, les informations légales et les textes d'information sont vérifiés avant ouverture publique. Le résultat de chaque contrôle est consigné pour le MVP concerné. |
 
-**En tant que** transmetteur, **je veux** que les seeds provençales soient chargées en brouillon, **afin de** les valider sans rien retaper.
+Les éléments de conservation, responsable de traitement, mentions légales et seuils de gravité des alertes de sécurité doivent être précisés dans les procédures et documents appropriés ; aucun de ces choix n'est considéré comme déjà acté ici.
 
-- Étant donné `word.json` (200 entrées) et `expression.json` (42), quand l'import est lancé, alors toutes les entrées existent avec le statut brouillon et aucune n'est publiée.
-- Étant donné une entrée éditée dans l'admin, quand l'import est relancé, alors l'édition est conservée et aucun doublon n'est créé.
-- Étant donné une entrée sans champ obligatoire, quand l'import est lancé, alors elle est importée en brouillon avec le champ vide, sans valeur inventée.
+## Roadmap et stories
 
-Dépendance : ADR-007 (identité stable).
+Les critères ci-dessous décrivent la cible produit. « Présent dans le code » n'équivaut pas à « livré ». Aucun des quatre MVP n'est déclaré livré par la seule inspection documentaire.
 
-### US-002 — Valider et publier une entrée (Must, L1)
+### MVP1 — Dictionnaire provençal de mots
 
-**En tant qu'** administrateur territorial, **je veux** publier ou dépublier une entrée avec un motif, **afin de** ne montrer que du contenu validé.
+**Valeur / priorité : Must.** C'est le premier service autonome et le socle de contenu des incréments suivants. Il ne contient pas les expressions.
 
-- Étant donné un brouillon, quand je le publie, alors il devient visible publiquement et l'historique garde auteur et date.
-- Étant donné une entrée publiée contestée, quand je la dépublie avec un motif, alors elle disparaît du public et le motif est conservé.
-- Étant donné un utilisateur non administrateur, quand il tente de publier, alors l'action est refusée (403).
+**Inclus :** consultation anonyme d'une liste et des fiches de mots publiés, recherche de base, administration éditoriale des mots.
+**Limites :** pas d'expressions, de comptes, de contribution publique, de jeux, de carte, d'événement, ni d'autres territoires. La tolérance aux fautes, les filtres avancés et les fonctions de progression sont reportés.
 
-### US-003 — Consulter mots et expressions sans compte (Must, L1)
+#### US-M1-01 — Publier des mots provençaux
 
-**En tant que** curieux, **je veux** parcourir et ouvrir un mot ou une expression, **afin de** découvrir le provençal sans m'inscrire.
+**En tant que** porteur, **je veux** gérer un mot en brouillon puis le publier ou le dépublier, **afin de** maîtriser ce qui est présenté au public.
 
-- Étant donné des entrées publiées, quand j'ouvre `/provencal/mot/{slug}`, alors la fiche s'affiche en moins de 2 s avec la forme principale, les variantes et la traduction.
-- Étant donné un brouillon, quand j'ouvre son URL, alors la réponse est 404.
-- Étant donné un ancien slug, quand je l'ouvre, alors je suis redirigé vers le slug actuel.
-- Étant donné un mobile de 360 px de large, quand je navigue au clavier ou au lecteur d'écran, alors tout est atteignable et sans violation axe.
+- Étant donné un mot en brouillon, quand un administrateur autorisé le publie, alors il devient accessible dans la liste publique et sa fiche est consultable.
+- Étant donné un brouillon ou un mot dépublié, quand un visiteur demande sa fiche ou le cherche, alors il n'est pas exposé et la fiche répond comme absente (404).
+- Étant donné un visiteur non autorisé, quand il tente une action de publication, alors l'action est refusée (403 ou équivalent de refus documenté).
+- Étant donné un champ facultatif vide, quand la fiche publique s'affiche, alors ce champ n'apparaît pas comme une valeur inventée ou un faux contenu.
+- **Dépendances :** administrateur autorisé, contenu éditorial vérifié, critères de publication et éventuels droits des sources.
+- **État vide/erreur :** aucun brouillon n'est confondu avec un mot publié ; une erreur de publication est signalée à l'administrateur et ne rend pas le mot public.
 
-### US-004 — Rechercher un mot (Should, L1)
+#### US-M1-02 — Parcourir les mots publiés sans compte
 
-**En tant que** curieux, **je veux** chercher un mot avec ou sans accent, **afin de** le trouver malgré une faute légère.
+**En tant que** curieux, **je veux** parcourir les mots et ouvrir une fiche, **afin de** découvrir le provençal sans m'inscrire.
 
-- Étant donné le mot « été », quand je cherche « ete », alors la fiche figure dans les résultats.
-- Étant donné une recherche sans résultat, quand elle est lancée, alors un message clair propose de parcourir la liste.
+- Étant donné au moins un mot publié, quand j'ouvre le dictionnaire, alors seuls des mots publiés sont listés et chaque élément ouvre sa fiche.
+- Étant donné une fiche publiée, quand je l'ouvre, alors les formes provençale et française sont présentées ; les autres champs ne sont affichés que s'ils ont une valeur.
+- Étant donné un mot inexistant, un brouillon ou un slug inconnu, quand j'ouvre son URL publique, alors la page indique que le mot est introuvable et ne révèle pas son contenu.
+- Étant donné qu'aucun mot n'est publié, quand j'ouvre le dictionnaire, alors un état vide indique qu'aucun mot n'est encore disponible, sans erreur technique ni contenu de brouillon.
+- Étant donné une indisponibilité du service de données, quand j'ouvre la liste ou une fiche, alors un état d'indisponibilité est distinct de « aucun résultat ».
+- **Dépendances :** US-M1-01 ; service de données du dictionnaire.
 
-### US-005 — Créer un compte et me connecter (Must, L2)
+#### US-M1-03 — Rechercher un mot
 
-**En tant que** visiteur, **je veux** créer un compte avec e-mail et pseudo, **afin de** sauvegarder ma progression.
+**En tant que** curieux, **je veux** rechercher dans les formes provençales et françaises, **afin de** retrouver un mot sans parcourir toute la liste.
 
-- Étant donné un e-mail valide, quand je m'inscris, alors le compte existe et je suis connecté (cookies Secure, HttpOnly, CSRF).
-- Étant donné trop de tentatives de connexion, quand la limite est dépassée, alors la connexion est temporairement refusée.
-- Étant donné un compte, quand je le supprime, alors mes données personnelles et ma progression sont effacées.
+- Étant donné un mot publié contenant la chaîne recherchée dans sa forme provençale ou française, quand je lance la recherche, alors ce mot apparaît dans les résultats.
+- Étant donné une recherche sans correspondance, quand les résultats s'affichent, alors un message sans ambiguïté indique qu'aucun mot ne correspond et permet de revenir à la liste.
+- Étant donné un résultat correspondant à un brouillon, quand je lance la recherche, alors ce brouillon n'apparaît pas.
+- **Dépendances :** US-M1-01 et US-M1-02.
+- **Limite :** la recherche approximative, les filtres et les règles de pagination restent à préciser/étendre ; l'équivalence accents et fautes légères fait partie des décisions à valider ci-dessous.
 
-### US-006 — Jouer à un mini-jeu sans compte (Must, L2)
+**Sortie observable MVP1 :** une personne sans compte peut consulter et chercher des mots provençaux publiés ; l'administrateur peut contrôler leur publication. États vide et indisponibilité vérifiés.
 
-**En tant que** curieux, **je veux** jouer à qcm, matching ou true-false, **afin de** apprendre en m'amusant.
+### MVP2 — QCM anonyme sur les mots publiés
 
-- Étant donné un pack validé, quand je lance une partie, alors elle compte 5 questions, sans chronomètre, issues de faits publiés.
-- Étant donné une partie finie, quand elle se termine, alors mon score et un retour par réponse s'affichent.
-- Étant donné aucun pack validé, quand j'ouvre les jeux, alors un message l'indique sans erreur.
+**Valeur / priorité : Must après MVP1.** Propose une première activité pédagogique à partir du dictionnaire publié, sans introduire de comptes ni de conservation de scores.
 
-Dépendance : pack de contenu validé, spec des jeux.
+**Inclus :** QCM en session anonyme, contenu tiré de mots publiés.
+**Limites :** pas de matching, vrai/faux ou autre mini-jeu ; pas de compte, de profil, d'historique, de progression ou de score sauvegardé. Le retour temporaire et les autres règles détaillées du QCM restent à préciser.
 
-### US-007 — Sauvegarder mon score et gagner de l'XP (Must, L2)
+#### US-M2-01 — Jouer à un QCM à partir de mots publiés
 
-**En tant que** joueur connecté, **je veux** que mon score soit enregistré, **afin de** suivre ma progression.
+**En tant que** curieux, **je veux** répondre à un QCM sur des mots provençaux publiés, **afin de** réviser le vocabulaire sans créer de compte.
 
-- Étant donné un score valide, quand il est envoyé, alors il est enregistré une fois (le même `submission_id` ne compte pas deux fois).
-- Étant donné un score hors bornes ou une clé inconnue, quand il est envoyé, alors il est refusé (400).
-- Étant donné un mot déjà consulté, quand je le reconsulte, alors aucun XP supplémentaire n'est donné.
+- Étant donné un contenu de QCM éditorialement validé et fondé sur des mots publiés, quand je démarre une partie, alors les questions affichées proviennent de ce contenu.
+- Étant donné un QCM affiché, quand je choisis une proposition, alors ma réponse est traitée pour la session en cours et aucun compte n'est requis.
+- Étant donné au moins cinq mots publiés éligibles permettant chacun trois distracteurs distincts et non ambigus tirés des mots publiés, quand je démarre, alors la partie présente cinq questions distinctes avec quatre choix dont un seul correct.
+- Étant donné exactement quatre mots éligibles permettant ces choix, quand je démarre, alors la partie est réduite à quatre questions distinctes.
+- Étant donné moins de quatre mots éligibles ou des distracteurs ambigus, quand une partie ne peut être composée avec quatre choix valides, alors les questions concernées sont exclues et le quiz est indisponible si moins de quatre mots restent éligibles ; aucun faux mot n'est inventé.
+- Étant donné qu'un mot utilisé par le QCM est dépublié, quand le contenu du QCM est servi pour une nouvelle partie, alors ce mot ne fournit plus de question publique.
+- Étant donné qu'aucun contenu de QCM validé et exploitable n'est disponible, quand j'ouvre le quiz, alors un état vide explique qu'il n'y a pas de quiz disponible et ne déclenche pas d'erreur.
+- Étant donné une erreur de chargement, quand j'ouvre ou poursuis le quiz, alors un état d'erreur permet de comprendre que le service est indisponible et ne présente pas l'erreur comme une partie terminée.
+- Étant donné une partie terminée, quand je quitte puis rouvre le quiz, alors aucun score sauvegardé ni historique de partie ne m'est présenté.
+- **Dépendances :** MVP1, mots publiés et contenu de QCM validé ; décisions de contenu et de règles ci-dessous.
+- **Limites :** aucune question provenant d'une expression, d'un brouillon ou d'un mot non publié ; aucune soumission de score persistante ni collecte d'identité du joueur.
 
-### US-008 — Terminer un parcours par un quiz (Should, L2)
+**Sortie observable MVP2 :** le MVP1 reste utilisable et une personne anonyme peut jouer à un QCM ; aucune sauvegarde de score n'est ajoutée.
 
-**En tant que** joueur connecté, **je veux** un quiz final de 5 questions, **afin de** valider un parcours.
+### MVP3 — Carte interactive des territoires
 
-- Étant donné 4 bonnes réponses sur 5, quand je termine, alors le parcours est réussi et l'XP de parcours est donnée une seule fois.
-- Étant donné 3 bonnes réponses, quand je termine, alors je peux recommencer sans limite.
+**Valeur / priorité : Must après MVP2.** Rend visible l'ancrage territorial et donne accès au territoire ouvert sans laisser croire que d'autres territoires sont disponibles.
 
-### US-009 — Contribuer via l'administration (Must, L3)
+**Inclus :** une carte de France sur laquelle seule la Provence est interactive. Les autres parties de la carte ne sont pas proposées comme territoires ouverts ou sélectionnables.
+**Limites :** cette représentation ne définit pas de frontière linguistique ni de délimitation de la Provence ; ne pas en inventer. La source et la licence de la géométrie de la carte doivent être validées avant publication.
 
-**En tant que** contributeur invité, **je veux** proposer une entrée, **afin de** enrichir le dictionnaire.
+#### US-M3-01 — Ouvrir le territoire provençal depuis la carte
 
-- Étant donné une invitation à usage unique (48 h), quand je l'utilise, alors je deviens contributeur ; après expiration, elle est refusée.
-- Étant donné une contribution, quand je l'enregistre, alors elle est en attente et invisible du public.
-- Étant donné une absence de source externe, quand je soumets, alors la contribution n'est pas bloquée.
+**En tant que** curieux, **je veux** voir et sélectionner le territoire provençal sur une carte interactive, **afin de** découvrir l'espace linguistique actuellement ouvert.
 
-### US-010 — Valider une contribution (Must, L3)
+- Étant donné que la carte est disponible, quand je l'ouvre, alors elle représente la France et seule la Provence y est interactive ; aucune autre partie n'est présentée comme un territoire ouvert.
+- Étant donné que je sélectionne la Provence, quand j'active sa zone interactive, alors je peux ouvrir l'espace provençal du produit.
+- Étant donné que les autres territoires ne sont pas ouverts, quand je consulte la carte, alors les autres parties de la France ne proposent ni sélection, ni lien, ni indication d'ouverture.
+- Étant donné que les données cartographiques ne peuvent être chargées, quand j'ouvre la carte, alors un état d'erreur explicite est affiché et un accès textuel à l'espace provençal reste disponible.
+- **Dépendances :** MVP1 et MVP2 conservés dans le produit ; source/licence de la carte de France et manière de représenter interactivement la Provence à valider, sans inventer de frontière linguistique ou de données géographiques.
+- **État vide :** l'espace provençal reste clairement identifiable ; aucune sélection territoriale ne conduit à une page vide.
 
-**En tant qu'** administrateur territorial, **je veux** accepter ou refuser une contribution, **afin de** garantir la qualité.
+**Sortie observable MVP3 :** l'ensemble des usages des MVP1 et MVP2 reste disponible ; la carte propose seulement le territoire provençal.
 
-- Étant donné une contribution en attente, quand je l'accepte, alors elle est publiée et le contributeur reçoit 30 XP.
-- Étant donné un refus, quand je refuse, alors un motif est enregistré et rien n'est publié.
+### MVP4 — Agenda public d'événements
 
-### US-011 — Obtenir des badges (Should, L3)
+**Valeur / priorité : Must après MVP3.** Permet au public de consulter les rendez-vous publiés et au porteur de tenir l'agenda à jour.
 
-**En tant que** joueur, **je veux** des badges, **afin de** voir mes progrès.
+**Inclus :** agenda consultable publiquement ; administration des événements par le porteur.
+**Limites :** aucune inscription, réservation, billetterie, paiement ou compte visiteur ; l'agenda n'est pas un service transactionnel.
 
-- Étant donné ma première contribution validée, quand elle est publiée, alors j'obtiens « Contributeur ».
-- Étant donné 20 puis 100 mots distincts consultés, quand le seuil est atteint, alors j'obtiens « Découvreur » puis « Collectionneur ».
-- Étant donné un seul territoire ouvert, quand je vois « Ambassadeur », alors il est affiché verrouillé.
+#### US-M4-01 — Administrer et publier un événement
 
-### US-012 — Consulter culture, tourisme, gastronomie (Should, L4)
+**En tant que** porteur, **je veux** saisir, corriger, publier ou retirer un événement, **afin de** maintenir un agenda public fiable.
 
-**En tant que** curieux, **je veux** lire des fiches lieux, recettes et activités publiées, **afin de** découvrir la culture provençale.
+- Étant donné un événement non publié, quand le porteur le publie, alors il devient consultable dans l'agenda public.
+- Étant donné un événement non publié ou retiré, quand un visiteur consulte l'agenda ou sa fiche, alors cet événement n'est pas exposé.
+- Étant donné un utilisateur non autorisé, quand il tente de modifier ou publier un événement, alors l'action est refusée.
+- Étant donné qu'une donnée requise par le contrat éditorial validé manque, quand le porteur tente de publier, alors l'événement n'est pas publié et le champ à corriger est signalé.
+- **Dépendances :** MVP1 à MVP3 conservés ; autorisation de l'administrateur et contrat éditorial des événements à confirmer.
+- **Limite :** la manière précise dont l'administration est fournie n'est pas présumée par cette story.
 
-- Étant donné une fiche publiée, quand je l'ouvre, alors titre, histoire et source facultative s'affichent.
-- Étant donné une fiche incomplète, quand je la cherche, alors elle n'est pas visible.
+#### US-M4-02 — Consulter l'agenda sans inscription
 
-### US-013 — Informations légales (Must, L4)
+**En tant que** visiteur, **je veux** consulter les événements publiés et leur fiche, **afin de** découvrir les rendez-vous annoncés.
 
-**En tant que** visiteur, **je veux** lire mentions légales et politique de confidentialité, **afin de** savoir quelles données sont traitées.
+- Étant donné un événement publié, quand j'ouvre l'agenda puis sa fiche, alors les informations éditoriales publiées et les dates renseignées sont consultables sans compte.
+- Étant donné un événement publié en cours ou à venir, quand j'ouvre l'agenda, alors il peut y être consulté ; un événement terminé n'apparaît plus dans l'agenda public et reste consultable par l'administrateur.
+- Étant donné qu'aucun événement n'est publié, quand j'ouvre l'agenda, alors un état vide indique qu'aucun événement n'est annoncé.
+- Étant donné un événement absent, non publié, retiré ou terminé, quand j'ouvre sa fiche publique, alors elle est indiquée comme indisponible sans révéler son contenu.
+- Étant donné une indisponibilité du service, quand je consulte l'agenda, alors un état d'erreur est distinct de l'agenda vide.
+- Étant donné un événement affiché, quand je consulte ses actions disponibles, alors aucune inscription, réservation ou paiement n'est proposé.
+- **Dépendances :** US-M4-01 et contrat des données d'événement.
 
-- Étant donné toute page, quand je regarde le pied de page, alors les deux liens sont présents et mènent à une page lisible.
+**Sortie observable MVP4 :** les MVP précédents restent disponibles ; le public consulte l'agenda et le porteur administre les événements, sans inscription ni paiement.
 
-### US-014 — Mettre en production (Must, L4)
+## Après ces quatre MVP — besoins conservés, non supprimés
 
-**En tant que** porteur, **je veux** déployer en HTTPS avec sauvegardes, **afin de** publier le site.
+Les sujets suivants proviennent de la vision finale, du cahier des charges et du backlog antérieur. Ils sont **ultérieurs ou à reprioriser**, et ne doivent pas être considérés comme livrés par MVP4 :
 
-- Étant donné le domaine `le-provencal.ovh`, quand j'ouvre le site, alors il est en HTTPS et la page d'accueil répond en moins de 2 s.
-- Étant donné une sauvegarde quotidienne hors serveur, quand je la restaure sur une copie, alors le site fonctionne.
-- Étant donné une mesure de fréquentation, quand je la consulte, alors elle est agrégée, sans donnée personnelle.
+- Expressions provençales (objectif de vision : 500 par territoire), malgré leur présence dans le modèle et les interfaces existants.
+- Recherche avancée : fautes légères, filtres, pagination cible de 25 résultats ; affichage et options de variantes.
+- Autres mini-jeux (matching, vrai/faux, recherche de mots, défi chronométré) et parcours d'apprentissage.
+- Comptes, profils, historique, sauvegarde de progression, XP, niveaux, statistiques personnelles et badges.
+- Contributions communautaires, invitations, workflow de proposition/refus et récompenses.
+- Contenus culturels, histoire, cartographie enrichie, tourisme, lieux et activités, gastronomie, médias et liens externes.
+- Ouverture des autres territoires ciblés à terme : Ch'ti/Picard, breton, basque, corse et créole réunionnais ; leur ordre et leurs dates restent à décider.
+- Objectifs de volume de contenu (notamment 5 000 mots par territoire), portail France/DROM complet et autres extensions de la vision.
+- PWA et application mobile native : hors de ces quatre MVP ; le cahier des charges place le mobile après le MVP.
 
-## Risques, dépendances, hypothèses
+## Décisions à valider — ne pas traiter comme acquises
+
+1. Cible chiffrée, population, fréquence et méthode formelle de l'indicateur de réussite de la séquence.
+2. Champs obligatoires d'un mot avant publication, provenance/droits des seeds et médias, ordre de grandeur éditorial souhaité avant ouverture.
+3. Contrat de recherche MVP1 : accents, casse, recherche dans variantes, tolérance aux fautes, volume/pagination et comportement de liste longue.
+4. QCM : sens de la question, mode de sélection, présentation de la bonne réponse, possibilité de rejouer, score temporaire éventuel et procédure éditoriale de validation des distracteurs. La partie vise cinq questions à quatre choix ; si quatre mots éligibles seulement sont disponibles, elle compte quatre questions, et reste indisponible en dessous.
+5. Carte : source/licence et périmètre de la carte de France ; mode de représentation interactive de la Provence sans inventer de limite linguistique ; inclusion éventuelle des DROM dans le fond cartographique, navigation clavier/alternative textuelle et comportement au zoom.
+6. Agenda : champs obligatoires, dates et fuseau permettant de déterminer la fin d'un événement, traitement des annulations et récurrences, tri, éventuelle recherche, médias/liens et règles de publication/retrait.
+7. Identité opérationnelle du « porteur » pour administrer l'agenda, délégations éventuelles et modalités d'accès ; cela ne signifie pas la création de comptes publics.
+8. Responsable de traitement, durées de conservation, contenu légal précis, éventuelles mesures d'audience, seuils de sécurité et cible de restauration/exploitation.
+
+## Risques, dépendances et hypothèses
 
 | Risque | Impact | Probabilité | Réponse |
-|--------|--------|-------------|---------|
-| Peu de contenu validé (un seul validateur) | Site presque vide | Haute | Ouvrir avec peu d'entrées : le volume n'est pas bloquant ; publier par petits lots |
-| MVP large pour une équipe réduite | Retard | Haute | Lots ordonnés, Should repoussables après L2 |
-| Exploitation par une seule personne | Panne longue | Moyenne | Sauvegardes testées, retour arrière documenté |
-| Droits de `src_dict.csv` et des médias non confirmés | Blocage de publication | Moyenne | Vérification avant publication, aucun média sans droit |
-| Valeurs d'XP provisoires | Rééquilibrage | Faible | Validation du porteur avant production |
+|---|---|---|---|
+| Confusion entre incrément publié et vision finale | Attentes de fonctionnalités non livrées | Moyenne | Présenter le périmètre et les reports à chaque publication ; ne déclarer livrée que la tranche vérifiée. |
+| Peu de mots ou événements validés | Dictionnaire ou agenda vide à l'ouverture | Moyenne | Rendre l'état vide explicite ; publication seulement de contenus vérifiés, sans inventer de volume minimal. |
+| Contenu QCM inadapté ou insuffisant | Quiz absent, erroné ou trompeur | Moyenne | Définir le contrat de contenu et faire valider questions/réponses avant publication. |
+| Carte ou emprise contestée | Représentation géographique inexacte | Moyenne | Valider source, droits et périmètre avant MVP3. |
+| Écarts entre code existant et contrat de publication | Brouillon exposé, faux état vide ou recherche trompeuse | Moyenne | Tester les parcours API et navigateur contre les critères de chaque tranche, dont les erreurs de service. |
+| Documentation actuelle continue d'annoncer un MVP monolithique | Portée contradictoire pour produit et équipe | Haute | Aligner les documents listés dans « Incohérences à traiter ailleurs ». |
+| Dépendance à une seule personne pour publication/exploitation | Blocage ou indisponibilité prolongée | Moyenne | Procédure de publication, sauvegarde restaurable et délégations à décider. |
 
-Hypothèses : pas de date imposée ; le validateur relit au rythme de sa disponibilité ; une entrée sans source externe reste acceptée.
+**Hypothèses de travail non validées :** pas de date imposée ; les contenus sont vérifiés par le porteur ; l'absence de source externe n'invalide pas automatiquement une forme linguistique ; les événements sont édités avant diffusion. Aucune hypothèse ne crée un compte visiteur, une inscription ou un paiement.
 
-## Vérification
+## État observé du dépôt (inspection documentaire/code, pas une recette)
 
-Chaque story livrée a ses critères couverts par un test automatisé ou un parcours Playwright, et la documentation concernée est à jour.
+| Tranche | Présent / repéré | Livré ? |
+|---|---|---|
+| MVP1 | Modèle Word, administration, API publique filtrant les brouillons, pages liste/fiche et recherche côté interface repérés ; tests de modèle/API présents dans l'arbre. | **Non vérifié** : tests non exécutés ici, données réellement publiées, scénarios complets, déploiement et gates communs non contrôlés. |
+| MVP2 | Une spécification de mini-jeux existe dans `docs/product/game-spec-mvp.md`. Aucune expérience QCM et aucun backend de jeu n'ont été repérés dans le code applicatif parcouru. | **Non vérifié / non déclaré livré**. La spécification actuelle décrit notamment des comptes et des envois de résultats, en contradiction avec la décision de ce MVP. |
+| MVP3 | Pas de carte interactive repérée dans les pages applicatives parcourues. | **Non vérifié / non déclaré livré**. |
+| MVP4 | Modèles ou pages d'agenda d'événements non repérés dans les applications parcourues. L'administration générique de contenus existants ne prouve pas l'administration d'événements. | **Non vérifié / non déclaré livré**. |
+
+La présence d'une fonctionnalité dans le dépôt, d'un test ou d'une spécification ne prouve ni que la recette passe ni qu'elle est publiée.
+
+## Incohérences à traiter dans les autres documents / le produit
+
+- La [spécification de jeu historique](./game-spec-mvp.md) documente plusieurs jeux et la progression future ; adapter ses règles détaillées au QCM anonyme et au choix de distracteurs avant implémentation.
+- Le code web contient des chemins d'expressions et la page d'accueil annonce expressions/culture. Ce code ne change pas la décision MVP1 « mots uniquement » et n'autorise pas à déclarer ces éléments livrés dans MVP1.
+- La recherche côté web envoie `q` à l'API ; le chemin API générique observé ne montre pas de filtrage par `q`. De plus, le client prévoit un repli sur une fixture locale lors d'une indisponibilité, ce qui peut confondre panne et absence de contenu publié. À vérifier/corriger dans les composants et tests, hors de ce changement documentaire.
+- La revue sécurité ciblée signale aussi des points à vérifier avant ouverture : transitions de statut via le formulaire d'administration pouvant contourner le motif de retrait ; cache de 60 secondes et repli local susceptibles de réexposer un mot retiré ; configuration effective de HTTPS, cookies et limitation de débit ; pages légales. Ces constats sont issus d'une lecture, pas d'un audit de production ; prévoir corrections et tests avant de déclarer les critères satisfaits.
+- Les tests et procédures de publication doivent être adaptés aux critères et prérequis ci-dessus. Les précisions de séquencement ont été ajoutées aux ADR concernés ; aucun code applicatif n'est modifié ici.

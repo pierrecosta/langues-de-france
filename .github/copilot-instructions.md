@@ -1,39 +1,28 @@
 # Instructions Copilot du dépôt
 
-Ces instructions s'appliquent à toutes les conversations. Elles ne recopient aucune règle : les normes sont dans [docs/standards/](../docs/standards/), les procédures dans [.github/skills/](./skills/), les rôles dans [.github/agents/](./agents/).
+Appliquer le [socle IA réutilisable](../ai-basepack/.github/copilot-instructions.md), puis les règles propres à ce projet ci-dessous.
 
 ## Langue
 
 - Contenu, commentaires et documentation en **français**.
 - Identifiants, noms de fichiers, clés de frontmatter et termes techniques en **anglais**.
 
-## Avant toute tâche
+## Contexte du projet
 
-1. Lire la mémoire du projet (serveur MCP `memory`).
-2. Consulter la documentation officielle à jour (serveur MCP `context7`) avant d'utiliser une bibliothèque ou un framework.
-3. Évaluer les impacts (code, données, sécurité, accessibilité, documentation).
-4. Pour toute décision structurante, appliquer le skill [grill-me](./skills/grill-me/SKILL.md).
-5. Si le Dev Container requis par la tâche échoue à être créé, démarré ou joint, signaler immédiatement le blocage et arrêter les opérations qui en dépendent. Ne pas poursuivre silencieusement sur l'hôte.
+- Les règles sont dans les [standards](../docs/standards/), les rôles et procédures dans le [catalogue](../docs/process/catalog.md).
+- Consulter les décisions pertinentes dans la mémoire `memory` et les confronter aux fichiers actuels ; ne pas recopier le graphe complet par défaut.
+- Pour une décision structurante, appliquer le skill [grill-me](./skills/grill-me/SKILL.md).
+- Si le Dev Container requis échoue à être créé, démarré ou joint, signaler le blocage et arrêter les opérations qui en dépendent ; ne pas poursuivre silencieusement sur l'hôte.
 
-## Disponibilité des outils
+## Réalisation
 
-- En cas d'erreur, de délai dépassé ou d'indisponibilité d'un MCP, afficher immédiatement un avertissement avec le serveur concerné, l'opération, l'erreur et son impact.
-- Ne jamais présenter comme lue, enregistrée ou vérifiée une information dont l'opération MCP a échoué. Continuer seulement si la tâche reste réalisable sans cette opération, en indiquant clairement les limites ; sinon, la marquer comme bloquée ou incomplète.
-- Pour le dépannage des services et du Dev Container, suivre le [guide MCP](../docs/guides/mcp.md).
-
-## Pendant la tâche
-
-- Aucun code sans tests, documentation et analyse d'impact.
-- Respecter les standards du dossier [docs/standards/](../docs/standards/) (liste dans le [catalogue](../docs/process/catalog.md)).
-- Utiliser l'agent adapté au rôle (voir [catalogue](../docs/process/catalog.md)) et suivre le [workflow](../docs/process/workflow.md).
-- Ne jamais écrire de secret dans un fichier versionné ; utiliser `.env` (voir [.env.example](../.env.example)).
-
-## Après la tâche
-
-- Enregistrer dans la mémoire (`memory`) les décisions, conventions et bugs connus utiles aux sessions futures.
-- **Mettre à jour la documentation à chaque itération**, dans la même livraison que le changement : règle et liste des pages dans le [standard documentaire](../docs/standards/documentation.md).
+- Adapter les vérifications et les outils à la tâche : pas de code sans tests, documentation et analyse d'impact. La [documentation](../docs/standards/documentation.md) est mise à jour dans la même livraison.
+- Utiliser `.env` pour les secrets ; ne jamais les écrire dans un fichier versionné.
+- Conserver dans `memory` les décisions, conventions et bugs durables utiles aux sessions futures, si le serveur est disponible ; sinon indiquer que la synchronisation n'a pas eu lieu.
+- En cas d'échec ou d'indisponibilité d'un MCP, nommer le serveur, l'opération, l'erreur et l'impact ; continuer seulement si la tâche reste réalisable. Voir le [guide MCP](../docs/guides/mcp.md).
 
 ## Voir aussi
 
-- [Relations entre agents, skills et prompts](../docs/process/relations.md)
+- [Guide personnel d'utilisation de l'IA](../docs/guides/ia-efficace.md)
+- [Relations entre agents, skills et points d'entrée](../docs/process/relations.md)
 - [Guide d'utilisation](../docs/guides/utilisation.md)

@@ -8,6 +8,12 @@ La base Django est la source de vérité des contenus publiés. Un **pack de con
 
 Les règles des mini-jeux web du MVP sont versionnées avec le code et non modifiables dans le back-office. Elles sont conçues pour pouvoir être portées vers Android après le MVP ; le client natif ne fait pas partie du lancement. Les critères d'acceptation du MVP sont détaillés dans la [spécification de jeu](../../.github/templates/game-spec-template.md).
 
+Le [backlog](../product/mvp-backlog.md) fixe le nouveau séquencement : aucun
+jeu au MVP 1, puis QCM anonyme sur les mots publiés au MVP 2. Le schéma de
+pack ci-dessous décrit le format pédagogique général ; il ne rend pas les
+autres jeux, un compte ou un pack complet obligatoires pour le MVP 2. Le
+contrat et la validation des distracteurs restent à préciser avant sa réalisation.
+
 ## Règles
 
 - JSON UTF-8, texte en français, clés en anglais. Les valeurs d'identifiant (`id`) sont en `kebab-case`. Les clés des seeds (`src_init/`) sont en `kebab-case` ; celles de `content-pack.json` sont en `camelCase` (`objectiveId`, `sourceId`).

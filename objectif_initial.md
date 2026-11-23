@@ -5,6 +5,13 @@
 Version : 2.0
 Statut : Référence Produit
 
+Ce document décrit la vision finale. La livraison suit désormais quatre MVP
+distincts et cumulatifs, publiables séparément : dictionnaire de mots, quiz,
+carte interactive, puis agenda d'événements. Leur périmètre et leurs critères
+sont définis dans le [backlog](docs/product/mvp-backlog.md) et les
+[incréments](docs/product/increments-mvp.md) ; les fonctionnalités décrites
+ci-dessous ne sont pas toutes nécessaires à la première publication.
+
 # 1. Vision
 
 Découverte des Langues de France est une plateforme web communautaire dédiée à la découverte, la préservation et la transmission des langues régionales françaises.
@@ -54,7 +61,7 @@ Objectifs :
 - Corse
 - Créole Réunionnais
 
-Le MVP ouvre d'abord le provençal. Les cinq autres territoires sont prévus après le MVP ; leur ordre et leurs dates d'ouverture restent à définir.
+Les quatre premiers MVP ouvrent uniquement le provençal. Les cinq autres territoires restent prévus ultérieurement ; leur ordre et leurs dates d'ouverture restent à définir.
 
 ## Territoires référencés
 - Alsacien
@@ -220,7 +227,7 @@ Un contributeur peut proposer une forme apprise ou connue de mémoire ; l'absenc
 
 # 10. Gamification
 
-Les mini-jeux pédagogiques sont inclus dans le MVP sur le site web responsive. Jouer dans un navigateur mobile fait partie de cette expérience web et ne constitue pas une application mobile native.
+Le premier quiz web responsive arrive au MVP 2, après le dictionnaire : un QCM anonyme fondé sur les mots publiés, sans compte ni sauvegarde du score. Les autres jeux et la progression restent dans la vision finale, mais ne sont pas exigés au MVP 2. Jouer dans un navigateur mobile ne constitue pas une application mobile native.
 
 ## Progression
 - XP.
@@ -286,12 +293,21 @@ Modules :
 
 # 15. Roadmap
 
-## MVP
-- 1 territoire : le provençal.
-- Corpus cible initial : 200 mots et 50 expressions ; ces volumes sont des objectifs, pas des seuils bloquant l'ouverture.
-- Mini-jeux pédagogiques dans le site web responsive.
-- Comptes utilisateurs.
-- Administration.
+## Quatre MVP cumulatifs
+
+Chaque étape conserve les précédentes et peut être publiée séparément après
+validation de ses critères :
+
+1. **Dictionnaire** : consulter et rechercher des mots provençaux publiés ; les expressions sont ultérieures.
+2. **Quiz** : jouer anonymement à un QCM fondé sur les mots publiés, sans sauvegarde du score.
+3. **Carte interactive** : carte de France avec le territoire provençal comme seule sélection interactive initiale.
+4. **Événements** : consulter un agenda public administré, sans inscription ni paiement.
+
+Le corpus cible de 200 mots et 50 expressions demeure un objectif, pas un seuil
+bloquant à lui seul. Les comptes, autres jeux, progression, contributions et
+autres contenus restent dans la vision finale, sans être requis pour ces
+premiers périmètres. Les exigences de sécurité, d'accessibilité et
+d'exploitation applicables restent à satisfaire avant chaque publication.
 
 ## V2
 - Parcours d'apprentissage.
@@ -300,7 +316,7 @@ Modules :
 ## V3
 - Audio natif.
 - Application mobile native, après le MVP web.
-- Événements régionaux.
+- Enrichissement des événements régionaux au-delà de l'agenda du MVP 4.
 - Partenariats culturels.
 
 # 16. Critères de réussite

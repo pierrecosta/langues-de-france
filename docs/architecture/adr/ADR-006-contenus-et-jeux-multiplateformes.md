@@ -4,6 +4,13 @@
 - Date : 2026-10-25
 - Décideurs : porteur du projet
 
+> **Précision de séquencement :** le MVP 1 livre le dictionnaire de mots, sans
+> jeu ; le MVP 2 ajoute un QCM anonyme fondé sur les mots publiés, sans
+> sauvegarde de score. Les autres jeux, l'import des autres catégories et les
+> mécanismes de compte et de progression décrits ci-dessous sont différés.
+> Les contrats de score ne s'appliquent que si cette fonctionnalité ultérieure
+> est engagée. Voir le [backlog](../../product/mvp-backlog.md).
+
 ## Contexte
 
 Le MVP propose des mini-jeux dans le site web responsive pour le territoire provençal. Le projet vise six territoires à terme. Une application mobile native, avec un éventuel portage Android hors ligne, est prévue après le MVP et ne conditionne pas son lancement. Django sert les contenus publiés ; les six fichiers historiques `src_init/provencal/*.json` ont des structures hétérogènes et certaines entrées incomplètes.

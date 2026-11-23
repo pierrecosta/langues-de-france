@@ -1,5 +1,15 @@
 # Spécification des mini-jeux web du MVP
 
+> **Séquençage révisé :** le MVP 1 ne comprend aucun jeu. Le MVP 2 ne
+> comprend qu'un QCM anonyme fondé sur les mots publiés, sans compte,
+> invitation à se connecter ni sauvegarde du score. Les autres jeux, comptes,
+> XP, badges et fonctionnalités de parcours décrits ci-dessous restent des
+> possibilités ultérieures, non des prérequis du MVP 2. La présente
+> spécification historique doit être adaptée au QCM sur mots publiés avant son
+> implémentation ; notamment, l'origine et la validation des distracteurs
+> restent à préciser. Le [backlog](./mvp-backlog.md) fait foi pour le
+> découpage et les critères de chaque étape.
+
 ## Objectif
 
 Décrire les règles, écrans et critères des jeux `qcm` et `matching` (puis `true-false`) du site web responsive. À compléter par l'agent game-designer à partir du [modèle](../../.github/templates/game-spec-template.md).
@@ -10,7 +20,7 @@ Jeux web du MVP provençal ; portage mobile post-MVP exclu.
 
 ## Prérequis
 
-[Standard des contenus](../standards/game-content.md), [catalogue des templates](../../.github/skills/minigame-templates/SKILL.md), [backlog](./mvp-backlog.md) (US-006 à US-008).
+[Standard des contenus](../standards/game-content.md), [catalogue des templates](../../.github/skills/minigame-templates/SKILL.md), [backlog](./mvp-backlog.md) (US-M2-01).
 
 ## Vision
 

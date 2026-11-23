@@ -32,7 +32,7 @@ Backend, frontend, déploiement et données personnelles du MVP provençal. Andr
 
 ## Constats connus
 
-À corriger avant la mise en production (lot L4) :
+À examiner avant la première mise en production et à corriger selon leur exposition effective et les contrôles requis :
 
 - `docker-compose.mcp.yml` utilise `playwright/mcp:latest` : figer la version.
 - Le MCP postgres (`.devcontainer/mcp/postgres/Dockerfile`) se connecte avec le propriétaire de la base, sans lecture seule : créer un rôle `mcp_ro` avec `SELECT` uniquement.

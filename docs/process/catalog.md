@@ -8,13 +8,15 @@ Inventaire unique des agents, skills, prompts, templates et serveurs MCP, avec l
 
 Liste des éléments et règle de répartition. Le détail de chaque élément est dans son propre fichier ; l'usage au quotidien est dans le [guide d'utilisation](../guides/utilisation.md).
 
+L'[audit IA](./ai-audit.md) décrit chaque élément, son utilité et les limites constatées. Le [socle minimal réutilisable](../../ai-basepack/README.md) est distinct des spécialisations de ce projet.
+
 ## Règle de répartition
 
 | Type | Question à laquelle il répond | Emplacement |
 |------|-------------------------------|-------------|
 | Agent | **Qui** fait (rôle, outils, enchaînements) | `.github/agents/<nom>.agent.md` |
 | Skill | **Comment** faire (procédure réutilisable) | `.github/skills/<nom>/SKILL.md` |
-| Skill d'entrée (`/nom`) | **Par où** commencer (point d'entrée) | `.github/skills/<nom>/SKILL.md` (les anciens prompts y sont migrés) |
+| Skill d'entrée (`/nom`) | **Par où** commencer (invocation explicite selon le client) | `.github/skills/<nom>/SKILL.md` (les anciens prompts y sont migrés) |
 | Standard | **Quelles règles** respecter | `docs/standards/<nom>.md` |
 | Template | **Quel modèle** remplir | `.github/templates/` |
 
@@ -45,7 +47,7 @@ Standards : [backend](../standards/backend.md), [frontend](../standards/frontend
 
 - Règles frontend et accessibilité : auparavant répétées dans l'agent frontend, deux skills et les standards → désormais uniquement dans [frontend](../standards/frontend.md) et [accessibilité](../standards/accessibility.md).
 - Revue d'architecture et documentation : le rôle reste dans l'agent, la procédure dans le skill.
-- Mémoire : `memory/project_knowledge.md` supprimé ; seul le serveur MCP `memory` fait foi (fichier dans [memory/](../../memory/)).
+- Mémoire : `memory/project_knowledge.md` supprimé ; le serveur MCP utilise le fichier dans [memory/](../../memory/). Ses observations historiques doivent être confrontées aux sources actuelles.
 - Anciens chemins `.github/copilot/*` supprimés au profit des chemins officiels.
 
 ## Vérification

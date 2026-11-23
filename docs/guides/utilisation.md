@@ -13,31 +13,21 @@ Ce guide explique l'adoption du pack dans un nouveau projet et l'utilisation des
 | Élément | Rôle | Où | Se déclenche |
 |---------|------|----|--------------|
 | Agent | **Qui** : un rôle avec ses outils et ses passages de relais | `.github/agents/` | Choix dans la liste du chat |
-| Skill | **Comment** : une procédure détaillée réutilisable | `.github/skills/` | Automatiquement, ou en citant son nom |
-| Prompt | **Point d'entrée** : pose les questions et lance l'agent | `.github/skills/<nom>/SKILL.md` (anciens prompts migrés en skills) | `/nom` dans le chat |
+| Skill | **Comment** : une procédure détaillée réutilisable | `.github/skills/` | Selon sa description et les capacités du client |
+| Skill d'entrée | **Point d'entrée** : propose une consigne ciblée | `.github/skills/<nom>/SKILL.md` | Invocation explicite `/nom`, si prise en charge par le client |
 | Standard | **Règles** : source unique des exigences | `docs/standards/` | Cité par agents et skills |
 | Modèle | **Forme** d'un livrable | `.github/templates/` | Rempli par l'agent |
-| MCP | **Outils externes** : mémoire, docs à jour, navigateur, base | `.vscode/mcp.json` | Appelés par les agents |
+| MCP | **Outils externes** : mémoire, docs à jour, navigateur, base | `.mcp.json` | Si le serveur est chargé et les outils exposés au client |
 
 Chaque règle n'existe qu'à un endroit ; les autres fichiers y renvoient par un lien.
 
 ## Prérequis
 
-Le nouveau projet est une copie de ce dossier, ouverte à sa racine dans VS Code. Docker, VS Code et les extensions GitHub Copilot et Dev Containers sont nécessaires pour utiliser l'environnement conteneurisé (voir le [guide MCP](./mcp.md)).
+Le nouveau projet est ouvert à sa racine dans VS Code avec Copilot. Docker et Dev Containers ne sont nécessaires que pour les outils ou l'environnement qui en dépendent ; voir le [guide MCP](./mcp.md).
 
 ## Adopter le pack pour un nouveau projet
 
-À chaque nouveau projet, partir de cette basepack, et non d'une ancienne copie déjà personnalisée.
-
-1. Copier le contenu de ce dossier vers un nouveau dossier de projet, y compris les fichiers cachés comme `.github/`, `.devcontainer/` et `.vscode/`.
-2. Ne pas recopier `.git/`, `.env` ni `memory/memory.jsonl` s'ils existent. Garder `memory/README.md` : la mémoire du nouveau projet sera créée lors de sa première écriture.
-3. Ouvrir le nouveau dossier à la racine dans VS Code et initialiser son propre dépôt Git, sans reprendre l'historique d'un autre projet.
-4. Adapter le nom du conteneur dans `.devcontainer/devcontainer.json`, le nom du projet dans `docker-compose.mcp.yml`, le README, les standards et les réglages MCP au projet cible.
-5. Garder les agents, skills, prompts et standards utiles ; retirer ou adapter les parcours spécialisés qui ne correspondent pas au projet. Mettre à jour le [catalogue](../process/catalog.md), les [relations](../process/relations.md) et le [workflow](../process/workflow.md) en conséquence.
-6. Ouvrir le projet dans son Dev Container, puis suivre le [guide MCP](./mcp.md) pour configurer et vérifier les serveurs nécessaires.
-7. Lancer `python scripts/lint_pack.py`, puis `/define-project` pour cadrer le nouveau projet.
-
-La copie doit conserver ses propres fichiers de mémoire et de configuration : ne pas réutiliser ceux d'un autre projet.
+Partir du [socle IA minimal](../../ai-basepack/README.md), puis ajouter et adapter les seuls agents, skills ou MCP nécessaires. Ne pas copier les données, secrets ou mémoire du présent projet. Les spécialisations du dépôt et leurs dépendances sont décrites dans l'[audit](../process/ai-audit.md).
 
 ## Choisir son point de départ
 
@@ -56,11 +46,11 @@ La copie doit conserver ses propres fichiers de mémoire et de configuration : n
 | Challenger une idée ou un plan | agent `grill-me` |
 | Auditer la sécurité | agent `security` |
 
-## Utiliser un prompt
+## Utiliser un skill d'entrée
 
 1. Dans le chat Copilot, taper `/` puis le nom, par exemple `/define-project`.
-2. Renseigner les champs demandés.
-3. L'agent associé s'active, suit sa procédure et produit son livrable.
+2. Fournir les informations nécessaires à la consigne.
+3. Vérifier le résultat et les outils réellement utilisés. Le skill peut citer un agent pertinent, mais ce lien ne garantit pas sa sélection automatique.
 
 ## Utiliser un agent directement
 
@@ -70,13 +60,13 @@ La copie doit conserver ses propres fichiers de mémoire et de configuration : n
 
 ## Utiliser un skill
 
-Les skills se chargent quand la demande correspond à leur description. Pour en forcer un, le citer : « applique grill-me ». Les procédures sont dans [catalogue](../process/catalog.md).
+Les skills de procédure peuvent être chargés quand la demande correspond à leur description, selon le client. Les points d'entrée marqués `disable-model-invocation: true` sont destinés à une invocation explicite. Vérifier le chargement effectif dans le client ; les procédures sont dans le [catalogue](../process/catalog.md).
 
 ## Ce que produit chaque étape
 
 | Étape | Livrable | Lu par |
 |-------|----------|--------|
-| `/define-project` | Backlog (user stories, critères) | architect, dev, qa |
+| `/define-project` | Incrément testable et suite ; backlog complet si nécessaire | porteur, puis rôles concernés |
 | `/design-architecture` | Schéma et ADR | dev, reviewer |
 | `/create-*` | Code, tests, note d'impact | qa-tests, reviewer |
 | `/test-change` | Tests et rapport | reviewer |
@@ -88,18 +78,25 @@ Les skills se chargent quand la demande correspond à leur description. Pour en 
 
 ## Rôle de la mémoire et de grill-me
 
-- **Mémoire** : les agents la lisent en début de tâche et y enregistrent décisions et connaissances (`memory/memory.jsonl`, serveur Memory MCP).
+- **Mémoire** : consulter les décisions pertinentes pour la tâche et les confronter aux sources actuelles ; enregistrer les connaissances durables si le serveur est disponible (`memory/memory.jsonl`, serveur Memory MCP).
 - **grill-me** : questions une à une sur hypothèses, risques et retour arrière. À utiliser avant une décision importante.
 
 ## Parcours type
 
-1. `/define-project` → backlog.
+Selon la tâche, choisir seulement les étapes utiles :
+
+1. `/define-project` → incrément testable, si un cadrage est nécessaire.
 2. `/design-architecture` → ADR.
 3. `/create-python-webapp` et/ou `/create-react-feature`.
 4. `/test-change`, puis `/review-change`.
 5. `/document-change`.
 
-## Parcours des mini-jeux web du MVP
+## Parcours des jeux web à partir du MVP 2
+
+Le premier incrément est limité à un QCM anonyme sur les mots publiés, sans
+compte ni score sauvegardé. Le parcours ci-dessous décrit les rôles
+disponibles pour préparer des contenus et jeux plus élaborés ; ils ne sont
+pas tous des prérequis du MVP 2. Voir le [backlog](../product/mvp-backlog.md).
 
 1. `/transform-content` → brief et pack candidat destiné à l'import en brouillon ; les connaissances d'un contributeur sont acceptées sans référence externe, et les références disponibles sont ajoutées.
 2. `backend-python` et l'équipe éditoriale importent les données dans Django, puis valident les entrées selon le [standard des contenus](../standards/game-content.md).
@@ -116,7 +113,7 @@ Chaque changement (agent, skill, prompt, standard, MCP, parcours) met à jour la
 ## Vérification
 
 - `python scripts/lint_pack.py` affiche `OK` avec les nombres d'agents, skills et prompts.
-- Après `/define-project`, la réponse contient des user stories avec critères d'acceptation.
+- Après `/define-project`, la réponse décrit un incrément et ses critères observables ; un backlog complet n'est produit que s'il est demandé ou nécessaire.
 - `memory/memory.jsonl` apparaît après une première écriture réussie dans la mémoire ; son absence avant cela est normale.
 
 ## Dépannage

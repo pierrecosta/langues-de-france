@@ -12,12 +12,12 @@ Relations d'usage. L'inventaire est dans le [catalogue](./catalog.md), l'enchaî
 
 | Relation | Sens | Où elle est déclarée |
 |----------|------|----------------------|
-| Prompt → agent | Le prompt active l'agent | `agent:` dans le frontmatter du prompt |
+| Skill d'entrée → agent | Le skill cite un rôle pertinent ; la sélection effective dépend du client et n'est pas garantie par ce lien | Section « Voir aussi » du skill |
 | Agent → skill | L'agent suit la procédure du skill | Section Procédure de l'agent |
 | Agent → agent (handoff) | Bouton de passage de relais, validé par l'utilisateur | `handoffs:` dans le frontmatter |
 | Agent → standard | L'agent applique les règles sans les redéfinir | Section Entrées de l'agent |
 | Agent → modèle | L'agent remplit le modèle | Section Procédure de l'agent |
-| Agent → MCP | Outils autorisés | `tools:` dans le frontmatter |
+| Agent → MCP | Outils demandés ou autorisés si le client les expose | `tools:` dans le frontmatter |
 | Skill → skill | Renvoi vers une procédure voisine (hors périmètre) | Section Périmètre du skill |
 
 ## Agents
@@ -52,11 +52,13 @@ Relations d'usage. L'inventaire est dans le [catalogue](./catalog.md), l'enchaî
 | minigame-templates | game-designer | design-minigames | game-content, frontend, android |
 | android-compose | android-dev | create-android-game | android |
 
-## Prompts : quel agent, quelle suite
+## Points d'entrée : rôle pertinent et suite possible
+
+Les éléments ci-dessous sont des skills, pas des fichiers `.prompt.md` ; la colonne « Agent » indique le rôle pertinent, sans garantir sa sélection automatique.
 
 | Prompt | Agent | Livrable | Suite logique |
 |--------|-------|----------|---------------|
-| define-project | po | Backlog | design-architecture |
+| define-project | po | Incrément testable et suite ; backlog si nécessaire | design-architecture si nécessaire |
 | design-architecture | architect | Schéma et ADR | create-python-webapp, create-react-feature |
 | create-python-webapp | backend-python | Code, tests, note d'impact | test-change, review-change |
 | create-react-feature | frontend-react | Code, tests, notes d'accessibilité | test-change, review-change |
@@ -93,7 +95,7 @@ flowchart LR
   game-designer -.challenge.-> grill-me
 ```
 
-Les agents `security` et `grill-me` n'ont pas de prompt : on les choisit dans la liste des agents.
+Les agents `security` et `grill-me` n'ont pas de point d'entrée dédié : on peut les choisir directement si le client les expose. Les handoffs sont des propositions, pas une obligation d'exécuter toute la chaîne.
 
 ## Maintenir cette page
 

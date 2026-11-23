@@ -2,11 +2,11 @@
 
 ## Objectif
 
-Cadre de travail avec GitHub Copilot : agents spécialisés, skills, prompts, standards et quatre serveurs MCP (context7, playwright, postgres, memory), chacun dans son conteneur. Le projet documenté lance le territoire provençal avec des mini-jeux web responsives au MVP ; six territoires sont visés à terme et le mobile viendra après le MVP, PWA puis Android natif ([trajectoire](docs/standards/android.md)).
+Projet de découverte des langues régionales et cadre de travail Copilot. Quatre MVP web cumulatifs sont prévus : dictionnaire provençal, quiz, carte de France interactive limitée au provençal, puis agenda d'événements. Chaque étape pourra être publiée séparément ; six territoires sont visés à terme et le mobile natif reste ultérieur ([trajectoire](docs/standards/android.md)).
 
 ## Principe
 
-Un **agent** dit qui, un **skill** dit comment, un **prompt** est le point d'entrée (`/nom`), un **standard** porte les règles, un **modèle** donne la forme du livrable. Aucune règle n'est écrite deux fois. **La documentation est mise à jour à chaque itération**, dans la même livraison que le changement ([règle](docs/standards/documentation.md)). Détail : [guide d'utilisation](docs/guides/utilisation.md).
+Un **agent** définit un rôle, un **skill** une procédure, un **standard** les règles et un **template** la forme d'un livrable. Certains skills servent de points d'entrée explicites. Leur disponibilité dépend du client. L'[audit](docs/process/ai-audit.md) explique leur utilisation et les écarts constatés ; le [guide personnel](docs/guides/ia-efficace.md) aide à limiter le contexte.
 
 ## Prérequis
 
@@ -20,18 +20,19 @@ Docker, VS Code, extensions GitHub Copilot et Dev Containers.
 
 ## Nouveau projet
 
-Créer chaque nouveau projet à partir d'une copie propre de ce dossier, puis adapter l'identité, les composants et les réglages au projet cible. Suivre le [parcours d'adoption](docs/guides/utilisation.md#adopter-le-pack-pour-un-nouveau-projet).
+Partir du [socle IA minimal](ai-basepack/README.md), puis ajouter uniquement les spécialisations utiles au projet cible. Ne pas recopier le produit, ses données ou sa mémoire par défaut.
 
 ## Organisation
 
 | Élément | Emplacement |
 |---------|-------------|
 | Instructions globales | [.github/copilot-instructions.md](.github/copilot-instructions.md) |
+| Socle IA réutilisable | [ai-basepack/](ai-basepack/) |
 | Agents, skills, prompts, templates | [.github/](.github/) |
 | Standards (règles : backend, frontend, accessibilité, documentation, Android, contenus) | [docs/standards/](docs/standards/) |
 | Catalogue, relations, workflow | [docs/process/](docs/process/) |
-| Backlog produit du MVP | [docs/product/mvp-backlog.md](docs/product/mvp-backlog.md) |
-| Standard de tests (qa-tests) | `docs/standards/testing.md` (page non encore créée) |
+| Backlog et incréments produit | [backlog](docs/product/mvp-backlog.md), [incréments proposés](docs/product/increments-mvp.md) |
+| Standard de tests | [docs/standards/testing.md](docs/standards/testing.md) |
 | Guides | [docs/guides/](docs/guides/) |
 | Mémoire du projet (montée dans le MCP) | [memory/](memory/) |
 | Seeds initiaux par territoire | [src_init/readme.md](src_init/readme.md) |
@@ -45,4 +46,4 @@ Créer chaque nouveau projet à partir d'une copie propre de ce dossier, puis ad
 
 ## Pour aller plus loin
 
-[Catalogue](docs/process/catalog.md) · [Relations](docs/process/relations.md) · [Workflow](docs/process/workflow.md) · [Contribuer](docs/guides/contribuer.md)
+[Audit IA](docs/process/ai-audit.md) · [Guide personnel](docs/guides/ia-efficace.md) · [Catalogue](docs/process/catalog.md) · [Relations](docs/process/relations.md) · [Workflow](docs/process/workflow.md) · [Contribuer](docs/guides/contribuer.md)
