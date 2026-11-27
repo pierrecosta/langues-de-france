@@ -12,7 +12,7 @@ def points(geometry):
     return [ring for polygon in polygons for ring in polygon]
 
 
-def project(features, marker=None):
+def project(features, markers=None):
     rings = [ring for feature in features for ring in points(feature["geometry"])]
     coordinates = [point for ring in rings for point in ring]
     west = min(point[0] for point in coordinates)
@@ -35,9 +35,11 @@ def project(features, marker=None):
         coords = [position(point) for point in ring]
         paths.append("M" + "L".join(f"{x:.1f} {y:.1f}" for x, y in coords) + "Z")
     result = {"path": "".join(paths)}
-    if marker:
-        x, y = position(marker)
-        result["marker"] = {"x": round(x / 4, 2), "y": round(y / 3.2, 2)}
+    if markers:
+        result["markers"] = {}
+        for name, point in markers.items():
+            x, y = position(point)
+            result["markers"][name] = {"x": round(x / 4, 2), "y": round(y / 3.2, 2)}
     return result
 
 
@@ -60,9 +62,22 @@ def main():
     if len(metropolitan) != 13:
         raise ValueError("Nombre inattendu de régions métropolitaines.")
     result = {
-        "metropolitan": project(metropolitan, (5.37, 43.30)),
+        "metropolitan": project(metropolitan, {
+            "provencal": (5.37, 43.30),
+            "picard": (3.06, 50.63),
+            "breton": (-4.10, 48.00),
+            "basque": (-1.47, 43.49),
+            "corse": (8.74, 41.92),
+        }),
         "overseas": [
-            {"id": code, "name": name, **project([detailed[code] if code in {"977", "978", "989"} else features[code]])}
+            {
+                "id": code,
+                "name": name,
+                **project(
+                    [detailed[code] if code in {"977", "978", "989"} else features[code]],
+                    {"creole-reunionnais": (55.54, -21.12)} if code == "04" else None,
+                ),
+            }
             for code, name in overseas
         ],
     }

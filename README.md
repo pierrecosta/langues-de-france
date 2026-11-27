@@ -32,6 +32,7 @@ Partir du [socle IA minimal](ai-basepack/README.md), puis ajouter uniquement les
 | Standards (règles : backend, frontend, accessibilité, documentation, Android, contenus) | [docs/standards/](docs/standards/) |
 | Catalogue, relations, workflow | [docs/process/](docs/process/) |
 | Backlog et incréments produit | [backlog](docs/product/mvp-backlog.md), [incréments proposés](docs/product/increments-mvp.md) |
+| Contexte produit et système visuel du site | [PRODUCT.md](PRODUCT.md), [DESIGN.md](DESIGN.md) |
 | Standard de tests | [docs/standards/testing.md](docs/standards/testing.md) |
 | Guides | [docs/guides/](docs/guides/) |
 | Mémoire du projet (montée dans le MCP) | [memory/](memory/) |

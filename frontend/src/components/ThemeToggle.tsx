@@ -16,7 +16,7 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggle}
-      className="rounded-md border border-border px-3 py-2 text-sm font-medium hover:bg-surface"
+      className="rounded-md border border-current px-3 py-2 text-base font-medium"
     >
       <span className="dark:hidden">Thème sombre</span>
       <span className="hidden dark:inline">Thème clair</span>

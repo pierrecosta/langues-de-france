@@ -14,7 +14,7 @@ Vérifier l'état réel du code, les contenus et les conditions communes de publ
 |---|---|---|
 | **1. Dictionnaire** | Consulter et rechercher des mots provençaux publiés ; un administrateur gère leur publication. | Expressions, jeux, carte, agenda et comptes visiteurs. |
 | **2. Quiz** | Jouer anonymement à un QCM sur les mots publiés, sans score sauvegardé ; le dictionnaire reste disponible. | Comptes, progression et autres jeux. |
-| **3. Carte** | Sur une carte de France, sélectionner le seul territoire provençal ouvert ; conserver dictionnaire et quiz. | Sélection d'autres territoires ; frontière linguistique ou source non validée. |
+| **3. Carte** | Sur une carte de France, accéder à l'espace provençal ou à cinq pages de langues en construction ; conserver dictionnaire et quiz. | Contenus d'autres langues ; frontière linguistique ou source non validée. |
 | **4. Événements** | Consulter les événements en cours ou à venir ; conserver les trois étapes précédentes et les événements passés en administration. | Inscription, réservation, billetterie et paiement. |
 
 Les autres fonctionnalités restent dans la vision finale ; elles ne sont pas supprimées. Les critères détaillés, les arbitrages ouverts et l'état de chaque MVP figurent dans le [backlog](./mvp-backlog.md).

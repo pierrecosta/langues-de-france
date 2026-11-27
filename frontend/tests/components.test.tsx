@@ -21,6 +21,7 @@ describe("composants", () => {
   it("l'en-tête expose une navigation nommée", () => {
     render(<SiteHeader />);
     expect(screen.getByRole("navigation", { name: "Navigation principale" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Langues de France" })).toHaveAttribute("href", "/carte");
     expect(screen.getByRole("link", { name: "Mots" })).toHaveAttribute("href", "/provencal/mot");
   });
 

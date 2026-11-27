@@ -18,6 +18,8 @@ Construire une fonctionnalité React solide techniquement. Le design et l'access
 
 User story, contrat d'API, composants et tokens existants.
 
+Pour toute création ou refonte d'interface, consulter aussi le skill [Impeccable](../impeccable/SKILL.md) et suivre son workflow de contexte et de conception avant l'implémentation. Il complète les standards du dépôt et ne remplace pas les contrôles d'accessibilité.
+
 ## Procédure
 
 1. **Vérifier** via `context7` les API de Next.js, React, React Query, Zustand et Tailwind pour les versions du projet.

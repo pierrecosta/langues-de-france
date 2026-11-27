@@ -13,7 +13,7 @@ export default function QuizPage() {
   return (
     <div className="space-y-6">
       <h1 className="text-3xl font-bold">Quiz provençal</h1>
-      <p className="rounded-md border border-border bg-surface p-4">
+      <p className="demo-notice rounded-md border border-border p-4">
         Démonstration : ce quiz utilise des mots locaux de test, pas les mots publiés du dictionnaire.
         Aucun compte n’est nécessaire et le score n’est pas enregistré.
       </p>

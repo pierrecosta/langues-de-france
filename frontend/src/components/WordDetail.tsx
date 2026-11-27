@@ -3,9 +3,9 @@ import type { Word } from "@/lib/api";
 export function WordDetail({ word }: { word: Word }) {
   const variants = Object.entries(word.variants);
   return (
-    <article className="space-y-4">
+    <article className="word-detail space-y-6">
       <h1 className="text-3xl font-bold">{word.local}</h1>
-      <dl className="space-y-2">
+      <dl>
         <div>
           <dt className="font-semibold">Traduction</dt>
           <dd>{word.french}</dd>

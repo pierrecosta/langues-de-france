@@ -13,7 +13,7 @@
 - Ordre cumulatif : **MVP1 dictionnaire de mots → MVP2 quiz → MVP3 carte interactive → MVP4 agenda d'événements**. Chaque MVP peut être publié seul après satisfaction des prérequis communs de publication ci-dessous.
 - MVP1 porte sur les **mots seulement**. Les expressions restent dans la vision finale et sont reportées.
 - MVP2 : QCM anonyme fondé sur des mots publiés ; ni compte utilisateur, ni sauvegarde de score.
-- MVP3 : carte de France dont seule la Provence est interactive ; aucun autre territoire n'est présenté comme ouvert.
+- MVP3 : carte de France avec accès aux contenus provençaux et repères pour cinq autres langues menant à des pages en construction ; ces espaces ne sont pas présentés comme ouverts.
 - MVP4 : agenda public consultable, administré par le porteur ; ni inscription ni paiement d'événement. Les événements en cours ou à venir sont affichés publiquement ; les événements passés restent accessibles en administration.
 - Les mini-jeux supplémentaires, les comptes et la progression, les territoires supplémentaires et les autres besoins déjà exprimés restent au backlog ultérieur ; ils ne sont pas supprimés.
 
@@ -120,23 +120,23 @@ avant publication.
 
 **Valeur / priorité : Must après MVP2.** Rend visible l'ancrage territorial et donne accès au territoire ouvert sans laisser croire que d'autres territoires sont disponibles.
 
-**Inclus :** une carte de France sur laquelle seule la Provence est interactive. Les autres parties de la carte ne sont pas proposées comme territoires ouverts ou sélectionnables.
+**Inclus :** une carte de France avec accès à l'espace provençal et repères indicatifs vers cinq espaces de langues en construction : picard/ch'ti, breton, basque, corse et créole réunionnais. Aucun de ces espaces n'est présenté comme ouvert.
 **Limites :** cette représentation ne définit pas de frontière linguistique ni de délimitation de la Provence ; ne pas en inventer. La source et la licence de la géométrie de la carte doivent être validées avant publication.
 
 #### US-M3-01 — Ouvrir le territoire provençal depuis la carte
 
 **En tant que** curieux, **je veux** voir et sélectionner le territoire provençal sur une carte interactive, **afin de** découvrir l'espace linguistique actuellement ouvert.
 
-- Étant donné que la carte est disponible, quand je l'ouvre, alors elle représente la France et seule la Provence y est interactive ; aucune autre partie n'est présentée comme un territoire ouvert.
+- Étant donné que la carte est disponible, quand je l'ouvre, alors elle représente la France, distingue l'espace provençal ouvert des cinq pages en construction et ne présente aucun autre espace comme ouvert.
 - Étant donné que je sélectionne la Provence, quand j'active sa zone interactive, alors je peux ouvrir l'espace provençal du produit.
-- Étant donné que les autres territoires ne sont pas ouverts, quand je consulte la carte, alors les autres parties de la France ne proposent ni sélection, ni lien, ni indication d'ouverture.
+- Étant donné que les cinq autres langues ne sont pas ouvertes, quand j'active leur repère ou leur lien textuel, alors une page nomme la langue, annonce la construction sans date et permet de revenir à la carte.
 - Étant donné que les données cartographiques ne peuvent être chargées, quand j'ouvre la carte, alors un état d'erreur explicite est affiché et un accès textuel à l'espace provençal reste disponible.
 - **Dépendances :** MVP1 et MVP2 conservés dans le produit ; source/licence de la carte de France et manière de représenter interactivement la Provence à valider, sans inventer de frontière linguistique ou de données géographiques.
 - **État vide :** l'espace provençal reste clairement identifiable ; aucune sélection territoriale ne conduit à une page vide.
 
-**Sortie observable MVP3 :** l'ensemble des usages des MVP1 et MVP2 reste disponible ; la carte propose seulement le territoire provençal.
+**Sortie observable MVP3 :** l'ensemble des usages des MVP1 et MVP2 reste disponible ; seul l'espace provençal propose des contenus, les autres repères menant à des pages d'attente.
 
-**Prototype local :** la page `/carte` représente la métropole et les territoires ultramarins en encarts à des échelles différentes. Un repère situé à Marseille et un lien textuel ouvrent l'espace provençal, sans dessiner de frontière linguistique ; les autres territoires ne sont pas sélectionnables. Les contours sont embarqués avec l'application : ils ne nécessitent ni service cartographique ni téléchargement au moment de la consultation. Le prototype ne constitue pas une validation éditoriale ou juridique de la carte pour publication.
+**Prototype local :** la page `/carte` représente la métropole et les territoires ultramarins en encarts à des échelles différentes. Un repère situé à Marseille ouvre l'espace provençal ; cinq repères numérotés et leurs liens textuels ouvrent des pages en construction, sans dessiner de frontière linguistique ni annoncer de date. Les contours sont embarqués avec l'application : ils ne nécessitent ni service cartographique ni téléchargement au moment de la consultation. Le prototype ne constitue pas une validation éditoriale ou juridique de la carte pour publication.
 
 **Source et reproduction :** contours régionaux généralisés, millésime 2026, du jeu [Contours administratifs de data.gouv.fr](https://www.data.gouv.fr/datasets/contours-administratifs), sous [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/). La source combine notamment Admin Express de l'IGN, © les contributeurs OpenStreetMap et, pour la Polynésie française et la Nouvelle-Calédonie, des jeux territoriaux identifiés dans la fiche source. Fichiers utilisés : [regions-1000m.geojson](https://contours-administratifs.s3.rbx.io.cloud.ovh.net/2026/geojson/regions-1000m.geojson) (SHA-256 : `2a48c8a4a38532053f07045e6d5a8ba0b1b6ff20d9d883f155ba9ea2abdbe685`) et [regions-100m.geojson](https://contours-administratifs.s3.rbx.io.cloud.ovh.net/2026/geojson/regions-100m.geojson) (SHA-256 : `f85fe769841120140cdf0dc8fb9536926ad884157fd8e26f74aec58b18994ba4`), ce dernier pour Saint-Barthélemy, Saint-Martin et Clipperton. Après téléchargement et vérification des fichiers, régénérer avec `python scripts/generate_map_data.py chemin/regions-1000m.geojson chemin/regions-100m.geojson frontend/src/lib/map-data.json`. Les contours et les échelles sont simplifiés ; vérifier la couverture, les droits et la représentation avant publication.
 

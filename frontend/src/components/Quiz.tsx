@@ -52,7 +52,7 @@ export function Quiz({ words }: { words: Word[] }) {
 
   if (questions === null) {
     return (
-      <div className="space-y-4">
+      <div className="quiz-panel space-y-4">
         <p>Choisissez la traduction provençale de chaque mot français. Sans chronomètre.</p>
         <button type="button" className={primary} onClick={start}>Commencer le quiz</button>
       </div>
@@ -61,7 +61,7 @@ export function Quiz({ words }: { words: Word[] }) {
 
   if (questions.length === 0) {
     return (
-      <div className="space-y-4">
+      <div className="quiz-panel space-y-4">
         <h2 ref={heading} tabIndex={-1} className="text-xl font-bold">Quiz indisponible</h2>
         <p>Il n’y a pas assez de mots de démonstration distincts pour préparer ce quiz.</p>
         <button type="button" className={primary} onClick={start}>Réessayer</button>
@@ -71,7 +71,7 @@ export function Quiz({ words }: { words: Word[] }) {
 
   if (finished) {
     return (
-      <div className="space-y-4">
+      <div className="quiz-panel space-y-4">
         <h2 ref={heading} tabIndex={-1} className="text-xl font-bold">Partie terminée</h2>
         <p>Votre score : {score} sur {questions.length}. Bravo d’avoir joué !</p>
         <p>Ce résultat n’est pas enregistré.</p>
@@ -83,7 +83,7 @@ export function Quiz({ words }: { words: Word[] }) {
   const question = questions[index];
   if (!question) throw new Error("Question de quiz introuvable.");
   return (
-    <div className="space-y-4">
+    <div className="quiz-panel space-y-4">
       <h2 ref={heading} tabIndex={-1} className="text-xl font-bold">
         Question {index + 1} sur {questions.length}
       </h2>

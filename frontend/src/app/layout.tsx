@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Aller au contenu
         </a>
         <SiteHeader />
-        <main id="contenu" tabIndex={-1} className="mx-auto w-full max-w-4xl flex-1 px-4 py-8">
+        <main id="contenu" tabIndex={-1} className="page-content mx-auto w-full max-w-5xl flex-1 px-4 sm:px-8">
           {children}
         </main>
         <SiteFooter />

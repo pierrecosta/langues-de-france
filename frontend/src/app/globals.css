@@ -1,27 +1,86 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Literata";
+  src: url("/fonts/literata-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Literata";
+  src: url("/fonts/literata-latin-ext.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("/fonts/atkinson-hyperlegible-400-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("/fonts/atkinson-hyperlegible-400-latin-ext.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("/fonts/atkinson-hyperlegible-700-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("/fonts/atkinson-hyperlegible-700-latin-ext.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
 /* Tokens : grille de 4 px (échelle d'espacement Tailwind 1 = 4 px). */
 :root {
-  --color-bg: #ffffff;
-  --color-surface: #f3f4f6;
-  --color-fg: #111827;
-  --color-muted: #4b5563;
-  --color-border: #6b7280;
-  --color-primary: #1d4ed8;
-  --color-on-primary: #ffffff;
-  --color-focus: #1d4ed8;
+  --color-bg: #f9f6ee;
+  --color-surface: #e9eee2;
+  --color-fg: #1f2c23;
+  --color-muted: #425245;
+  --color-border: #637663;
+  --color-primary: #80391f;
+  --color-on-primary: #fffaf3;
+  --color-focus: #80391f;
+  --color-masthead: #263f2e;
+  --color-on-masthead: #fffaf3;
+  --color-peach: #f0d7c8;
+  --color-olive: #687243;
   color-scheme: light;
 }
 
 :root[data-theme="dark"] {
-  --color-bg: #0f172a;
-  --color-surface: #1e293b;
-  --color-fg: #f1f5f9;
-  --color-muted: #cbd5e1;
-  --color-border: #94a3b8;
-  --color-primary: #93c5fd;
-  --color-on-primary: #0f172a;
-  --color-focus: #93c5fd;
+  --color-bg: #19231d;
+  --color-surface: #293a2d;
+  --color-fg: #f6f1e7;
+  --color-muted: #d3ddce;
+  --color-border: #a5bba4;
+  --color-primary: #ffc0a5;
+  --color-on-primary: #3a1c12;
+  --color-focus: #ffc0a5;
+  --color-masthead: #101a14;
+  --color-on-masthead: #f6f1e7;
+  --color-peach: #543b30;
+  --color-olive: #c2cb96;
   color-scheme: dark;
 }
 
@@ -41,6 +100,141 @@
 body {
   background: var(--color-bg);
   color: var(--color-fg);
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.65;
+  caret-color: var(--color-primary);
+}
+
+h1, h2, h3 {
+  font-family: "Literata", Georgia, serif;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 5vw, 3.75rem) !important;
+  letter-spacing: -0.025em;
+}
+
+p, dd {
+  max-width: 70ch;
+}
+
+a {
+  text-underline-offset: 0.2em;
+}
+
+button, input {
+  font: inherit;
+}
+
+button, a {
+  transition: background-color 160ms ease-out, color 160ms ease-out, border-color 160ms ease-out;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.site-header {
+  background: var(--color-masthead);
+  color: var(--color-on-masthead);
+}
+
+.site-header :focus-visible {
+  outline-color: var(--color-on-masthead);
+}
+
+.site-brand {
+  font-family: "Literata", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.site-nav a, .site-nav button {
+  min-height: 3rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-nav a:hover, .site-nav button:hover {
+  color: var(--color-on-masthead);
+  text-decoration: underline;
+}
+
+.site-nav button:hover {
+  background: transparent;
+}
+
+.page-content {
+  padding-block: clamp(2rem, 5vw, 4rem);
+}
+
+.page-content > div > h1,
+.page-content article > h1 {
+  max-width: 18ch;
+}
+
+.page-content section {
+  scroll-margin-top: 2rem;
+}
+
+.home-intro {
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background: var(--color-surface);
+  border-top: 0.5rem solid var(--color-olive);
+}
+
+.home-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+}
+
+.home-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3rem;
+}
+
+.editorial-section {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.site-footer {
+  background: var(--color-surface);
+}
+
+.word-link:hover {
+  border-color: var(--color-primary);
+}
+
+.word-detail dl > div {
+  padding-block: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.word-detail dt {
+  color: var(--color-muted);
+}
+
+.word-detail dd {
+  margin-top: 0.25rem;
+}
+
+.quiz-panel {
+  padding: clamp(1rem, 3vw, 2rem);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.demo-notice {
+  background: var(--color-peach);
 }
 
 :focus-visible {

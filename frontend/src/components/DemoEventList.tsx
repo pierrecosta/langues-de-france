@@ -9,7 +9,7 @@ export function DemoEventList({ events }: { events: DemoEvent[] }) {
   return (
     <ul className="space-y-4">
       {events.map((event) => (
-        <li key={event.slug} className="rounded-md border border-border bg-surface p-4">
+        <li key={event.slug} className="border-t border-border py-4">
           <article className="space-y-2">
             <h2 className="text-xl font-bold">
               <Link className="text-primary underline" href={`/provencal/evenement/${event.slug}`}>

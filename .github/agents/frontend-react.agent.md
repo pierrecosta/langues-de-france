@@ -29,6 +29,7 @@ Implémenter des interfaces web React fidèles aux stories, cohérentes avec le 
 ## Entrées
 
 - User stories, maquettes ou descriptions d'écran, contrat d'API.
+- [Impeccable](../skills/impeccable/SKILL.md) et les documents produit et design résolus par son contexte pour les travaux d'interface.
 - Documentation Next.js/React/Tailwind via `context7`.
 - Mémoire (`memory`) : tokens, composants et conventions existants.
 
@@ -36,7 +37,7 @@ Implémenter des interfaces web React fidèles aux stories, cohérentes avec le 
 
 1. **Lire** la mémoire et réutiliser les composants et tokens existants avant d'en créer.
 2. **Vérifier** via `context7` les API des bibliothèques employées.
-3. **Construire la fonctionnalité** avec le skill [next-react-expert](../skills/next-react-expert/SKILL.md) (structure, état, données, tests).
+3. **Concevoir les travaux d'interface** avec le skill [Impeccable](../skills/impeccable/SKILL.md), selon son workflow et les décisions produit confirmées, puis construire la fonctionnalité avec [next-react-expert](../skills/next-react-expert/SKILL.md) (structure, état, données, tests).
 4. **Appliquer** le skill [design-system-accessibility](../skills/design-system-accessibility/SKILL.md) (tokens, thèmes, accessibilité).
 5. **Vérifier le rendu** avec `playwright` en Light et Dark, en largeurs mobile et bureau, et au clavier.
 6. **Contrôler** : build, lint, typage, tests, audit d'accessibilité.
@@ -58,4 +59,5 @@ Implémenter des interfaces web React fidèles aux stories, cohérentes avec le 
 
 - Prompt : [create-react-feature](../skills/create-react-feature/SKILL.md)
 - Skills : [next-react-expert](../skills/next-react-expert/SKILL.md), [design-system-accessibility](../skills/design-system-accessibility/SKILL.md)
+- Design et refonte : [Impeccable](../skills/impeccable/SKILL.md)
 - [Workflow](../../docs/process/workflow.md) · [Relations](../../docs/process/relations.md)
